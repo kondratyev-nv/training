@@ -9,7 +9,10 @@ import java.util.Comparator;
  * You may assume that both values already exist in the tree.
  */
 public class CommonAncestorFinder {
-    public <T> BinaryTreeNode<T> find(BinaryTreeNode<T> root, T value1, T value2, Comparator<T> comparator) {
+    public <T> BinaryTreeNode<T> find(BinaryTreeNode<T> root,
+                                      T value1,
+                                      T value2,
+                                      Comparator<T> comparator) {
         while (true) {
             int compareToValue1 = comparator.compare(root.value, value1);
             int compareToValue2 = comparator.compare(root.value, value2);

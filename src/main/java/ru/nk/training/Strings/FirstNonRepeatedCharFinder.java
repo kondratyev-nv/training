@@ -16,12 +16,10 @@ public class FirstNonRepeatedCharFinder {
         if (string == null) {
             throw new IllegalArgumentException();
         }
-        Map<Integer, Long> charFrequencies = string
-                .chars()
-                .boxed()
-                .collect(Collectors.groupingBy(
-                        Function.identity(),
-                        Collectors.counting()));
+        Map<Integer, Long> charFrequencies = string.chars()
+                                                   .boxed()
+                                                   .collect(Collectors.groupingBy(Function.identity(),
+                                                                                  Collectors.counting()));
         return (char) string.chars()
                             .filter(c -> charFrequencies.get(c) < 2)
                             .findFirst()
