@@ -3,25 +3,12 @@ package ru.nk.training;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Arrays;
-
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static ru.nk.training.TestUtils.AssertHelper.assertSortedArraysEqual;
 
 public class TrieTest {
 
     private Trie trie;
-
-    private static void assertSortedArraysEqual(String[] expected,
-                                                String[] actual) {
-        String[] expectedClone = expected.clone();
-        Arrays.sort(expectedClone);
-
-        String[] actualClone = actual.clone();
-        Arrays.sort(actualClone);
-
-        assertArrayEquals(expectedClone, actualClone);
-    }
 
     @Before
     public void setUp() throws Exception {
@@ -64,8 +51,7 @@ public class TrieTest {
         for (String word : words) {
             trie.add(word);
         }
-        assertSortedArraysEqual(new String[]{ "abc", "abd", "bcd" },
-                                trie.words(""));
+        assertSortedArraysEqual(new String[]{ "abc", "abd", "bcd" }, trie.words(""));
         assertEquals(3, trie.wordCount(""));
     }
 
