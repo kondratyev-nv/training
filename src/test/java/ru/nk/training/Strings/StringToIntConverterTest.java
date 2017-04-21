@@ -14,15 +14,14 @@ public class StringToIntConverterTest {
         converter = new StringToIntConverter();
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void failsOnNullString() {
-        AssertHelper.assertThrows(IllegalArgumentException.class,
-                                  () -> converter.stringToInt(null));
+        converter.stringToInt(null);
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void failsOnEmptyString() {
-        AssertHelper.assertThrows(IllegalArgumentException.class, () -> converter.stringToInt(""));
+        converter.stringToInt("");
     }
 
     @Test

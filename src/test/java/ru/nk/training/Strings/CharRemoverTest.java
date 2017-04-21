@@ -14,14 +14,14 @@ public class CharRemoverTest {
         remover = new CharRemover();
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void failsOnNullString() {
-        AssertHelper.assertThrows(IllegalArgumentException.class, () -> remover.remove(null, "a"));
+        remover.remove(null, "a");
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void failsOnNullToRemoveString() {
-        AssertHelper.assertThrows(IllegalArgumentException.class, () -> remover.remove("a", null));
+        remover.remove("a", null);
     }
 
     @Test

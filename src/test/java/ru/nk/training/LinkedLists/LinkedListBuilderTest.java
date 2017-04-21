@@ -28,8 +28,8 @@ public class LinkedListBuilderTest {
 
     @Test
     public void canAppendNodes() {
-        LinkedListNode<Integer> node = builder.append(new LinkedListNode<Integer>(1, null))
-                                              .append(new LinkedListNode<Integer>(2, null))
+        LinkedListNode<Integer> node = builder.append(new LinkedListNode<>(1, null))
+                                              .append(new LinkedListNode<>(2, null))
                                               .head();
 
         assertNotNull(node);
@@ -43,8 +43,8 @@ public class LinkedListBuilderTest {
 
     @Test
     public void canGetTail() {
-        LinkedListNode<Integer> node = builder.append(new LinkedListNode<Integer>(1, null))
-                                              .append(new LinkedListNode<Integer>(2, null))
+        LinkedListNode<Integer> node = builder.append(new LinkedListNode<>(1, null))
+                                              .append(new LinkedListNode<>(2, null))
                                               .tail();
 
         assertNull(node.next);

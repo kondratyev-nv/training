@@ -2,7 +2,6 @@ package ru.nk.training.Recursion;
 
 import org.junit.Before;
 import org.junit.Test;
-import ru.nk.training.TestUtils.AssertHelper;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -15,16 +14,14 @@ public class BinarySearcherTest {
         searcher = new BinarySearcher();
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void failsOnNullArray() {
-        AssertHelper.assertThrows(IllegalArgumentException.class,
-                                  () -> searcher.binarySearch(null, 0));
+        searcher.binarySearch(null, 0);
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void failsOnEmptyArray() {
-        AssertHelper.assertThrows(IllegalArgumentException.class,
-                                  () -> searcher.binarySearch(new int[0], 0));
+        searcher.binarySearch(new int[0], 0);
     }
 
     @Test

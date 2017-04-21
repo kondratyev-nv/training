@@ -1,7 +1,8 @@
-package ru.fox.training;
+package ru.nk.training;
 
 import org.junit.Before;
 import org.junit.Test;
+import ru.nk.training.LeftRotation;
 
 import static org.junit.Assert.assertArrayEquals;
 

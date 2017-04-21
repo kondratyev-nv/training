@@ -1,8 +1,5 @@
-package ru.fox.training;
+package ru.nk.training;
 
-/**
- * Created by Natalia on 4/17/2017.
- */
 public class LeftRotation {
     public void rotate(int[] a, int k) {
         if (a == null) {

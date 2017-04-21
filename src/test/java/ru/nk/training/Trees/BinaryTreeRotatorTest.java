@@ -16,9 +16,9 @@ public class BinaryTreeRotatorTest {
         builder = new BinarySearchTreeBuilder<>(Integer::compareTo);
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void failsOnNullRoot() {
-        AssertHelper.assertThrows(IllegalArgumentException.class, () -> rotator.rotateRight(null));
+        rotator.rotateRight(null);
     }
 
     @Test

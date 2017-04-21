@@ -14,10 +14,9 @@ public class SentenceReverserTest {
         reverser = new SentenceReverser();
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void failsOnNullString() {
-        AssertHelper.assertThrows(IllegalArgumentException.class,
-                                  () -> reverser.reverseWords(null, ' '));
+        reverser.reverseWords(null, ' ');
     }
 
     @Test

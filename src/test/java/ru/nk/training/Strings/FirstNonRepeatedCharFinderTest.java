@@ -3,7 +3,6 @@ package ru.nk.training.Strings;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import ru.nk.training.TestUtils.AssertHelper;
 
 import java.util.NoSuchElementException;
 
@@ -15,16 +14,14 @@ public class FirstNonRepeatedCharFinderTest {
         finder = new FirstNonRepeatedCharFinder();
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void failsOnNullString() {
-        AssertHelper.assertThrows(IllegalArgumentException.class,
-                                  () -> finder.firstNonRepeatedChar(null));
+        finder.firstNonRepeatedChar(null);
     }
 
-    @Test
+    @Test(expected = NoSuchElementException.class)
     public void failsOnEmptyString() {
-        AssertHelper.assertThrows(NoSuchElementException.class,
-                                  () -> finder.firstNonRepeatedChar(""));
+        finder.firstNonRepeatedChar("");
     }
 
     @Test
@@ -42,9 +39,8 @@ public class FirstNonRepeatedCharFinderTest {
         Assert.assertEquals('b', finder.firstNonRepeatedChar("aabccdeef"));
     }
 
-    @Test
+    @Test(expected = NoSuchElementException.class)
     public void failsWhenAllCharsRepeated() {
-        AssertHelper.assertThrows(NoSuchElementException.class,
-                                  () -> finder.firstNonRepeatedChar("aabbccddeeff"));
+        finder.firstNonRepeatedChar("aabbccddeeff");
     }
 }

@@ -1,7 +1,6 @@
 package ru.nk.training;
 
 import org.junit.Test;
-import ru.nk.training.TestUtils.AssertHelper;
 
 import java.util.NoSuchElementException;
 
@@ -38,7 +37,7 @@ public class LruCacheTest {
         assertEquals(2, cache.size());
     }
 
-    @Test
+    @Test(expected = NoSuchElementException.class)
     public void removesLeastUsedByGetFromStartWhenCapacityExceeds() {
         LruCache<Integer, String> cache = new LruCache<>(3);
         cache.add(1, "a");
@@ -53,10 +52,10 @@ public class LruCacheTest {
         assertEquals("a", cache.get(1));
         assertEquals("b", cache.get(2));
 
-        AssertHelper.assertThrows(NoSuchElementException.class, () -> cache.get(3));
+        cache.get(3);
     }
 
-    @Test
+    @Test(expected = NoSuchElementException.class)
     public void removesLeastUsedByGetFromEndWhenCapacityExceeds() {
         LruCache<Integer, String> cache = new LruCache<>(3);
         cache.add(1, "a");
@@ -70,10 +69,10 @@ public class LruCacheTest {
         assertEquals("b", cache.get(2));
         assertEquals("c", cache.get(3));
 
-        AssertHelper.assertThrows(NoSuchElementException.class, () -> cache.get(1));
+        cache.get(1);
     }
 
-    @Test
+    @Test(expected = NoSuchElementException.class)
     public void removesLeastUsedByAddFromStartWhenCapacityExceeds() {
         LruCache<Integer, String> cache = new LruCache<>(3);
         cache.add(1, "a");
@@ -88,10 +87,10 @@ public class LruCacheTest {
         assertEquals("A", cache.get(1));
         assertEquals("B", cache.get(2));
 
-        AssertHelper.assertThrows(NoSuchElementException.class, () -> cache.get(3));
+        cache.get(3);
     }
 
-    @Test
+    @Test(expected = NoSuchElementException.class)
     public void removesLeastUsedByAddFromEndWhenCapacityExceeds() {
         LruCache<Integer, String> cache = new LruCache<>(3);
         cache.add(1, "a");
@@ -105,6 +104,6 @@ public class LruCacheTest {
         assertEquals("B", cache.get(2));
         assertEquals("C", cache.get(3));
 
-        AssertHelper.assertThrows(NoSuchElementException.class, () -> cache.get(1));
+        cache.get(1);
     }
 }
