@@ -1,7 +1,6 @@
 package ru.nk.training.Strings;
 
 /**
- * Arrays:
  * Write a function that reverses the order of the words in a string.
  * For example, your function should transform the string
  * "Do or do not, there is no try." to "try. no is there not, do or Do".

@@ -1,6 +1,18 @@
 package ru.nk.training;
 
+/**
+ * You are given two rectangles, each defined by an upper-left (UL) corner and
+ * a lower-right (LR) corner. Both rectangles’ edges will always be parallel
+ * to the x or y axis. Write a function that determines whether the two rectangles overlap.
+ */
 public class RectangleIntersectionChecker {
+    /**
+     * Find if two rectangles intersects
+     *
+     * @param r1 First rectangle
+     * @param r2 Second rectangle
+     * @return true if rectangles overlap, and false if they don’t.
+     */
     public boolean intersects(Rectangle r1, Rectangle r2) {
         Point2D r1rb = r1.getRightBottom();
         Point2D r1lt = r1.getLeftTop();

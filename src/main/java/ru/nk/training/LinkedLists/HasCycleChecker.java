@@ -1,7 +1,6 @@
 package ru.nk.training.LinkedLists;
 
 /**
- * Linked List Problems:
  * You are given a linked list with at least one node
  * that is either null-terminated (acyclic) or ends in a cycle (cyclic).
  * Write a function that takes a pointer to the head of a list and

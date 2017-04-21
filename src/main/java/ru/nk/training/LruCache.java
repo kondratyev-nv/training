@@ -4,6 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
+/**
+ * Least Recently Used (LRU) cache
+ *
+ * @param <TKey>   Key
+ * @param <TValue> Value
+ */
 public class LruCache<TKey, TValue> {
     private final int capacity;
     private final Map<TKey, DoublyLinkedListNode> map = new HashMap<>();
@@ -14,6 +20,12 @@ public class LruCache<TKey, TValue> {
         this.capacity = capacity;
     }
 
+    /**
+     * Add or update value associated with specified key
+     *
+     * @param key   Key
+     * @param value Value
+     */
     public void add(TKey key, TValue value) {
         DoublyLinkedListNode node;
         if (map.containsKey(key)) {
@@ -29,6 +41,12 @@ public class LruCache<TKey, TValue> {
         ensureCapacity();
     }
 
+    /**
+     * Get value by key or throw exception if no such key in cache
+     *
+     * @param key Key
+     * @return Value associated with key
+     */
     public TValue get(TKey key) {
         DoublyLinkedListNode node = map.get(key);
         if (node == null) {
@@ -38,6 +56,21 @@ public class LruCache<TKey, TValue> {
         return node.value;
     }
 
+    /**
+     * Checks if there is a key in cache
+     *
+     * @param key Key
+     * @return true if cache contains key
+     */
+    public boolean exists(TKey key) {
+        return map.get(key) != null;
+    }
+
+    /**
+     * Get number of elements in cache
+     *
+     * @return number of elements in cache
+     */
     public int size() {
         return map.size();
     }

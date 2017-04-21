@@ -10,18 +10,35 @@ class Trie {
 
     private final TrieNode root = new TrieNode(null);
 
-    public void add(String s) {
-        TrieNode next = root;
-        for (int i = 0; i < s.length() - 1; ++i) {
-            next = next.addChild(s.charAt(i));
+    /**
+     * Add new word
+     *
+     * @param word - Word to add
+     */
+    public void add(String word) {
+        TrieNode node = root;
+        for (int i = 0; i < word.length() - 1; ++i) {
+            node = node.addChild(word.charAt(i));
         }
-        next.addChild(s.charAt(s.length() - 1)).setCompleteWord();
+        node.addChild(word.charAt(word.length() - 1)).setCompleteWord();
     }
 
+    /**
+     * Get number of words that start with specified prefix
+     *
+     * @param prefix prefix of words to count
+     * @return number of words in trie
+     */
     public int wordCount(String prefix) {
         return findNodeByPrefix(prefix).wordCount();
     }
 
+    /**
+     * Get words that start with specified prefix
+     *
+     * @param prefix prefix of words to look for
+     * @return words that starts with the prefix
+     */
     public String[] words(String prefix) {
         TrieNode node = findNodeByPrefix(prefix);
         Stream<String> suffixes = node.getWords().map(suffix -> prefix + suffix);
