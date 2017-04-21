@@ -53,9 +53,7 @@ public class LruCacheTest {
         assertEquals("a", cache.get(1));
         assertEquals("b", cache.get(2));
 
-        AssertHelper.assertThrows(
-                NoSuchElementException.class,
-                () -> cache.get(3));
+        AssertHelper.assertThrows(NoSuchElementException.class, () -> cache.get(3));
     }
 
     @Test
@@ -72,9 +70,7 @@ public class LruCacheTest {
         assertEquals("b", cache.get(2));
         assertEquals("c", cache.get(3));
 
-        AssertHelper.assertThrows(
-                NoSuchElementException.class,
-                () -> cache.get(1));
+        AssertHelper.assertThrows(NoSuchElementException.class, () -> cache.get(1));
     }
 
     @Test
@@ -92,9 +88,7 @@ public class LruCacheTest {
         assertEquals("A", cache.get(1));
         assertEquals("B", cache.get(2));
 
-        AssertHelper.assertThrows(
-                NoSuchElementException.class,
-                () -> cache.get(3));
+        AssertHelper.assertThrows(NoSuchElementException.class, () -> cache.get(3));
     }
 
     @Test
@@ -111,8 +105,6 @@ public class LruCacheTest {
         assertEquals("B", cache.get(2));
         assertEquals("C", cache.get(3));
 
-        AssertHelper.assertThrows(
-                NoSuchElementException.class,
-                () -> cache.get(1));
+        AssertHelper.assertThrows(NoSuchElementException.class, () -> cache.get(1));
     }
 }

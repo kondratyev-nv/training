@@ -27,15 +27,22 @@ public class HeightFinderTest {
     public void returnsDepthWhenLeftSubtreeIsHigher() {
         BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1,
                                                             new BinaryTreeNode<>(2,
-                                                                                 new BinaryTreeNode<>(4,
-                                                                                                      new BinaryTreeNode<>(
-                                                                                                              6,
-                                                                                                              null,
-                                                                                                              null),
-                                                                                                      null),
-                                                                                 new BinaryTreeNode<>(5, null, null)),
+                                                                                 new BinaryTreeNode<>(
+                                                                                         4,
+                                                                                         new BinaryTreeNode<>(
+                                                                                                 6,
+                                                                                                 null,
+                                                                                                 null),
+                                                                                         null),
+                                                                                 new BinaryTreeNode<>(
+                                                                                         5,
+                                                                                         null,
+                                                                                         null)),
                                                             new BinaryTreeNode<>(3,
-                                                                                 new BinaryTreeNode<>(7, null, null),
+                                                                                 new BinaryTreeNode<>(
+                                                                                         7,
+                                                                                         null,
+                                                                                         null),
                                                                                  null));
         assertEquals(4, finder.depth(root));
     }
@@ -44,15 +51,26 @@ public class HeightFinderTest {
     public void returnsDepthWhenRightSubtreeIsHigher() {
         BinaryTreeNode<Integer> root = new BinaryTreeNode<>(1,
                                                             new BinaryTreeNode<>(2,
-                                                                                 new BinaryTreeNode<>(4, null, null),
-                                                                                 new BinaryTreeNode<>(5, null, null)),
+                                                                                 new BinaryTreeNode<>(
+                                                                                         4,
+                                                                                         null,
+                                                                                         null),
+                                                                                 new BinaryTreeNode<>(
+                                                                                         5,
+                                                                                         null,
+                                                                                         null)),
                                                             new BinaryTreeNode<>(3,
-                                                                                 new BinaryTreeNode<>(7, null,
-                                                                                                      new BinaryTreeNode<>(
-                                                                                                              8,
-                                                                                                              null,
-                                                                                                              null)),
-                                                                                 new BinaryTreeNode<>(6, null, null)));
+                                                                                 new BinaryTreeNode<>(
+                                                                                         7,
+                                                                                         null,
+                                                                                         new BinaryTreeNode<>(
+                                                                                                 8,
+                                                                                                 null,
+                                                                                                 null)),
+                                                                                 new BinaryTreeNode<>(
+                                                                                         6,
+                                                                                         null,
+                                                                                         null)));
         assertEquals(4, finder.depth(root));
     }
 }

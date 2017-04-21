@@ -16,16 +16,13 @@ public class StringToIntConverterTest {
 
     @Test
     public void failsOnNullString() {
-        AssertHelper.assertThrows(
-                IllegalArgumentException.class,
-                () -> converter.stringToInt(null));
+        AssertHelper.assertThrows(IllegalArgumentException.class,
+                                  () -> converter.stringToInt(null));
     }
 
     @Test
     public void failsOnEmptyString() {
-        AssertHelper.assertThrows(
-                IllegalArgumentException.class,
-                () -> converter.stringToInt(""));
+        AssertHelper.assertThrows(IllegalArgumentException.class, () -> converter.stringToInt(""));
     }
 
     @Test

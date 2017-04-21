@@ -17,16 +17,14 @@ public class FirstNonRepeatedCharFinderTest {
 
     @Test
     public void failsOnNullString() {
-        AssertHelper.assertThrows(
-                IllegalArgumentException.class,
-                () -> finder.firstNonRepeatedChar(null));
+        AssertHelper.assertThrows(IllegalArgumentException.class,
+                                  () -> finder.firstNonRepeatedChar(null));
     }
 
     @Test
     public void failsOnEmptyString() {
-        AssertHelper.assertThrows(
-                NoSuchElementException.class,
-                () -> finder.firstNonRepeatedChar(""));
+        AssertHelper.assertThrows(NoSuchElementException.class,
+                                  () -> finder.firstNonRepeatedChar(""));
     }
 
     @Test
@@ -46,8 +44,7 @@ public class FirstNonRepeatedCharFinderTest {
 
     @Test
     public void failsWhenAllCharsRepeated() {
-        AssertHelper.assertThrows(
-                NoSuchElementException.class,
-                () -> finder.firstNonRepeatedChar("aabbccddeeff"));
+        AssertHelper.assertThrows(NoSuchElementException.class,
+                                  () -> finder.firstNonRepeatedChar("aabbccddeeff"));
     }
 }

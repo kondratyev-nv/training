@@ -18,9 +18,7 @@ public class BinaryTreeRotatorTest {
 
     @Test
     public void failsOnNullRoot() {
-        AssertHelper.assertThrows(
-                IllegalArgumentException.class,
-                () -> rotator.rotateRight(null));
+        AssertHelper.assertThrows(IllegalArgumentException.class, () -> rotator.rotateRight(null));
     }
 
     @Test
@@ -56,7 +54,15 @@ public class BinaryTreeRotatorTest {
               |                              |       6   8
               4                              4
          */
-        BinaryTreeNode<Integer> root = builder.add(5).add(2).add(3).add(4).add(1).add(7).add(6).add(8).build();
+        BinaryTreeNode<Integer> root = builder.add(5)
+                                              .add(2)
+                                              .add(3)
+                                              .add(4)
+                                              .add(1)
+                                              .add(7)
+                                              .add(6)
+                                              .add(8)
+                                              .build();
         BinaryTreeNode<Integer> newRootExpected = root.left;
         BinaryTreeNode<Integer> leftSubtreeOfNewRootExpected = root.left.right;
 

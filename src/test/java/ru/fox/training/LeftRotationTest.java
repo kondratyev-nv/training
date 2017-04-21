@@ -31,36 +31,36 @@ public class LeftRotationTest {
 
     @Test
     public void canRotateWhenShiftIsLessThanZero() {
-        int[] a = new int[]{1, 2, 3};
+        int[] a = new int[]{ 1, 2, 3 };
         rotation.rotate(a, -2);
-        assertArrayEquals(new int[]{2, 3, 1}, a);
+        assertArrayEquals(new int[]{ 2, 3, 1 }, a);
     }
 
     @Test
     public void shiftByZeroDoesNotChangeArray() throws Exception {
-        int[] a = new int[]{1, 2, 3};
+        int[] a = new int[]{ 1, 2, 3 };
         rotation.rotate(a, 0);
-        assertArrayEquals(new int[]{1, 2, 3}, a);
+        assertArrayEquals(new int[]{ 1, 2, 3 }, a);
     }
 
     @Test
     public void canShiftBy1() throws Exception {
-        int[] a = new int[]{1, 2, 3};
+        int[] a = new int[]{ 1, 2, 3 };
         rotation.rotate(a, 1);
-        assertArrayEquals(new int[]{2, 3, 1}, a);
+        assertArrayEquals(new int[]{ 2, 3, 1 }, a);
     }
 
     @Test
     public void canShiftBy2() throws Exception {
-        int[] a = new int[]{1, 2, 3, 4};
+        int[] a = new int[]{ 1, 2, 3, 4 };
         rotation.rotate(a, 2);
-        assertArrayEquals(new int[]{3, 4, 1, 2}, a);
+        assertArrayEquals(new int[]{ 3, 4, 1, 2 }, a);
     }
 
     @Test
     public void canShiftBySizeOfArray() throws Exception {
-        int[] a = new int[]{1, 2, 3, 4};
+        int[] a = new int[]{ 1, 2, 3, 4 };
         rotation.rotate(a, a.length);
-        assertArrayEquals(new int[]{1, 2, 3, 4}, a);
+        assertArrayEquals(new int[]{ 1, 2, 3, 4 }, a);
     }
 }

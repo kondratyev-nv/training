@@ -16,16 +16,12 @@ public class CharRemoverTest {
 
     @Test
     public void failsOnNullString() {
-        AssertHelper.assertThrows(
-                IllegalArgumentException.class,
-                () -> remover.remove(null, "a"));
+        AssertHelper.assertThrows(IllegalArgumentException.class, () -> remover.remove(null, "a"));
     }
 
     @Test
     public void failsOnNullToRemoveString() {
-        AssertHelper.assertThrows(
-                IllegalArgumentException.class,
-                () -> remover.remove("a", null));
+        AssertHelper.assertThrows(IllegalArgumentException.class, () -> remover.remove("a", null));
     }
 
     @Test
