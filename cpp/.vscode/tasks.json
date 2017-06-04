@@ -1,0 +1,71 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "taskName": "create_build_directory",
+            "command": "",
+            "linux": {
+                "command": "mkdir",
+                "args": [
+                    "-p",
+                    "build"
+                ]
+            },
+            "windows": {
+                "command": "cmd",
+                "args": [
+                    "/C",
+                    "if not exist \"build\" mkdir build"
+                ]
+            },
+            "isShellCommand": true,
+            "showOutput": "always"
+        },
+        {
+            "taskName": "cmake_generate",
+            "command": "cmake",
+            "args": [
+                "-DCMAKE_BUILD_TYPE=Debug",
+                "-G",
+                "'CodeBlocks - Unix Makefiles'",
+                ".."
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            },
+            "isShellCommand": true,
+            "showOutput": "always",
+            "dependsOn": [
+                "create_build_directory"
+            ]
+        },
+        {
+            "taskName": "cmake_build",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "."
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            },
+            "isShellCommand": true,
+            "showOutput": "always",
+            "isBuildCommand": true,
+            "dependsOn": [
+                "cmake_generate"
+            ]
+        },
+        {
+            "taskName": "cmake_test",
+            "command": "ctest",
+            "args": [
+                "-VV"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            },
+            "isTestCommand": true
+        }
+    ]
+}
