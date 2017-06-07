@@ -5,6 +5,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
+/**
+ * Implemetation of Trie data structure
+ * designed to add words, count number of words by specified prefix, and
+ * to obtaining words that starts with the specified prefix.
+ */
 class Trie {
     private static final TrieNode EMPTY_NODE = new TrieNode(null);
 
