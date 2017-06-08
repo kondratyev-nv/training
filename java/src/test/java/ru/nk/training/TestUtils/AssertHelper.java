@@ -2,7 +2,7 @@ package ru.nk.training.TestUtils;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 public class AssertHelper {
     public static <T> void assertSortedArraysEqual(T[] expected, T[] actual) {

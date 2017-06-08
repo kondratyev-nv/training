@@ -2,7 +2,6 @@ package ru.nk.training.Trees;
 
 import org.junit.Before;
 import org.junit.Test;
-import ru.nk.training.TestUtils.AssertHelper;
 
 import static org.junit.Assert.*;
 

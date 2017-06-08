@@ -2,7 +2,6 @@ package ru.nk.training.Strings;
 
 import org.junit.Before;
 import org.junit.Test;
-import ru.nk.training.TestUtils.AssertHelper;
 
 import static org.junit.Assert.assertEquals;
 
