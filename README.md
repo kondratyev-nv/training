@@ -1,6 +1,6 @@
 # Training project
 
-Solutions to various programming challenges in Java, C++ and Python
+Solutions to various programming challenges in Java, C++ and Python.
 
 ## Currently solved challenges
 
@@ -49,3 +49,20 @@ Implement a routine that prints all possible orderings of the characters in a st
 ### Get number of combination to obtain specified sum - [Java](java/src/main/java/ru/nk/training/Recursion/SumCombinationsFinder.java)
 
 Davis has s staircases in his house and he likes to climb each staircase 1, 2, or 3 steps at a time. Being a very precocious child, he wonders how many ways there are to reach the top of the staircase. Given the respective heights for each of the s staircases in his house, find and print the number of ways he can climb each staircase on a new line.
+
+### Height of a tree - [Java](java/src/main/java/ru/nk/training/Trees/HeightFinder.java)
+
+The height of a tree (binary or not) is defined to be the maximum distance from the root node to any leaf node. Write a function to calculate the height of an arbitrary binary tree.
+
+### Even tree - [Java](java/src/main/java/ru/nk/training/Trees/EvenTreeCounter.java)
+
+You are given a tree (a simple connected graph with no cycles). The tree has N nodes numbered from 1 to N and is rooted at node 1. Find the maximum number of edges you can remove from the tree to get a forest such that each connected component of the forest contains an even number of vertices.
+
+### Find common ancestor - [Java](java/src/main/java/ru/nk/training/Trees/CommonAncestorFinder.java)
+
+Given the value of two nodes in a binary search tree, find the lowest (nearest) common ancestor. You may assume that both values already exist in the tree.
+
+### Rotate binary tree - [Java](java/src/main/java/ru/nk/training/Trees/BinaryTreeRotator.java)
+
+Given an unbalanced binary search tree with more nodes in the left subtree than 
+the right, reorganize the tree to improve its balance while maintaining the properties of a binary search tree
