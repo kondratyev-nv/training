@@ -1,4 +1,6 @@
-package ru.nk.training.Trees;
+package ru.nk.training.Trees.Utils;
+
+import ru.nk.training.Trees.BinaryTreeNode;
 
 import java.util.Comparator;
 

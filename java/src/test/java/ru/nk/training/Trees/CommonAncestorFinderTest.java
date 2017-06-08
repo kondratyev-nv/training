@@ -2,6 +2,7 @@ package ru.nk.training.Trees;
 
 import org.junit.Before;
 import org.junit.Test;
+import ru.nk.training.Trees.Utils.BinarySearchTreeBuilder;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

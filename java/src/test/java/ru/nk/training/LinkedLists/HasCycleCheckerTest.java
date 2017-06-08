@@ -2,6 +2,7 @@ package ru.nk.training.LinkedLists;
 
 import org.junit.Before;
 import org.junit.Test;
+import ru.nk.training.LinkedLists.Utils.LinkedListBuilder;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;

@@ -79,3 +79,6 @@ Given an image represented by a NxN matrix, where each pixel in the image is 4 b
 
 You are given a linked list with at least one node that is either null-terminated (acyclic) or ends in a cycle (cyclic). Write a function that takes a pointer to the head of a list and determines whether the list is cyclic or acyclic. Your function should return false if the list is acyclic and true if it is cyclic. You may not modify the list in any way.
 
+### Integer/String Conversions - [Java](java/src/main/java/ru/nk/training/Strings/IntegerStringConverter.java)
+
+Write two conversion routines. The first routine converts a string to a signed integer. You may assume that the string contains only digits and the minus character ('-'), that it is a properly formatted integer number, and that the number is within the range of an int type. The second routine converts a signed integer stored as an int back to a string.

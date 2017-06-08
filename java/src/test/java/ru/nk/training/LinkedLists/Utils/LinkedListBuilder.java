@@ -1,11 +1,13 @@
-package ru.nk.training.LinkedLists;
+package ru.nk.training.LinkedLists.Utils;
+
+import ru.nk.training.LinkedLists.LinkedListNode;
 
 public class LinkedListBuilder<T> {
     private LinkedListNode<T> head;
     private LinkedListNode<T> tail;
 
     public LinkedListBuilder<T> append(T value) {
-        append(new LinkedListNode<T>(value, null));
+        append(new LinkedListNode<>(value, null));
         return this;
     }
 
