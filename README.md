@@ -6,11 +6,11 @@ Solutions to various programming challenges in Java, C++ and Python.
 
 ### Trie implementation - [Java](java/src/main/java/ru/nk/training/Trie.java)
 
-Implemetation of Trie data structure designed to add words, count number of words by specified prefix, and to obtaining words that starts with the specified prefix.
+Implementation of Trie data structure designed to add words, count number of words by specified prefix, and to obtaining words that start with the specified prefix.
 
 ### Count stars - [Java](java/src/main/java/ru/nk/training/StarCounter.java)
 
-For this problem, you should write a program which counts the number of stars visible in an bitmap image. An image consists of pixels, and each pixel is either black or white (represented by the characters `#` and `-`, respectively). All black pixels are considered to be part of the sky, and each white pixel is considered to be part of a star. White pixels that are adjacent vertically or horizontally are part of the same star.
+For this problem, you should write a program which counts the number of stars visible in a bitmap image. An image consists of pixels, and each pixel is either black or white (represented by the characters `#` and `-`, respectively). All black pixels are considered to be part of the sky, and each white pixel is considered to be part of a star. White pixels that are adjacent vertically or horizontally are part of the same star.
 
 ### Checking intersection of rectangles - [Java](java/src/main/java/ru/nk/training/RectangleIntersectionChecker.java), [C++](cpp/src/rectangles_intersect.cpp)
 
@@ -24,7 +24,7 @@ A left rotation operation on an array of size N shifts each of the array's eleme
 
 ### Remove chars from the string - [Java](java/src/main/java/ru/nk/training/Strings/CharRemover.java), [C++](cpp/src/remove_chars.cpp)
 
-Write an efficient function that deletes characters from an ASCII string. Use the prototype `string removeChars(string str, string remove);` where any character existing in remove must be deleted from `str`. For example, given a str of "Battle of the Vowels: Hawaii vs. Grozny" and a remove of "aeiou", the function should transform `str` to "Bttl f th Vwls: Hw vs. Grzny".
+Write an efficient function that deletes characters from an ASCII string. Use the prototype `string removeChars(string str, string remove);` where any character existing in `remove` must be deleted from `str`. For example, given a `str` of "Battle of the Vowels: Hawaii vs. Grozny" and a remove of "aeiou", the function should transform `str` to "Bttl f th Vwls: Hw vs. Grzny".
 
 ### Count number of road forks - [Python](python/src/count_number_of_road_forks.py)
 
@@ -48,7 +48,7 @@ Implement a routine that prints all possible orderings of the characters in a st
 
 ### Get number of combination to obtain specified sum - [Java](java/src/main/java/ru/nk/training/Recursion/SumCombinationsFinder.java)
 
-Davis has s staircases in his house and he likes to climb each staircase 1, 2, or 3 steps at a time. Being a very precocious child, he wonders how many ways there are to reach the top of the staircase. Given the respective heights for each of the s staircases in his house, find and print the number of ways he can climb each staircase on a new line.
+Davis has s staircases in his house, and he likes to climb each staircase 1, 2, or 3 steps at a time. Being a very precocious child, he wonders how many ways there are to reach the top of the staircase. Given the respective heights for each of the s staircases in his house, find and print the number of ways he can climb each staircase on a new line.
 
 ### Height of a tree - [Java](java/src/main/java/ru/nk/training/Trees/HeightFinder.java)
 
@@ -65,7 +65,7 @@ Given the value of two nodes in a binary search tree, find the lowest (nearest) 
 ### Rotate binary tree - [Java](java/src/main/java/ru/nk/training/Trees/BinaryTreeRotator.java)
 
 Given an unbalanced binary search tree with more nodes in the left subtree than 
-the right, reorganize the tree to improve its balance while maintaining the properties of a binary search tree
+the right, reorganise the tree to improve its balance while maintaining the properties of a binary search tree
 
 ### Maximize profit on stock - [Java](java/src/main/java/ru/nk/training/StocksProfitCalculator.java)
 
@@ -73,7 +73,7 @@ Your algorithms have become so good at predicting the market that you now know w
 
 ### Rotate matrix - [Java](java/src/main/java/ru/nk/training/MatrixRotator.java)
 
-Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
+Given an image represented by a NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
 
 ### Check if linked list has cycle - [Java](java/src/main/java/ru/nk/training/LinkedLists/HasCycleChecker.java)
 

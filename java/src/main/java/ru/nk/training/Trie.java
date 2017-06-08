@@ -6,11 +6,11 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 /**
- * Implemetation of Trie data structure
+ * Implementation of Trie data structure
  * designed to add words, count number of words by specified prefix, and
  * to obtaining words that starts with the specified prefix.
  */
-class Trie {
+public class Trie {
     private static final TrieNode EMPTY_NODE = new TrieNode(null);
 
     private final TrieNode root = new TrieNode(null);
