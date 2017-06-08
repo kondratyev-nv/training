@@ -66,3 +66,16 @@ Given the value of two nodes in a binary search tree, find the lowest (nearest) 
 
 Given an unbalanced binary search tree with more nodes in the left subtree than 
 the right, reorganize the tree to improve its balance while maintaining the properties of a binary search tree
+
+### Maximize profit on stock - [Java](java/src/main/java/ru/nk/training/StocksProfitCalculator.java)
+
+Your algorithms have become so good at predicting the market that you now know what the share price of Wooden Orange Toothpicks Inc. (WOT) will be for the next N days. Each day, you can either buy one share of WOT, sell any number of shares of WOT that you own, or not make any transaction at all. What is the maximum profit you can obtain with an optimum trading strategy?
+
+### Rotate matrix - [Java](java/src/main/java/ru/nk/training/MatrixRotator.java)
+
+Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
+
+### Check if linked list has cycle - [Java](java/src/main/java/ru/nk/training/LinkedLists/HasCycleChecker.java)
+
+You are given a linked list with at least one node that is either null-terminated (acyclic) or ends in a cycle (cyclic). Write a function that takes a pointer to the head of a list and determines whether the list is cyclic or acyclic. Your function should return false if the list is acyclic and true if it is cyclic. You may not modify the list in any way.
+
