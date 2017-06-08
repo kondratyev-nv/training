@@ -1,5 +1,8 @@
 package ru.nk.training;
 
+import ru.nk.training.DataStructures.Point2D;
+import ru.nk.training.DataStructures.Rectangle;
+
 /**
  * You are given two rectangles, each defined by an upper-left (UL) corner and
  * a lower-right (LR) corner. Both rectangles’ edges will always be parallel

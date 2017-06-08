@@ -2,6 +2,8 @@ package ru.nk.training;
 
 import org.junit.Before;
 import org.junit.Test;
+import ru.nk.training.DataStructures.Point2D;
+import ru.nk.training.DataStructures.Rectangle;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
