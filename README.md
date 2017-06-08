@@ -1,6 +1,6 @@
 # Training project
 
-Solutions to various programming challenges in Java and C++
+Solutions to various programming challenges in Java, C++ and Python
 
 ## Currently solved challenges
 
@@ -25,3 +25,27 @@ A left rotation operation on an array of size N shifts each of the array's eleme
 ### Remove chars from the string - [Java](java/src/main/java/ru/nk/training/Strings/CharRemover.java), [C++](cpp/src/remove_chars.cpp)
 
 Write an efficient function that deletes characters from an ASCII string. Use the prototype `string removeChars(string str, string remove);` where any character existing in remove must be deleted from `str`. For example, given a str of "Battle of the Vowels: Hawaii vs. Grozny" and a remove of "aeiou", the function should transform `str` to "Bttl f th Vwls: Hw vs. Grzny".
+
+### Count number of road forks - [Python](python/src/count_number_of_road_forks.py)
+
+Consider the forest as an N x M grid. Each cell is either empty (represented by .) or blocked by a tree (represented by X). You can move LEFT, RIGHT, UP, and DOWN through empty cells, but you cannot travel through a tree cell. Starting cell is marked with the character M, and the target cell is marked with a *. The upper-left corner is indexed as (0, 0). Find a number of times you are able to move in more than one direction.
+
+### Find first non repeated char - [Java](java/src/main/java/ru/nk/training/Strings/FirstNonRepeatedCharFinder.java)
+
+Write an efficient function to find the first nonrepeated character in a string. For instance, the first nonrepeated character in "total" is 'o' and the first nonrepeated character in "teeter" is 'r'.
+
+### Reverse sentence - [Java](java/src/main/java/ru/nk/training/Strings/SentenceReverser.java)
+
+Write a function that reverses the order of the words in a string. For example, your function should transform the string "Do or do not, there is no try." to "try. no is there not, do or Do". Assume that all words are space delimited and treat punctuation the same as letters.
+
+### Binary search - [Java](java/src/main/java/ru/nk/training/Recursion/BinarySearcher.java)
+
+Implement a function to perform a binary search on a sorted array of integers to find the index of a given integer.
+
+### Generate permutation of a string - [Java](java/src/main/java/ru/nk/training/Recursion/PermutationGenerator.java)
+
+Implement a routine that prints all possible orderings of the characters in a string. In other words, print all permutations that use all the characters from the original string. For example, given the string “hat”, your function should print the strings “tha”, “aht”, “tah”, “ath”, “hta”, and “hat”. Treat each character in the input string as a distinct character, even if it is repeated. Given the string “aaa”, your routine should print “aaa” six times. You may print the permutations in any order you choose.
+
+### Get number of combination to obtain specified sum - [Java](java/src/main/java/ru/nk/training/Recursion/SumCombinationsFinder.java)
+
+Davis has s staircases in his house and he likes to climb each staircase 1, 2, or 3 steps at a time. Being a very precocious child, he wonders how many ways there are to reach the top of the staircase. Given the respective heights for each of the s staircases in his house, find and print the number of ways he can climb each staircase on a new line.
