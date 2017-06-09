@@ -82,3 +82,7 @@ You are given a linked list with at least one node that is either null-terminate
 ### Integer/String Conversions - [Java](java/src/main/java/ru/nk/training/IntegerStringConverter.java)
 
 Write two conversion routines. The first routine converts a string to a signed integer. You may assume that the string contains only digits and the minus character ('-'), that it is a properly formatted integer number, and that the number is within the range of an int type. The second routine converts a signed integer stored as an int back to a string.
+
+### Evaluate Reverse Polish Notation - [Python](python/src/evaluate_reverse_polish_notation.py)
+
+Evaluate the value of an arithmetic expression in Reverse Polish Notation. Valid operators are `+`, `-`, `*`, `/`. Each operand may be an integer or another expression. Result of division operation is rounded to nearest integer.
