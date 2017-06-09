@@ -1,0 +1,57 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceRoot}",
+                "/usr/include",
+                "/usr/local/include"
+            ],
+            "defines": [],
+            "browse": {
+                "path": [
+                    "/usr/include",
+                    "/usr/local/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceRoot}",
+                "/usr/include",
+                "/usr/local/include"
+            ],
+            "defines": [],
+            "browse": {
+                "path": [
+                    "/usr/include",
+                    "/usr/local/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceRoot}",
+                "${env:CPP_INCLUDE_PATH}"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "",
+                "path": [
+                    "${workspaceRoot}",
+                    "${env:CPP_INCLUDE_PATH}"
+                ]
+            }
+        }
+    ]
+}
