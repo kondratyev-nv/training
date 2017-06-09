@@ -86,3 +86,7 @@ Write two conversion routines. The first routine converts a string to a signed i
 ### Add one to big integer - [Python](python/src/add_one_to_big_integer.py)
 
 Given a non-negative integer represented as a non-empty array of digits, plus one to the integer. You may assume the integer do not contain any leading zero, except the number 0 itself. The digits are stored such that the most significant digit is at the head of the list.
+
+### Interval map - [Java](java/src/main/java/ru/nk/training/IntervalMap.java)
+
+Implementation of interval map - data structure that maps half-open intervals of comparable keys to values. Value can be queried for a specific key, result will be the value mapped to the interval containing the key.
