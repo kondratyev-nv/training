@@ -82,3 +82,7 @@ You are given a linked list with at least one node that is either null-terminate
 ### Integer/String Conversions - [Java](java/src/main/java/ru/nk/training/IntegerStringConverter.java)
 
 Write two conversion routines. The first routine converts a string to a signed integer. You may assume that the string contains only digits and the minus character ('-'), that it is a properly formatted integer number, and that the number is within the range of an int type. The second routine converts a signed integer stored as an int back to a string.
+
+### Add one to big integer - [Python](python/src/add_one_to_big_integer.py)
+
+Given a non-negative integer represented as a non-empty array of digits, plus one to the integer. You may assume the integer do not contain any leading zero, except the number 0 itself. The digits are stored such that the most significant digit is at the head of the list.
