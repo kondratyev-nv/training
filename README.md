@@ -90,3 +90,7 @@ Given a non-negative integer represented as a non-empty array of digits, plus on
 ### Interval map - [Java](java/src/main/java/ru/nk/training/IntervalMap.java)
 
 Implementation of interval map - data structure that maps half-open intervals of comparable keys to values. Value can be queried for a specific key, result will be the value mapped to the interval containing the key.
+
+### Evaluate Reverse Polish Notation - [Python](python/src/evaluate_reverse_polish_notation.py)
+
+Evaluate the value of an arithmetic expression in Reverse Polish Notation. Valid operators are `+`, `-`, `*`, `/`. Each operand may be an integer or another expression. Result of division operation is rounded to nearest integer.
