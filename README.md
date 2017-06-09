@@ -83,6 +83,14 @@ You are given a linked list with at least one node that is either null-terminate
 
 Write two conversion routines. The first routine converts a string to a signed integer. You may assume that the string contains only digits and the minus character ('-'), that it is a properly formatted integer number, and that the number is within the range of an int type. The second routine converts a signed integer stored as an int back to a string.
 
+### Add one to big integer - [Python](python/src/add_one_to_big_integer.py)
+
+Given a non-negative integer represented as a non-empty array of digits, plus one to the integer. You may assume the integer do not contain any leading zero, except the number 0 itself. The digits are stored such that the most significant digit is at the head of the list.
+
+### Interval map - [Java](java/src/main/java/ru/nk/training/IntervalMap.java)
+
+Implementation of interval map - data structure that maps half-open intervals of comparable keys to values. Value can be queried for a specific key, result will be the value mapped to the interval containing the key.
+
 ### Evaluate Reverse Polish Notation - [Python](python/src/evaluate_reverse_polish_notation.py)
 
 Evaluate the value of an arithmetic expression in Reverse Polish Notation. Valid operators are `+`, `-`, `*`, `/`. Each operand may be an integer or another expression. Result of division operation is rounded to nearest integer.

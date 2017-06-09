@@ -24,3 +24,10 @@ hs_err_pid*
 # IntelliJ IDEA
 .idea/
 *.iml
+
+# Maven
+target/
+
+# VS Code
+.project
+.classpath
