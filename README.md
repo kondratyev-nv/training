@@ -82,3 +82,7 @@ You are given a linked list with at least one node that is either null-terminate
 ### Integer/String Conversions - [Java](java/src/main/java/ru/nk/training/IntegerStringConverter.java)
 
 Write two conversion routines. The first routine converts a string to a signed integer. You may assume that the string contains only digits and the minus character ('-'), that it is a properly formatted integer number, and that the number is within the range of an int type. The second routine converts a signed integer stored as an int back to a string.
+
+### Interval map - [Java](java/src/main/java/ru/nk/training/IntervalMap.java)
+
+Implementation of interval map - data structure that maps half-open intervals of comparable keys to values. Value can be queried for a specific key, result will be the value mapped to the interval containing the key.
