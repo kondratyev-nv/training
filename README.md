@@ -98,3 +98,7 @@ Evaluate the value of an arithmetic expression in Reverse Polish Notation. Valid
 ### Count ways of making change - [C++](cpp/src/count_ways_to_make_change.cpp)
 
 You have `m` types of coins available in infinite quantities where the value of each coin is given in the array `C`. Can you determine the number of ways of making change for `n` units using the given types of coins? For example, if `m = 4`, and `C = [8, 3, 1, 2]`, we can make change for `n = 3` units in three ways: `{1, 1, 1}`, `{1, 2}`, and `{3}`.
+
+### Count number of pairs by difference - [Java](java/src/main/java/ru/nk/training/PairsByDifferenceCounter.java)
+
+Given `N` integers, count the number of pairs of integers whose difference is `K`.
