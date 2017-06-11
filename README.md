@@ -94,3 +94,7 @@ Implementation of interval map - data structure that maps half-open intervals of
 ### Evaluate Reverse Polish Notation - [Python](python/src/evaluate_reverse_polish_notation.py)
 
 Evaluate the value of an arithmetic expression in Reverse Polish Notation. Valid operators are `+`, `-`, `*`, `/`. Each operand may be an integer or another expression. Result of division operation is rounded to nearest integer.
+
+### Count ways of making change - [C++](cpp/src/count_ways_to_make_change.cpp)
+
+You have `m` types of coins available in infinite quantities where the value of each coin is given in the array `C`. Can you determine the number of ways of making change for `n` units using the given types of coins? For example, if `m = 4`, and `C = [8, 3, 1, 2]`, we can make change for `n = 3` units in three ways: `{1, 1, 1}`, `{1, 2}`, and `{3}`.
