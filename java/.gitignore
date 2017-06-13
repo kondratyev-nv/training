@@ -31,3 +31,6 @@ target/
 # VS Code
 .project
 .classpath
+
+# Eclipse
+.settings/
