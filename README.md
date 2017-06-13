@@ -102,3 +102,7 @@ You have `m` types of coins available in infinite quantities where the value of 
 ### Count number of pairs by difference - [Java](java/src/main/java/ru/nk/training/PairsByDifferenceCounter.java)
 
 Given `N` integers, count the number of pairs of integers whose difference is `K`.
+
+### Find minimum sum with different indices - [Java](java/src/main/java/ru/nk/training/MinimumSumWithDifferentIndicesFinder.java)
+
+You are given two arrays `A` and `B` each containing `n` integers. You need to choose exactly one number from `A` and exactly one number from `B` such that the index of the two chosen numbers is not same and the sum of the two chosen values is minimum.
