@@ -106,3 +106,7 @@ Given `N` integers, count the number of pairs of integers whose difference is `K
 ### Find minimum sum with different indices - [Java](java/src/main/java/ru/nk/training/MinimumSumWithDifferentIndicesFinder.java)
 
 You are given two arrays `A` and `B` each containing `n` integers. You need to choose exactly one number from `A` and exactly one number from `B` such that the index of the two chosen numbers is not same and the sum of the two chosen values is minimum.
+
+### Count patterns - [Python](python/src/count_patterns.py)
+
+A string `s` contains many patterns of the form `1(0+)1` where `(0+)` represents any non-empty consecutive sequence of zeros. The patterns are allowed to overlap. For example, consider string `1101001`, we can see there are two consecutive sequences `1(0)1` and `1(00)1` which are of the form `1(0+)1`. Find the total number of patterns of the form `1(0+)1` that occur in `s`.
