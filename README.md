@@ -110,3 +110,7 @@ You are given two arrays `A` and `B` each containing `n` integers. You need to c
 ### Count patterns - [Python](python/src/count_patterns.py)
 
 A string `s` contains many patterns of the form `1(0+)1` where `(0+)` represents any non-empty consecutive sequence of zeros. The patterns are allowed to overlap. For example, consider string `1101001`, we can see there are two consecutive sequences `1(0)1` and `1(00)1` which are of the form `1(0+)1`. Find the total number of patterns of the form `1(0+)1` that occur in `s`.
+
+### Find longest palindromic subsequence - [Java](java/src/main/java/ru/nk/training/LongestPalindromicSubsequenceFinder.java)
+
+Given a string, find a longest palindromic subsequence in it. A longest palindromic subsequence is a sequence that appears in the same relative order, but not necessarily contiguous (not substring) and palindrome in nature (means the subsequence will read same from the front and back).
