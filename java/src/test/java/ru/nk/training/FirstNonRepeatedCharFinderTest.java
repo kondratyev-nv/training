@@ -1,6 +1,6 @@
 package ru.nk.training;
 
-import org.junit.Assert;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,17 +26,17 @@ public class FirstNonRepeatedCharFinderTest {
 
     @Test
     public void returnsWhenOnlyOneChar() {
-        Assert.assertEquals('a', finder.firstNonRepeatedChar("a"));
+        assertEquals('a', finder.firstNonRepeatedChar("a"));
     }
 
     @Test
     public void returnsWhenNoRepeatableChars() {
-        Assert.assertEquals('a', finder.firstNonRepeatedChar("abcdef"));
+        assertEquals('a', finder.firstNonRepeatedChar("abcdef"));
     }
 
     @Test
     public void returnsFirstWhenHasRepeatableChars() {
-        Assert.assertEquals('b', finder.firstNonRepeatedChar("aabccdeef"));
+        assertEquals('b', finder.firstNonRepeatedChar("aabccdeef"));
     }
 
     @Test(expected = NoSuchElementException.class)
