@@ -18,6 +18,8 @@ You are given two rectangles, each defined by an upper-left (UL) corner and a lo
 
 ### Least Recently Used (LRU) cache - [Java](java/src/main/java/ru/nk/training/LruCache.java)
 
+Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: `get` and `put`. `get(key)` - Get the value of the key if the key exists in the cache, otherwise return `null`. `put(key, value)` - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
+
 ### Left rotation of an array - [Java](java/src/main/java/ru/nk/training/ArrayRotator.java)
 
 A left rotation operation on an array of size N shifts each of the array's elements 1 unit to the left. Given an array of integers and a number, k, perform k left rotations on the array.
@@ -117,7 +119,7 @@ Given a string, find a longest palindromic subsequence in it. A longest palindro
 
 ### Given a string find out if symbols can be rearranged to a palindrom - [Python](python/src/can_rearrange_to_palindrom.py)
 
-Given a string find out if symbols can be rearranged to a palindrom
+Given a string find out if symbols can be rearranged to a palindrom.
 
 ### Find longest palindromic subsequence that can be obtained with specific transformations - [Java](java/src/main/java/ru/nk/training/LongestPalindromicSubsequenceWithTransformationFinder.java)
 

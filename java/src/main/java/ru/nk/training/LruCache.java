@@ -9,6 +9,14 @@ import java.util.NoSuchElementException;
  *
  * @param <TKey>   Key
  * @param <TValue> Value
+ *
+ * Design and implement a data structure for Least Recently Used (LRU) cache. 
+ * It should support the following operations: get and put. 
+ * 
+ * - get(key) - Get the value of the key if the key exists in the cache, otherwise return null. 
+ * - put(key, value) - Set or insert the value if the key is not already present. 
+ * 
+ * When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
  */
 public class LruCache<TKey, TValue> {
     private final int capacity;
@@ -26,7 +34,7 @@ public class LruCache<TKey, TValue> {
      * @param key   Key
      * @param value Value
      */
-    public void add(TKey key, TValue value) {
+    public void put(TKey key, TValue value) {
         DoublyLinkedListNode node;
         if (map.containsKey(key)) {
             node = map.get(key);
@@ -42,7 +50,7 @@ public class LruCache<TKey, TValue> {
     }
 
     /**
-     * Get value by key or throw exception if no such key in cache
+     * Get value by key or returns null if no such key in cache
      *
      * @param key Key
      * @return Value associated with key
@@ -50,7 +58,7 @@ public class LruCache<TKey, TValue> {
     public TValue get(TKey key) {
         DoublyLinkedListNode node = map.get(key);
         if (node == null) {
-            throw new NoSuchElementException();
+            return null;
         }
         upgrade(node);
         return node.value;
