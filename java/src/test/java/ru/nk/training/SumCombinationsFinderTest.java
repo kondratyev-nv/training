@@ -1,6 +1,5 @@
 package ru.nk.training;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -8,10 +7,6 @@ import static org.junit.Assert.assertEquals;
 public class SumCombinationsFinderTest {
 
     private static final int[] THREE_VALUES = new int[]{ 1, 2, 3 };
-
-    @Before
-    public void setUp() throws Exception {
-    }
 
     @Test(expected = IllegalArgumentException.class)
     public void throwsWhenValuesArrayIsNull() throws Exception {
