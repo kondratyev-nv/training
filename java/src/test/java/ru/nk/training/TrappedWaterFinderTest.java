@@ -78,4 +78,16 @@ public class TrappedWaterFinderTest {
         int units = finder.findTrappedWaterUnits(new int[]{ 5, 6, 5, 4, 2, 4, 3, 5, 2, 3, 7 });
         assertEquals(20, units);
     }
+
+    @Test
+    public void returnsUnitsForPitWithinLargerPitOnRightBoundary() throws Exception {
+        int units = finder.findTrappedWaterUnits(new int[]{ 3, 4, 5, 3, 2, 3, 4, 3, 2 });
+        assertEquals(4, units);
+    }
+
+    @Test
+    public void returnsUnitsForPitWithinLargerPitOnLeftBoundary() throws Exception {
+        int units = finder.findTrappedWaterUnits(new int[]{ 2, 3, 4, 3, 2, 3, 5, 4, 3 });
+        assertEquals(4, units);
+    }
 }
