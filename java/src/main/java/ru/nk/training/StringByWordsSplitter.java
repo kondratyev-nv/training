@@ -8,6 +8,12 @@ import java.util.Set;
 
 public class StringByWordsSplitter {
     public Optional<List<String>> split(String sentence, Set<String> words) {
+        if (sentence == null || sentence.length() <= 0) {
+            throw new IllegalArgumentException();
+        }
+        if (words == null || words.size() <= 0) {
+            throw new IllegalArgumentException();
+        }
         return splitSentenceFrom(sentence, words, 0, new HashSet<>());
     }
 

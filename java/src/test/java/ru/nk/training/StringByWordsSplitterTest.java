@@ -37,6 +37,20 @@ public class StringByWordsSplitterTest {
         });
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void throwsWhenWordsAreNull() {
+        splitter.split("abc", null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void throwsWhenSentenceIsNull() {
+        splitter.split(null, new HashSet<String>() {
+            {
+                add("a");
+            }
+        });
+    }
+
     @Test
     public void returnsSplittedSentenceForSingleWord() {
         Optional<List<String>> split = splitter.split("a", new HashSet<String>() {
