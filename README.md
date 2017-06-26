@@ -132,3 +132,7 @@ The alphabet system consists of `n` letters, denoted by the integers from `1` to
  - If letter `x` can be transformed to letter `y` and letter `y` can be transformed to letter `z`, then letter `x` can be transformed to letter `z` as well.
  
 You are given a sequence `s` comprising of `m` letters. You are given `k` transformations that can be applied to `s`. You may apply transformations to zero or more letters in the sequence. When a transformation is applied to a letter, the other letters of the string remain unaffected. You can also apply a single transformation multiple times on the same sequence. Find the length of the longest possible palindromic subsequence after applying zero or more transformations on the letters of the given sequence.
+
+### Word Break - [Java](java/src/main/java/ru/nk/training/StringByWordsSplitter.java)
+
+Given a non-empty string `s` and a dictionary of words containing non-empty words, determine if `s` can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain duplicate words. For example, given `s = "leetcode"`, `dict = ["leet", "code"]` return space separated sentence `"leet code"`.
