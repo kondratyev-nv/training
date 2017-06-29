@@ -136,3 +136,11 @@ You are given a sequence `s` comprising of `m` letters. You are given `k` transf
 ### Word Break - [Java](java/src/main/java/ru/nk/training/StringByWordsSplitter.java)
 
 Given a non-empty string `s` and a dictionary of words containing non-empty words, determine if `s` can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain duplicate words. For example, given `s = "leetcode"`, `dict = ["leet", "code"]` return space separated sentence `"leet code"`.
+
+### Recursive Digit Sum - [Python](python/src/get_recursive_digit_sum.py)
+
+We define super digit of an integer `x` using the following rules:
+- If `x` has only 1 digit, then its super digit is `x`.
+- Otherwise, the super digit of `x` is equal to the super digit of the digit-sum of `x`. Here, digit-sum of a number is defined as the sum of its digits.
+
+You are given two numbers `n` and `k`. You have to calculate the super digit of `P`. `P` is created when number `n` is concatenated `k` times.
