@@ -72,8 +72,12 @@ public class IntervalMapTest {
     public void canOverrideLeftPartOfExistingInterval() throws Exception {
         map.set(15, 30, 2);
         map.set(10, 20, 1);
+        assertEquals(4, map.size());
+        assertEquals(0, (long) map.get(5));
         assertEquals(1, (long) map.get(12));
-        assertEquals(2, (long) map.get(17));
+        assertEquals(1, (long) map.get(17));
+        assertEquals(2, (long) map.get(25));
+        assertEquals(0, (long) map.get(35));
     }
 
     @Test
@@ -89,6 +93,28 @@ public class IntervalMapTest {
         map.set(10, 20, 1);
         map.set(10, 20, 2);
         assertEquals(2, (long) map.get(15));
+    }
+
+    @Test
+    public void canOverrideExistingIntervalWithLargerKey() throws Exception {
+        map.set(10, 20, 1);
+        map.set(10, 30, 2);
+        assertEquals(3, map.size());
+        assertEquals(0, (long) map.get(5));
+        assertEquals(2, (long) map.get(15));
+        assertEquals(2, (long) map.get(25));
+        assertEquals(0, (long) map.get(35));
+    }
+
+    @Test
+    public void canSplitExistingIntervalWithSmallerKey() throws Exception {
+        map.set(10, 30, 2);
+        map.set(10, 20, 1);
+        assertEquals(4, map.size());
+        assertEquals(0, (long) map.get(5));
+        assertEquals(1, (long) map.get(15));
+        assertEquals(2, (long) map.get(25));
+        assertEquals(0, (long) map.get(35));
     }
 
     @Test

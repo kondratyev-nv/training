@@ -77,7 +77,7 @@ public class IntervalMap<K extends Comparable<K>, V> {
     private void removeIntervals(K from, K to) {
         K removeFrom = map.higherKey(from);
         K removeTo = map.lowerKey(to);
-        if (removeTo.compareTo(removeFrom) <= 0) {
+        if (removeTo.compareTo(removeFrom) < 0) {
             return;
         }
 
