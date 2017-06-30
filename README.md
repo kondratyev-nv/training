@@ -140,3 +140,11 @@ Given a non-empty string `s` and a dictionary of words containing non-empty word
 ### Find number of available positions in matrix - [Java](java/src/main/java/ru/nk/training/MatrixAvailablePositionsCounter.java)
 
 You are given `n x m` matrix and a list of tracks that always run in straight horizontal lines along a row. In other words, the start and end points of a track are `(r, c1)` and `(r, c2)`, where `r` represents the row number, `c1` represents the starting column, and `c2` represents the ending column of the track. Determine the number of cell that is not occupied by a track.
+
+### Recursive Digit Sum - [Python](python/src/get_recursive_digit_sum.py)
+
+We define super digit of an integer `x` using the following rules:
+- If `x` has only 1 digit, then its super digit is `x`.
+- Otherwise, the super digit of `x` is equal to the super digit of the digit-sum of `x`. Here, digit-sum of a number is defined as the sum of its digits.
+
+You are given two numbers `n` and `k`. You have to calculate the super digit of `P`. `P` is created when number `n` is concatenated `k` times.
