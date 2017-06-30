@@ -136,3 +136,7 @@ You are given a sequence `s` comprising of `m` letters. You are given `k` transf
 ### Word Break - [Java](java/src/main/java/ru/nk/training/StringByWordsSplitter.java)
 
 Given a non-empty string `s` and a dictionary of words containing non-empty words, determine if `s` can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain duplicate words. For example, given `s = "leetcode"`, `dict = ["leet", "code"]` return space separated sentence `"leet code"`.
+
+### Find number of available positions in matrix - [Java](java/src/main/java/ru/nk/training/MatrixAvailablePositionsCounter.java)
+
+You are given `n x m` matrix and a list of tracks that always run in straight horizontal lines along a row. In other words, the start and end points of a track are `(r, c1)` and `(r, c2)`, where `r` represents the row number, `c1` represents the starting column, and `c2` represents the ending column of the track. Determine the number of cell that is not occupied by a track.
