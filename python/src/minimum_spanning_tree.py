@@ -1,6 +1,6 @@
 import math
 
-from src.graph import UndirectedGraph, Edge
+from src.graph import UndirectedGraph
 
 
 def minimum_spanning_tree(adjacency_list):
@@ -12,42 +12,42 @@ def minimum_spanning_tree(adjacency_list):
     - It is also required that there is exactly one,
       exclusive path between any two nodes of the subgraph.
     """
-    adjacency_list = adjacency_list.copy()
-    c = {}
-    e = {}
-    m = UndirectedGraph()
-    for vertex in adjacency_list.keys():
-        c[vertex] = math.inf
-        e[vertex] = None
+    remain_vertices = adjacency_list.copy()
+    weights_by_vertex = {}
+    edges_by_vertex = {}
+    mst = UndirectedGraph()
+    for vertex in remain_vertices.keys():
+        weights_by_vertex[vertex] = math.inf
+        edges_by_vertex[vertex] = None
 
-    while adjacency_list:
-        (v, adjacent_edges) = __extract_next_vertex_with_edges(adjacency_list, c)
-        if e[v]:
-            m.add_edge(e[v].start, e[v].end, e[v].weight)
-        for vw in adjacent_edges:
-            w = vw.end
-            if w in adjacency_list and vw.weight < c[w]:
-                c[w] = vw.weight
-                e[w] = __reverse_edge(vw)
-    return m
-
-
-def __reverse_edge(edge):
-    return Edge(edge.end, edge.start, edge.weight)
-
-
-def __extract_next_vertex_with_edges(adjacency_list, c):
-    v = __next_vertex_with_min_weight(adjacency_list.keys(), c)
-    adjacent_edges = adjacency_list[v]
-    del adjacency_list[v]
-    return v, adjacent_edges
+    while remain_vertices:
+        (vertex, adjacent_edges) = __extract_next_vertex_with_edges(remain_vertices,
+                                                                    weights_by_vertex)
+        if edges_by_vertex[vertex]:
+            mst.add_edge(edges_by_vertex[vertex].start,
+                         edges_by_vertex[vertex].end,
+                         edges_by_vertex[vertex].weight)
+        for edge in adjacent_edges:
+            adjacent_vertex = edge.end
+            is_not_visited = adjacent_vertex in remain_vertices
+            is_lighter = edge.weight < weights_by_vertex[adjacent_vertex]
+            if is_not_visited and is_lighter:
+                weights_by_vertex[adjacent_vertex] = edge.weight
+                edges_by_vertex[adjacent_vertex] = edge
+    return mst
 
 
-def __next_vertex_with_min_weight(vertices, c):
+def __extract_next_vertex_with_edges(remain_vertices, weights_by_vertex):
+    vertex_with_min_weight = __find_vertex_with_min_weight(remain_vertices.keys(),
+                                                           weights_by_vertex)
+    return vertex_with_min_weight, remain_vertices.pop(vertex_with_min_weight)
+
+
+def __find_vertex_with_min_weight(vertices, weights_by_vertex):
     min_weight_vertex = None
     for vertex in vertices:
         if min_weight_vertex is None:
             min_weight_vertex = vertex
-        if c[vertex] < c[min_weight_vertex]:
+        if weights_by_vertex[vertex] < weights_by_vertex[min_weight_vertex]:
             min_weight_vertex = vertex
     return min_weight_vertex
