@@ -148,3 +148,10 @@ We define super digit of an integer `x` using the following rules:
 - Otherwise, the super digit of `x` is equal to the super digit of the digit-sum of `x`. Here, digit-sum of a number is defined as the sum of its digits.
 
 You are given two numbers `n` and `k`. You have to calculate the super digit of `P`. `P` is created when number `n` is concatenated `k` times.
+
+### Find Minimum Spanning Tree (MST) - [Python](python/src/minimum_spanning_tree.py)
+
+Given a graph which consists of several edges connecting the N nodes in it. It is required to find a subgraph of the given graph with the following properties:
+- The subgraph contains all the nodes present in the original graph.
+- The subgraph is of minimum overall weight (sum of all edges) among all such subgraphs.
+- It is also required that there is exactly one, exclusive path between any two nodes of the subgraph.
