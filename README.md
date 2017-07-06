@@ -155,3 +155,11 @@ Given a graph which consists of several edges connecting the N nodes in it. It i
 - The subgraph contains all the nodes present in the original graph.
 - The subgraph is of minimum overall weight (sum of all edges) among all such subgraphs.
 - It is also required that there is exactly one, exclusive path between any two nodes of the subgraph.
+
+### Min Stack - [Java](java/src/main/java/ru/nk/training/MinStack.java)
+
+Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+- `push(x)` - Push element x onto stack.
+- `pop()` - Removes the element on top of the stack.
+- `peek()` - Get the top element.
+- `getMin()` - Retrieve the minimum element in the stack.
