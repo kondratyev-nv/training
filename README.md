@@ -163,3 +163,9 @@ Design a stack that supports push, pop, top, and retrieving the minimum element 
 - `pop()` - Removes the element on top of the stack.
 - `peek()` - Get the top element.
 - `getMin()` - Retrieve the minimum element in the stack.
+
+### Is This a Binary Search Tree? - [Java](java/src/main/java/ru/nk/training/BinarySearchTreeChecker.java)
+
+Given the root node of a binary tree, can you determine if it's also a binary search tree. A binary tree is a binary search tree when the following ordering requirements are satisfied:
+- The value of every node in a node's left subtree is less than the data value of that node.
+- The value of every node in a node's right subtree is greater than the data value of that node.
