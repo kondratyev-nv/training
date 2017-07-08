@@ -18,7 +18,7 @@ public class MatrixAvailablePositionsCounterTest {
     }
 
     @Test
-    public void returnsNumberOfMatrixElementsWhenNothigIsOccupied() throws Exception {
+    public void returnsNumberOfMatrixElementsWhenNothingIsOccupied() throws Exception {
         assertEquals(50, counter.count(5, 10, new ArrayList<>()));
     }
 

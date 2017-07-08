@@ -25,7 +25,7 @@ public class StringByWordsSplitterTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void throwsWhenWordsAreEmpty() {
-        splitter.split("abc", new HashSet<String>());
+        splitter.split("abc", new HashSet<>());
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -130,10 +130,11 @@ public class StringByWordsSplitterTest {
 
     @Test
     public void canNotSplitSentenceWhenNoMatchingWords() {
-        Optional<List<String>> split = splitter.split("aab", new HashSet<String>() {
+        Optional<List<String>> split = splitter.split("aaab", new HashSet<String>() {
             {
                 add("a");
                 add("aa");
+                add("bc");
             }
         });
         assertFalse(split.isPresent());
