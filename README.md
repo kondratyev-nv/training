@@ -171,3 +171,9 @@ A bracket is considered to be any one of the following characters: `(`, `)`, `{`
 - The subset of brackets enclosed within the confines of a matched pair of brackets is also a matched pair of brackets.
 
 Given  strings of brackets, determine whether each sequence of brackets is balanced.
+
+### Is This a Binary Search Tree? - [Java](java/src/main/java/ru/nk/training/BinarySearchTreeChecker.java)
+
+Given the root node of a binary tree, can you determine if it's also a binary search tree. A binary tree is a binary search tree when the following ordering requirements are satisfied:
+- The value of every node in a node's left subtree is less than the data value of that node.
+- The value of every node in a node's right subtree is greater than the data value of that node.
