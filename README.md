@@ -132,3 +132,48 @@ The alphabet system consists of `n` letters, denoted by the integers from `1` to
  - If letter `x` can be transformed to letter `y` and letter `y` can be transformed to letter `z`, then letter `x` can be transformed to letter `z` as well.
  
 You are given a sequence `s` comprising of `m` letters. You are given `k` transformations that can be applied to `s`. You may apply transformations to zero or more letters in the sequence. When a transformation is applied to a letter, the other letters of the string remain unaffected. You can also apply a single transformation multiple times on the same sequence. Find the length of the longest possible palindromic subsequence after applying zero or more transformations on the letters of the given sequence.
+
+### Word Break - [Java](java/src/main/java/ru/nk/training/StringByWordsSplitter.java)
+
+Given a non-empty string `s` and a dictionary of words containing non-empty words, determine if `s` can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain duplicate words. For example, given `s = "leetcode"`, `dict = ["leet", "code"]` return space separated sentence `"leet code"`.
+
+### Find number of available positions in matrix - [Java](java/src/main/java/ru/nk/training/MatrixAvailablePositionsCounter.java)
+
+You are given `n x m` matrix and a list of tracks that always run in straight horizontal lines along a row. In other words, the start and end points of a track are `(r, c1)` and `(r, c2)`, where `r` represents the row number, `c1` represents the starting column, and `c2` represents the ending column of the track. Determine the number of cell that is not occupied by a track.
+
+### Recursive Digit Sum - [Python](python/src/get_recursive_digit_sum.py)
+
+We define super digit of an integer `x` using the following rules:
+- If `x` has only 1 digit, then its super digit is `x`.
+- Otherwise, the super digit of `x` is equal to the super digit of the digit-sum of `x`. Here, digit-sum of a number is defined as the sum of its digits.
+
+You are given two numbers `n` and `k`. You have to calculate the super digit of `P`. `P` is created when number `n` is concatenated `k` times.
+
+### Find Minimum Spanning Tree (MST) - [Python](python/src/minimum_spanning_tree.py)
+
+Given a graph which consists of several edges connecting the N nodes in it. It is required to find a subgraph of the given graph with the following properties:
+- The subgraph contains all the nodes present in the original graph.
+- The subgraph is of minimum overall weight (sum of all edges) among all such subgraphs.
+- It is also required that there is exactly one, exclusive path between any two nodes of the subgraph.
+
+### Min Stack - [Java](java/src/main/java/ru/nk/training/MinStack.java)
+
+Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+- `push(x)` - Push element x onto stack.
+- `pop()` - Removes the element on top of the stack.
+- `peek()` - Get the top element.
+- `getMin()` - Retrieve the minimum element in the stack.
+
+### Balanced Brackets - [Java](java/src/main/java/ru/nk/training/BalancedBracketsChecker.java)
+
+A bracket is considered to be any one of the following characters: `(`, `)`, `{`, `}`, `[`, or `]`. Two brackets are considered to be a matched pair if the an opening bracket (i.e., `(`, `[`, or `{`) occurs to the left of a closing bracket (i.e., `)`, `]`, or `}`) of the exact same type. There are three types of matched pairs of brackets: `[]`, `{}`, and `()`. A matching pair of brackets is not balanced if the set of brackets it encloses are not matched. For example, `{[(])}` is not balanced because the contents in between `{` and `}` are not balanced. The pair of square brackets encloses a single, unbalanced opening bracket, `(`, and the pair of parentheses encloses a single, unbalanced closing square bracket, `]`. By this logic, we say a sequence of brackets is considered to be balanced if the following conditions are met:
+- It contains no unmatched brackets.
+- The subset of brackets enclosed within the confines of a matched pair of brackets is also a matched pair of brackets.
+
+Given  strings of brackets, determine whether each sequence of brackets is balanced.
+
+### Is This a Binary Search Tree? - [Java](java/src/main/java/ru/nk/training/BinarySearchTreeChecker.java)
+
+Given the root node of a binary tree, can you determine if it's also a binary search tree. A binary tree is a binary search tree when the following ordering requirements are satisfied:
+- The value of every node in a node's left subtree is less than the data value of that node.
+- The value of every node in a node's right subtree is greater than the data value of that node.

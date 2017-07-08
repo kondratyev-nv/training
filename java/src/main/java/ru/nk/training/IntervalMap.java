@@ -35,6 +35,40 @@ public class IntervalMap<K extends Comparable<K>, V> {
         return floorEntry == null ? defaultValue : floorEntry.getValue();
     }
 
+    public Iterator<Interval<K, V>> intervalIterator() {
+        return new Iterator<Interval<K, V>>() {
+            private Iterator<K> iterator = map.keySet().iterator();
+            private K previousKey = null;
+            private boolean isLastIntervalProcessed = false;
+
+            @Override
+            public boolean hasNext() {
+                return iterator.hasNext() || !isLastIntervalProcessed;
+            }
+
+            @Override
+            public Interval<K, V> next() {
+                K toKey = nextIntervalKey();
+                Interval<K, V> interval = new Interval<K, V>(previousKey, toKey, getValueOrDefault(previousKey));
+                previousKey = toKey;
+                return interval;
+            }
+
+            private V getValueOrDefault(K key) {
+                return key == null ? defaultValue : get(key);
+            }
+
+            private K nextIntervalKey() {
+                if (iterator.hasNext()) {
+                    return iterator.next();
+                }
+
+                isLastIntervalProcessed = true;
+                return null;
+            }
+        };
+    }
+
     public int size() {
         int size = map.size();
         return size < 1 ? 1 : size + 1;
@@ -43,7 +77,7 @@ public class IntervalMap<K extends Comparable<K>, V> {
     private void removeIntervals(K from, K to) {
         K removeFrom = map.higherKey(from);
         K removeTo = map.lowerKey(to);
-        if (removeTo.compareTo(removeFrom) <= 0) {
+        if (removeTo.compareTo(removeFrom) < 0) {
             return;
         }
 
@@ -51,6 +85,18 @@ public class IntervalMap<K extends Comparable<K>, V> {
         while (iterator.hasNext()) {
             iterator.next();
             iterator.remove();
+        }
+    }
+
+    public static class Interval<K, V> {
+        public final K from;
+        public final K to;
+        public final V value;
+
+        public Interval(K from, K to, V value) {
+            this.from = from;
+            this.to = to;
+            this.value = value;
         }
     }
 }
