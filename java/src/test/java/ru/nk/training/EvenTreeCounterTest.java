@@ -83,17 +83,17 @@ public class EvenTreeCounterTest {
                 add(3);
             }});
             put(3, new ArrayList<>());
-            put(4, new ArrayList<Integer>());
+            put(4, new ArrayList<>());
             put(5, new ArrayList<Integer>() {{
                 add(7);
             }});
-            put(6, new ArrayList<Integer>());
+            put(6, new ArrayList<>());
             put(7, new ArrayList<Integer>() {{
                 add(8);
                 add(9);
             }});
-            put(8, new ArrayList<Integer>());
-            put(9, new ArrayList<Integer>());
+            put(8, new ArrayList<>());
+            put(9, new ArrayList<>());
         }}).getNumberOfEdgesToRemove();
         assertEquals(2, edgesToRemove);
     }

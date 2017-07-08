@@ -2,8 +2,6 @@ package ru.nk.training;
 
 import org.junit.Test;
 
-import java.util.NoSuchElementException;
-
 import static org.junit.Assert.*;
 
 public class LruCacheTest {
@@ -34,6 +32,9 @@ public class LruCacheTest {
         cache.put(2, "b");
         cache.put(3, "c");
 
+        assertFalse(cache.exists(1));
+        assertTrue(cache.exists(2));
+        assertTrue(cache.exists(3));
         assertEquals(2, cache.size());
     }
 
@@ -51,6 +52,7 @@ public class LruCacheTest {
         assertEquals("a", cache.get(1));
         assertEquals("b", cache.get(2));
 
+        assertFalse(cache.exists(3));
         assertNull(cache.get(3));
     }
 
@@ -68,6 +70,7 @@ public class LruCacheTest {
         assertEquals("b", cache.get(2));
         assertEquals("c", cache.get(3));
 
+        assertFalse(cache.exists(1));
         assertNull(cache.get(1));
     }
 
@@ -85,6 +88,7 @@ public class LruCacheTest {
         assertEquals("A", cache.get(1));
         assertEquals("B", cache.get(2));
 
+        assertFalse(cache.exists(3));
         assertNull(cache.get(3));
     }
 
@@ -102,6 +106,7 @@ public class LruCacheTest {
         assertEquals("B", cache.get(2));
         assertEquals("C", cache.get(3));
 
+        assertFalse(cache.exists(1));
         assertNull(cache.get(1));
     }
 }
