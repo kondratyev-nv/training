@@ -1,8 +1,8 @@
 package ru.nk.training;
 
-import java.util.Comparator;
-
 import ru.nk.training.DataStructures.BinaryTreeNode;
+
+import java.util.Comparator;
 
 /**
  * Given the root node of a binary tree, can you determine if it's also a binary search tree.
@@ -15,32 +15,50 @@ public class BinarySearchTreeChecker {
         if (root == null || comparator == null) {
             throw new IllegalArgumentException();
         }
-        boolean leftSubtreeIsOk = checkAllLessThan(root.left, root.value, comparator);
-        boolean rightSubtreeIsOk = checkAllGreaterThan(root.right, root.value, comparator);
-        return leftSubtreeIsOk && rightSubtreeIsOk;
+        return isSubtreeValuesLessThan(root.left, root.value, comparator) &&
+               isSubtreeValuesGreaterThan(root.right, root.value, comparator);
     }
 
-    private <T> boolean checkAllLessThan(BinaryTreeNode<T> root, T max, Comparator<T> comparator) {
+    private <T> boolean isSubtreeValuesLessThan(BinaryTreeNode<T> root,
+                                                T max,
+                                                Comparator<T> comparator) {
         if (root == null) {
             return true;
         }
-        if (comparator.compare(root.value, max) >= 0) {
-            return false;
-        }
-        return checkAllLessThan(root.left, root.value, comparator)
-                && checkAllGreaterThan(root.right, root.value, comparator)
-                && checkAllLessThan(root.right, max, comparator);
+        return isNodeLessThan(root, max, comparator) &&
+               isSubtreeValuesLessThan(root.left, root.value, comparator) &&
+               isSubtreeValuesInRange(root.right, root.value, max, comparator);
     }
 
-    private <T> boolean checkAllGreaterThan(BinaryTreeNode<T> root, T min, Comparator<T> comparator) {
+    private <T> boolean isSubtreeValuesGreaterThan(BinaryTreeNode<T> root,
+                                                   T min,
+                                                   Comparator<T> comparator) {
         if (root == null) {
             return true;
         }
-        if (comparator.compare(root.value, min) <= 0) {
-            return false;
+        return isNodeGreaterThan(root, min, comparator) &&
+               isSubtreeValuesGreaterThan(root.right, root.value, comparator) &&
+               isSubtreeValuesInRange(root.left, min, root.value, comparator);
+    }
+
+    private <T> boolean isSubtreeValuesInRange(BinaryTreeNode<T> root,
+                                               T min,
+                                               T max,
+                                               Comparator<T> comparator) {
+        if (root == null) {
+            return true;
         }
-        return checkAllGreaterThan(root.right, root.value, comparator)
-                && checkAllLessThan(root.left, root.value, comparator)
-                && checkAllGreaterThan(root.left, min, comparator);
+        return isNodeGreaterThan(root, min, comparator) &&
+               isNodeLessThan(root, max, comparator) &&
+               isSubtreeValuesInRange(root.right, root.value, max, comparator) &&
+               isSubtreeValuesInRange(root.left, min, root.value, comparator);
+    }
+
+    private <T> boolean isNodeGreaterThan(BinaryTreeNode<T> root, T min, Comparator<T> comparator) {
+        return comparator.compare(root.value, min) > 0;
+    }
+
+    private <T> boolean isNodeLessThan(BinaryTreeNode<T> root, T max, Comparator<T> comparator) {
+        return comparator.compare(root.value, max) < 0;
     }
 }
