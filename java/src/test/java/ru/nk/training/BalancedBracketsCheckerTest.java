@@ -15,8 +15,13 @@ public class BalancedBracketsCheckerTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void failsOnNullString() {
+    public void throwsOnNullString() {
         checker.isBalanced(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void throwsOnStringContainingNonBracketSymbols() {
+        checker.isBalanced("{1}");
     }
 
     @Test

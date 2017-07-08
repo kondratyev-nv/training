@@ -21,7 +21,7 @@ public class MatrixAvailablePositionsCounter {
         Map<Integer, IntervalMap<Integer, Boolean>> occupiedCells = new HashMap<>();
         for (RowInterval interval : occupiedIntervals) {
             if (!occupiedCells.containsKey(interval.row)) {
-                occupiedCells.put(interval.row, new IntervalMap<Integer, Boolean>(Boolean.FALSE));
+                occupiedCells.put(interval.row, new IntervalMap<>(Boolean.FALSE));
             }
             occupiedCells.get(interval.row).set(interval.from, interval.to + 1, Boolean.TRUE);
         }
