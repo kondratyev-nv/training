@@ -177,3 +177,7 @@ Given  strings of brackets, determine whether each sequence of brackets is balan
 Given the root node of a binary tree, can you determine if it's also a binary search tree. A binary tree is a binary search tree when the following ordering requirements are satisfied:
 - The value of every node in a node's left subtree is less than the data value of that node.
 - The value of every node in a node's right subtree is greater than the data value of that node.
+
+### Average of Fibonacci numbers - [Java](java/src/main/java/ru/nk/training/AverageOfFibonacciNumbersFinder.java)
+
+Find the average of first `n` numbers from Fibonacci sequence using Java streams
