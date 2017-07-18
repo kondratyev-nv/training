@@ -25,7 +25,8 @@ TEST(reverse_words, reverts_single_word) {
     EXPECT_EQ(s, "cba");
 }
 
-TEST(reverse_words, reverts_word_when_string_has_multiple_whitespaces_between_words) {
+TEST(reverse_words,
+     reverts_word_when_string_has_multiple_whitespaces_between_words) {
     std::string s = "ab   c";
     reverse_words(s);
     EXPECT_EQ(s, "ba   c");
