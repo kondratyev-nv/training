@@ -40,7 +40,7 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceRoot}",
-                "${env:CPP_INCLUDE_PATH}"
+                "${CPP_INCLUDE_PATH}"
             ],
             "defines": [
                 "_DEBUG",
@@ -51,7 +51,7 @@
                 "databaseFilename": "",
                 "path": [
                     "${workspaceRoot}",
-                    "${env:CPP_INCLUDE_PATH}"
+                    "${CPP_INCLUDE_PATH}"
                 ]
             },
             "intelliSenseMode": "msvc-x64"
