@@ -7,6 +7,11 @@ import java.util.Queue;
 
 import ru.nk.training.DataStructures.BinaryTreeNode;
 
+/**
+ * 
+ * @author nkondratyev
+ *
+ */
 public class BinaryTreeFlattener {
     private final BinaryTreeHeightFinder heightFinder;
 
