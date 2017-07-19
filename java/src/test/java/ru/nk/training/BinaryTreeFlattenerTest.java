@@ -89,4 +89,34 @@ public class BinaryTreeFlattenerTest {
             }
         }, flattenedTree);
     }
+
+    @Test
+    public void canFlattenTreeWhenLeftAndRightSubtreeHasDifferentHeight() {
+        BinaryTreeNode<Integer> leftLeftRight = new BinaryTreeNode<Integer>(3, null, null);
+        BinaryTreeNode<Integer> leftLeft = new BinaryTreeNode<Integer>(2, null, leftLeftRight);
+        BinaryTreeNode<Integer> left = new BinaryTreeNode<Integer>(1, leftLeft, null);
+        BinaryTreeNode<Integer> right = new BinaryTreeNode<Integer>(4, null, null);
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<Integer>(0, left, right);
+
+        List<BinaryTreeNode<Integer>> flattenedTree = flattener.flatten(root);
+        assertEquals(new ArrayList<BinaryTreeNode<Integer>>() {
+            {
+                add(root);
+                add(left);
+                add(right);
+                add(leftLeft);
+                add(null);
+                add(null);
+                add(null);
+                add(null);
+                add(leftLeftRight);
+                add(null);
+                add(null);
+                add(null);
+                add(null);
+                add(null);
+                add(null);
+            }
+        }, flattenedTree);
+    }
 }
