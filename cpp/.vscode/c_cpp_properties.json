@@ -11,7 +11,8 @@
             "browse": {
                 "path": [
                     "/usr/include",
-                    "/usr/local/include"
+                    "/usr/local/include",
+                    "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
@@ -29,7 +30,8 @@
             "browse": {
                 "path": [
                     "/usr/include",
-                    "/usr/local/include"
+                    "/usr/local/include",
+                    "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
@@ -56,5 +58,6 @@
             },
             "intelliSenseMode": "msvc-x64"
         }
-    ]
+    ],
+    "version": 2
 }
