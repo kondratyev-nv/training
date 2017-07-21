@@ -11,11 +11,13 @@
             "browse": {
                 "path": [
                     "/usr/include",
-                    "/usr/local/include"
+                    "/usr/local/include",
+                    "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
-            }
+            },
+            "intelliSenseMode": "clang-x64"
         },
         {
             "name": "Linux",
@@ -28,17 +30,19 @@
             "browse": {
                 "path": [
                     "/usr/include",
-                    "/usr/local/include"
+                    "/usr/local/include",
+                    "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
-            }
+            },
+            "intelliSenseMode": "clang-x64"
         },
         {
             "name": "Win32",
             "includePath": [
                 "${workspaceRoot}",
-                "${env:CPP_INCLUDE_PATH}"
+                "${CPP_INCLUDE_PATH}"
             ],
             "defines": [
                 "_DEBUG",
@@ -49,9 +53,11 @@
                 "databaseFilename": "",
                 "path": [
                     "${workspaceRoot}",
-                    "${env:CPP_INCLUDE_PATH}"
+                    "${CPP_INCLUDE_PATH}"
                 ]
-            }
+            },
+            "intelliSenseMode": "msvc-x64"
         }
-    ]
+    ],
+    "version": 2
 }
