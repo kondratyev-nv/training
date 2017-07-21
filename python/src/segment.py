@@ -13,3 +13,6 @@ class Segment:
 
     def length(self):
         return self.end - self.start
+
+    def contains(self, point):
+        return self.start <= point and point <= self.end
