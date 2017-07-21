@@ -181,3 +181,7 @@ Given the root node of a binary tree, can you determine if it's also a binary se
 ### Average of Fibonacci numbers - [Java](java/src/main/java/ru/nk/training/AverageOfFibonacciNumbersFinder.java)
 
 Find the average of first `n` numbers from Fibonacci sequence using Java streams
+
+### Find the point where maximum intervals overlap
+
+Consider a big party where a log register for guest’s entry and exit times is maintained. Find the time at which there are maximum guests in the party. Note that entries in register are not in any order.

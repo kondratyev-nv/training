@@ -1,10 +1,10 @@
-class Segment:
-    def __init__(self, start, end):
-        self.start = start
-        self.end = end
-
-
 def max_segment_intersections(segments):
+    """
+    Consider a big party where a log register for guest’s
+    entry and exit times is maintained. Find the time at which
+    there are maximum guests in the party.
+    Note that entries in register are not in any order.
+    """
     diff = {}
     for segment in segments:
         diff[segment.start] = diff.get(segment.start, 0) + 1
