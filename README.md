@@ -181,3 +181,7 @@ Given the root node of a binary tree, can you determine if it's also a binary se
 ### Average of Fibonacci numbers - [Java](java/src/main/java/ru/nk/training/AverageOfFibonacciNumbersFinder.java)
 
 Find the average of first `n` numbers from Fibonacci sequence using Java streams
+
+### Reverse each word in a string - [C++](cpp/src/reverse_words.cpp)
+
+Write a program to reverse each word in a sentence. For example, if input string is "Hello World" then the output should be "olleH dlroW".
