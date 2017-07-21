@@ -1,7 +1,12 @@
+"""
+Evaluate the value of an arithmetic expression in Reverse Polish Notation.
+Valid operators are +, -, *, /. Each operand may be an integer or another expression.
+"""
+
+
 def evaluate_reverse_polish_notation(tokens):
     """
-    Evaluate the value of an arithmetic expression in Reverse Polish Notation.
-    Valid operators are +, -, *, /. Each operand may be an integer or another expression.
+    Returns the result of evaluation of an arithmetic expression in Reverse Polish Notation
 
     :param tokens: Array of tokens that for Reverse Polish Notation
     :return: result of the expression

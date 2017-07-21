@@ -1,9 +1,13 @@
+"""
+Given a string find out if symbols can be rearranged to a palindrom
+"""
+
 from collections import Counter
 
 
-def can_rearrange_to_palindrom(s):
+def can_rearrange_to_palindrom(string):
     """
-    Given a string find out if symbols can be rearranged to a palindrom
+    Returns True if string can be rearranged to a palindrom
     """
-    occurences = Counter(s)
+    occurences = Counter(string)
     return sum(count % 2 != 0 for count in occurences.values()) < 2

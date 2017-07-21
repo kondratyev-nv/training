@@ -28,7 +28,8 @@ def minimum_spanning_tree(adjacency_list):
         for edge in adjacent_edges:
             adjacent_vertex = edge.end
             is_not_visited = adjacent_vertex in remain_vertices
-            is_lighter = edge.weight < __get_weight_or_inf(edges_by_vertex[adjacent_vertex])
+            is_lighter = edge.weight < __get_weight_or_inf(
+                edges_by_vertex[adjacent_vertex])
             if is_not_visited and is_lighter:
                 edges_by_vertex[adjacent_vertex] = edge
     return mst
@@ -45,7 +46,8 @@ def __find_vertex_with_min_weight(vertices, edges_by_vertex):
     for vertex in vertices:
         if min_weight_vertex is None:
             min_weight_vertex = vertex
-        min_weight_vertex = __get_lighter_vertex(edges_by_vertex, vertex, min_weight_vertex)
+        min_weight_vertex = __get_lighter_vertex(
+            edges_by_vertex, vertex, min_weight_vertex)
     return min_weight_vertex
 
 
