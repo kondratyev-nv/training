@@ -185,3 +185,7 @@ Find the average of first `n` numbers from Fibonacci sequence using Java streams
 ### Reverse each word in a string - [C++](cpp/src/reverse_words.cpp)
 
 Write a program to reverse each word in a sentence. For example, if input string is "Hello World" then the output should be "olleH dlroW".
+
+### Find the point where maximum intervals overlap
+
+Consider a big party where a log register for guest’s entry and exit times is maintained. Find the time at which there are maximum guests in the party. Note that entries in register are not in any order.

@@ -1,4 +1,13 @@
+"""
+Graph module that provides weighted edge, directed and undirected graph data structures
+"""
+
+
 class Edge:
+    """
+    Weighted directed edge
+    """
+
     def __init__(self, start, end, weight):
         self.start = start
         self.end = end
@@ -6,6 +15,10 @@ class Edge:
 
 
 class Graph:
+    """
+    Weighted directed graph
+    """
+
     def __init__(self):
         self.adjacency_list = {}
 
@@ -26,6 +39,10 @@ class Graph:
 
 
 class UndirectedGraph:
+    """
+    Weighted undirected graph
+    """
+
     def __init__(self):
         self.graph = Graph()
 
