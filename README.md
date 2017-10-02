@@ -1,5 +1,7 @@
 # Training project
 
+[![Build Status](https://travis-ci.org/kondratyev-nv/training.svg?branch=master)](https://travis-ci.org/kondratyev-nv/training.svg?branch=master)
+
 Solutions to various programming challenges in Java, C++ and Python.
 
 ## Currently solved challenges
