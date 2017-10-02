@@ -6,8 +6,10 @@ matrix:
         - cd python
       script:
         - python3 -m unittest discover -v --pattern *_tests.py
+
     - language: java
-      before_script:
+      jdk: openjdk8
+      dist: trusty
+      before_install:
         - cd java
-      jdk:
-        - openjdk8
+
