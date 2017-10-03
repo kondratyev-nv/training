@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.6)
+cmake_minimum_required(VERSION 3.5)
 
 set(PROJECT_NAME_STR training)
 project(${PROJECT_NAME_STR})

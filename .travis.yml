@@ -13,3 +13,12 @@ matrix:
       before_install:
         - cd java
 
+    - language: cpp
+      compiler: gcc
+      script:
+        - mkdir cpp/build
+        - cd cpp/build
+        - cmake ..
+        - cmake --build .
+        - ./training_test
+      
