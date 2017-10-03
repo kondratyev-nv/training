@@ -15,8 +15,9 @@ matrix:
 
     - language: cpp
       compiler: gcc
+      dist: trusty
       script:
-        - mkdir cpp/build
+        - mkdir -p cpp/build
         - cd cpp/build
         - cmake ..
         - cmake --build .
