@@ -10,16 +10,14 @@ matrix:
     - language: java
       jdk: openjdk8
       dist: trusty
-      before_install:
+      before_script:
         - cd java
 
     - language: cpp
       compiler: gcc
       dist: trusty
+      before_script:
+        - cd cpp
       script:
-        - mkdir -p cpp/build
-        - cd cpp/build
-        - cmake ..
-        - cmake --build .
-        - ./training_test
+        - ./build.sh
       
