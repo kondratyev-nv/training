@@ -1,4 +1,4 @@
-package ru.nk.training;
+package ru.nk.training.Helpers;
 
 import org.junit.Before;
 import org.junit.Test;

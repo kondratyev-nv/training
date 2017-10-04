@@ -1,21 +1,11 @@
-package ru.nk.training;
+package ru.nk.training.Helpers;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class DateUtil {
-    private static final int[] DESCENDING_PERIODS = new int[]{
-            Calendar.YEAR,
-            Calendar.MONTH,
-            Calendar.DAY_OF_MONTH,
-            Calendar.HOUR_OF_DAY,
-            Calendar.MINUTE,
-            Calendar.SECOND,
-            Calendar.MILLISECOND
-    };
-
+public class DateHelper {
     public final long MILLISECONDS_IN_SECOND = 1000L;
     public final long MILLISECONDS_IN_MINUTE = MILLISECONDS_IN_SECOND * 60;
     public final long MILLISECONDS_IN_HOUR = MILLISECONDS_IN_MINUTE * 60;
