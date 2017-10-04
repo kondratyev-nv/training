@@ -43,7 +43,7 @@ public class DateHelperTest {
 
     @Test
     public void canTruncateDateToDayPrecision() throws Exception {
-        Date today = helper.truncateToDay(new Date());
+        Date today = helper.withTimeAtStartOfDay(new Date());
 
         Calendar expected = Calendar.getInstance();
         expected.setTime(new Date());

@@ -20,4 +20,3 @@ matrix:
         - cd cpp
       script:
         - ./build.sh
-      

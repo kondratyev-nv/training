@@ -17,10 +17,10 @@ public class DateHelper {
     /**
      * Removes hour, minutes, seconds and milliseconds from date
      */
-    public Date truncateToDay(Date date) {
+    public Date withTimeAtStartOfDay(Date date) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        truncateToDay(calendar);
+        withTimeAtStartOfDay(calendar);
         return calendar.getTime();
     }
 
@@ -121,7 +121,7 @@ public class DateHelper {
      * Returns current date object truncated up to day
      */
     public Date getToday() {
-        return truncateToDay(new Date());
+        return withTimeAtStartOfDay(new Date());
     }
 
     /**
@@ -145,7 +145,7 @@ public class DateHelper {
         return (double) (afterDate.getTime() - beforeDate.getTime()) / MILLISECONDS_IN_DAY;
     }
 
-    private void truncateToDay(final Calendar calendar) {
+    private void withTimeAtStartOfDay(Calendar calendar) {
         calendar.set(Calendar.HOUR_OF_DAY, 0);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
