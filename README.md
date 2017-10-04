@@ -1,5 +1,7 @@
 # Training project
 
+[![Build Status](https://travis-ci.org/kondratyev-nv/training.svg?branch=master)](https://travis-ci.org/kondratyev-nv/training)
+
 Solutions to various programming challenges in Java, C++ and Python.
 
 ## Currently solved challenges
@@ -186,6 +188,6 @@ Find the average of first `n` numbers from Fibonacci sequence using Java streams
 
 Write a program to reverse each word in a sentence. For example, if input string is "Hello World" then the output should be "olleH dlroW".
 
-### Find the point where maximum intervals overlap
+### Find the point where maximum intervals overlap - [Python](python/src/max_segment_intersections.py)
 
 Consider a big party where a log register for guest’s entry and exit times is maintained. Find the time at which there are maximum guests in the party. Note that entries in register are not in any order.
