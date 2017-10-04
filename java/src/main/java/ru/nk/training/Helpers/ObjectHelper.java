@@ -3,11 +3,11 @@ package ru.nk.training.Helpers;
 import java.util.Objects;
 import java.util.Optional;
 
-/*
+/**
  * Helper methods to simplify common operations with objects
  */
 public class ObjectHelper {
-    /*
+    /**
      * Returns first not null argument of provided
      */
     @SafeVarargs
@@ -16,14 +16,14 @@ public class ObjectHelper {
                 .orElseThrow(() -> new IllegalArgumentException("All provided values are null"));
     }
 
-    /*
+    /**
      * Returns value if it's not null or default value otherwise
      */
     public final <T> T getOrDefault(T value, T defaultValue) {
         return Optional.ofNullable(value).orElse(defaultValue);
     }
 
-    /*
+    /**
      * Returns first not null value of provided or default value otherwise
      */
     @SafeVarargs
@@ -31,7 +31,7 @@ public class ObjectHelper {
         return firstNotNull(firstValue, otherValues).orElse(defaultValue);
     }
 
-    /*
+    /**
      * Returns wrapper initialized to specified value
      */
     public final <T> Wrapper<T> wrap(T value) {

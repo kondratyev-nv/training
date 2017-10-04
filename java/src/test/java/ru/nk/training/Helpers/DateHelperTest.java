@@ -54,28 +54,16 @@ public class DateHelperTest {
     }
 
     @Test
-    public void canTruncateMillisecondsToDayPrecision() throws Exception {
-        long midnightMilliseconds = helper.truncateToDay(new Date().getTime());
-
-        Calendar expected = Calendar.getInstance();
-        expected.setTime(new Date());
-        assertDateEqualsWithDayPrecision(new Date(midnightMilliseconds),
-                expected.get(Calendar.YEAR),
-                expected.get(Calendar.MONTH),
-                expected.get(Calendar.DATE));
-    }
-
-    @Test
     public void canAddDay() throws Exception {
         Date date = sdf.parse("2017-01-01");
-        Date tomorrow = helper.addDay(date, 1);
+        Date tomorrow = helper.addDays(date, 1);
         assertDateEqualsWithDayPrecision(tomorrow, 2017, Calendar.JANUARY, 2);
     }
 
     @Test
     public void addingZeroReturnsSameDate() throws Exception {
         Date date = sdf.parse("2017-01-01");
-        Date same = helper.addDay(date, 0);
+        Date same = helper.addDays(date, 0);
         assertEquals(date, same);
     }
 
@@ -87,28 +75,28 @@ public class DateHelperTest {
     @Test
     public void canSubtractDay() throws Exception {
         Date date = sdf.parse("2017-01-02");
-        Date tomorrow = helper.addDay(date, -1);
+        Date tomorrow = helper.addDays(date, -1);
         assertDateEqualsWithDayPrecision(tomorrow, 2017, Calendar.JANUARY, 1);
     }
 
     @Test
     public void addDayMovesThroughMonthAndYear() throws Exception {
         Date date = sdf.parse("2016-12-31");
-        Date tomorrow = helper.addDay(date, 1);
+        Date tomorrow = helper.addDays(date, 1);
         assertDateEqualsWithDayPrecision(tomorrow, 2017, Calendar.JANUARY, 1);
     }
 
     @Test
     public void previousDayMovesThroughMonthAndYear() throws Exception {
         Date date = sdf.parse("2017-01-01");
-        Date tomorrow = helper.addDay(date, -1);
+        Date tomorrow = helper.addDays(date, -1);
         assertDateEqualsWithDayPrecision(tomorrow, 2016, Calendar.DECEMBER, 31);
     }
 
     @Test
     public void addDayIsTheSameAsDayAfter() throws Exception {
         Date now = new Date();
-        Date tomorrowByAfter = helper.addDay(now, 1);
+        Date tomorrowByAfter = helper.addDays(now, 1);
         Date tomorrowByNext = helper.dayAfter(now);
         assertEquals(tomorrowByAfter, tomorrowByNext);
     }
@@ -116,7 +104,7 @@ public class DateHelperTest {
     @Test
     public void subtractDayIsTheSameAsDayBefore() throws Exception {
         Date now = new Date();
-        Date yesterdayByAdd = helper.addDay(now, -1);
+        Date yesterdayByAdd = helper.addDays(now, -1);
         Date yesterdayByBefore = helper.dayBefore(now);
         assertEquals(yesterdayByAdd, yesterdayByBefore);
     }
