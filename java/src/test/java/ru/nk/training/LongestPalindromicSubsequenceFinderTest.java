@@ -14,7 +14,7 @@ public class LongestPalindromicSubsequenceFinderTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void throwsOnNullString() {
-        finder.findLongestPalindromicSubsequence("");
+        finder.findLongestPalindromicSubsequence(null);
     }
 
     @Test(expected = IllegalArgumentException.class)

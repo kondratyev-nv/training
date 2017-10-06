@@ -23,6 +23,11 @@ public class BinarySearchTreeCheckerTest {
         checker.isBinarySearchTree(null, comparator);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void throwsForNullComparator() {
+        checker.isBinarySearchTree(new BinaryTreeNode<>(0, null, null), null);
+    }
+
     @Test
     public void returnsTrueForSingleNode() {
         BinaryTreeNode<Integer> root = new BinaryTreeNode<>(0, null, null);
