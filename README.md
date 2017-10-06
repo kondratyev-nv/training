@@ -22,7 +22,8 @@ Solutions to various programming challenges in Java, C++ and Python.
    - `getDaysBetween` - Returns all dates with single day offset between from and to including both of them
    - `diffInDays` - Returns difference between two dates in days
  - [ObjectHelper](java/src/main/java/ru/nk/training/Helpers/ObjectHelper.java) - Helper methods to simplify common operations with objects
-   - `avoidNull` - Returns first not null argument of provided
+   - `requireAnyNotNull` - Returns first not null argument of provided
+   - `firstNotNull` - Returns `Optional` with first not null argument of provided or empty `Optional`
    - `getOrDefault` - Returns value if it's not null or default value otherwise
    - `getOrDefault` - Returns first not null value of provided or default value otherwise
    - `wrap` - Returns wrapper initialized to specified value

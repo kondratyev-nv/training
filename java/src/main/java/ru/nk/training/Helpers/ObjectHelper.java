@@ -11,9 +11,17 @@ public class ObjectHelper {
      * Returns first not null argument of provided
      */
     @SafeVarargs
-    public final <T> T avoidNull(T firstValue, T... otherValues) {
+    public final <T> T requireAnyNotNull(T firstValue, T... otherValues) {
         return firstNotNull(firstValue, otherValues)
                 .orElseThrow(() -> new IllegalArgumentException("All provided values are null"));
+    }
+
+    @SafeVarargs
+    public final <T> Optional<T> firstNotNull(T firstValue, T... otherValues) {
+        return new StreamHelper()
+                .of(firstValue, otherValues)
+                .filter(Objects::nonNull)
+                .findFirst();
     }
 
     /**
@@ -36,14 +44,6 @@ public class ObjectHelper {
      */
     public final <T> Wrapper<T> wrap(T value) {
         return Wrapper.of(value);
-    }
-
-    @SafeVarargs
-    private final <T> Optional<T> firstNotNull(T firstValue, T... otherValues) {
-        return new StreamHelper()
-                .of(firstValue, otherValues)
-                .filter(Objects::nonNull)
-                .findFirst();
     }
 
     public static class Wrapper<T> {

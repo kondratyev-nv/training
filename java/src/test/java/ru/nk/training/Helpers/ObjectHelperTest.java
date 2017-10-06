@@ -4,10 +4,13 @@ import org.junit.Before;
 import org.junit.Test;
 import ru.nk.training.Helpers.ObjectHelper.Wrapper;
 
+import java.util.Optional;
 import java.util.stream.IntStream;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class ObjectHelperTest {
     private ObjectHelper helper;
@@ -18,26 +21,53 @@ public class ObjectHelperTest {
     }
 
     @Test
-    public void avoidNullCanReturnFirstValue() throws Exception {
-        String notNullString = helper.avoidNull("1", "2");
+    public void requireAnyNotNullCanReturnFirstValue() throws Exception {
+        String notNullString = helper.requireAnyNotNull("1", "2");
         assertEquals("1", notNullString);
     }
 
     @Test
-    public void avoidNullReturnsFirstNotNullValue() throws Exception {
-        String notNullString = helper.avoidNull(null, "1", "2");
+    public void requireAnyNotNullReturnsFirstNotNullValue() throws Exception {
+        String notNullString = helper.requireAnyNotNull(null, "1", "2");
         assertEquals("1", notNullString);
     }
 
     @Test
-    public void avoidNullReturnsFirstValue() throws Exception {
-        String notNullString = helper.avoidNull(null, "1", "2");
+    public void requireAnyNotNullReturnsFirstValue() throws Exception {
+        String notNullString = helper.requireAnyNotNull("1", null, "2");
         assertEquals("1", notNullString);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void avoidNullThrowsWhenNoNotNullValues() throws Exception {
-        helper.avoidNull(null, null, null);
+    public void requireAnyNotNullThrowsWhenNoNotNullValues() throws Exception {
+        helper.requireAnyNotNull(null, null, null);
+    }
+
+    @Test
+    public void firstNotNullCanReturnFirstValue() throws Exception {
+        Optional<String> notNullString = helper.firstNotNull("1", "2");
+        assertTrue(notNullString.isPresent());
+        assertEquals("1", notNullString.get());
+    }
+
+    @Test
+    public void firstNotNullReturnsFirstNotNullValue() throws Exception {
+        Optional<String> notNullString = helper.firstNotNull(null, "1", "2");
+        assertTrue(notNullString.isPresent());
+        assertEquals("1", notNullString.get());
+    }
+
+    @Test
+    public void firstNotNullReturnsFirstValue() throws Exception {
+        Optional<String> notNullString = helper.firstNotNull(null, "1", "2");
+        assertTrue(notNullString.isPresent());
+        assertEquals("1", notNullString.get());
+    }
+
+    @Test
+    public void firstNotNullReturnsEmptyOptionalWhenNoNotNullValues() throws Exception {
+        Optional<String> firstNotNull = helper.firstNotNull(null, null, null);
+        assertFalse(firstNotNull.isPresent());
     }
 
     @Test
