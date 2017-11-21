@@ -80,18 +80,12 @@ long long highway_cost_calculator::bm(long long n) {
       s = am(s, mm(c(n + 1, i), bm(i)));
     }
     bc[n] = mm(mod(-s), im(n + 1));
-    while (bc[n] < 0) {
-      bc[n] += m;
-    }
   }
   return bc[n];
 }
 
 long long highway_cost_calculator::pm(long long n, long long p) {
   long long r = 1, ln = mod(n);
-  if (p <= 0) {
-    return 1;
-  }
   while (p != 0) {
     if ((p & 1) == 1) {
       r = mm(r, ln);
