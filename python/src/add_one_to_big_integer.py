@@ -10,15 +10,14 @@ def add_one_to_big_integer(digits):
     """
     Add one to the integer represented as a non-empty array of digits
     """
-    return __add_one_to_big_integer_digit(digits, len(digits) - 1)
+    def add_one_to_big_integer_digit(digits, position):
+        if position < 0:
+            return [1] + digits
+        if digits[position] + 1 < 10:
+            digits[position] += 1
+            return digits
 
+        digits[position] = 0
+        return add_one_to_big_integer_digit(digits, position - 1)
 
-def __add_one_to_big_integer_digit(digits, position):
-    if position < 0:
-        return [1] + digits
-    if digits[position] + 1 < 10:
-        digits[position] += 1
-        return digits
-
-    digits[position] = 0
-    return __add_one_to_big_integer_digit(digits, position - 1)
+    return add_one_to_big_integer_digit(digits, len(digits) - 1)

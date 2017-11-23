@@ -1,6 +1,38 @@
 # Training project
 
+[![Build Status](https://travis-ci.org/kondratyev-nv/training.svg?branch=master)](https://travis-ci.org/kondratyev-nv/training)
+[![codecov](https://codecov.io/gh/kondratyev-nv/training/branch/master/graph/badge.svg)](https://codecov.io/gh/kondratyev-nv/training)
+
 Solutions to various programming challenges in Java, C++ and Python.
+
+## List of helper methods
+
+ - [DateHelper](java/src/main/java/ru/nk/training/Helpers/DateHelper.java) - Helper methods for common operations with `java.util.Date`
+   - `withTimeAtStartOfDay` - Removes hour, minutes, seconds and milliseconds from date
+   - `dayAfter` - Returns next day after specified one
+   - `dayBefore` - Returns a day before specified one
+   - `addDays` - Returns date shifted by the specified offset of days
+   - `add` - Returns date shifted by the specified offset of Calendar field
+   - `min` - Returns the earliest date of provided dates
+   - `max` - Returns the latest date of provided dates
+   - `getYear` - Returns year of a date
+   - `getMonth` - Returns month of a date
+   - `getDayOfMonth` - Returns day of month of a date
+   - `getCalendarField` - Returns specified Calendar field of a date
+   - `getToday` - Returns current date object truncated up to day
+   - `getDaysBetween` - Returns all dates with single day offset between from and to including both of them
+   - `diffInDays` - Returns difference between two dates in days
+ - [ObjectHelper](java/src/main/java/ru/nk/training/Helpers/ObjectHelper.java) - Helper methods to simplify common operations with objects
+   - `requireAnyNotNull` - Returns first not null argument of provided
+   - `firstNotNull` - Returns `Optional` with first not null argument of provided or empty `Optional`
+   - `getOrDefault` - Returns value if it's not null or default value otherwise
+   - `getOrDefault` - Returns first not null value of provided or default value otherwise
+   - `wrap` - Returns wrapper initialized to specified value
+ - [StreamHelper](java/src/main/java/ru/nk/training/Helpers/StreamHelper.java) - Stream helper methods to simplify common operations 
+   - `emptyWhenNull` - Returns stream of array values when array is not null or empty stream otherwise
+   - `emptyWhenNull` - Returns stream of values from iterable when argument is not null or empty stream otherwise
+   - `of` - Returns stream of values from iterable
+   - `of` - Returns stream of values built from first argument and varargs
 
 ## Currently solved challenges
 
@@ -185,3 +217,7 @@ Find the average of first `n` numbers from Fibonacci sequence using Java streams
 ### Reverse each word in a string - [C++](cpp/src/reverse_words.cpp)
 
 Write a program to reverse each word in a sentence. For example, if input string is "Hello World" then the output should be "olleH dlroW".
+
+### Find the point where maximum intervals overlap - [Python](python/src/max_segment_intersections.py)
+
+Consider a big party where a log register for guest’s entry and exit times is maintained. Find the time at which there are maximum guests in the party. Note that entries in register are not in any order.
