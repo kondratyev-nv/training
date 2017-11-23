@@ -27,7 +27,7 @@ def count_number_of_road_forks(field):
             if symbol == 'X':
                 continue
 
-            index = __linear_index(i, j, height, width)
+            index = __linear_index(i, j, width)
             if symbol == 'M':
                 start = index
             if symbol == '*':
@@ -36,13 +36,13 @@ def count_number_of_road_forks(field):
             graph[index] = []
             if __can_go_to(i - 1, j, height, width):
                 if field[i - 1][j] != 'X':
-                    neighbor_index = __linear_index(i - 1, j, height, width)
+                    neighbor_index = __linear_index(i - 1, j, width)
                     graph[neighbor_index].append(index)
                     graph[index].append(neighbor_index)
 
             if __can_go_to(i, j - 1, height, width):
                 if field[i][j - 1] != 'X':
-                    neighbor_index = __linear_index(i, j - 1, height, width)
+                    neighbor_index = __linear_index(i, j - 1, width)
                     graph[neighbor_index].append(index)
                     graph[index].append(neighbor_index)
 
@@ -94,8 +94,8 @@ def __build_path(start, end, previous):
     return [start] + path
 
 
-def __linear_index(i, j, width, height):
-    return i * height + j
+def __linear_index(i, j, width):
+    return i * width + j
 
 
 def __can_go_to(i, j, width, height):
