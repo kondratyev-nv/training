@@ -2,12 +2,13 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "taskName": "create_build_directory",
+            "label": "create_build_directory",
             "command": "",
             "linux": {
                 "command": "mkdir",
                 "args": [
-                    "-p build"
+                    "-p",
+                    "build"
                 ]
             },
             "windows": {
@@ -18,7 +19,7 @@
             }
         },
         {
-            "taskName": "cmake_generate",
+            "label": "cmake_generate",
             "command": "cmake",
             "args": [
                 "-DCMAKE_BUILD_TYPE=Debug",
@@ -34,7 +35,7 @@
             ]
         },
         {
-            "taskName": "cmake_build",
+            "label": "cmake_build",
             "command": "cmake",
             "args": [
                 "--build",
@@ -53,7 +54,7 @@
             "problemMatcher": []
         },
         {
-            "taskName": "cmake_test",
+            "label": "cmake_test",
             "command": "ctest",
             "args": [
                 "-VV"
