@@ -1,3 +1,12 @@
+"""
+Given a graph which consists of several edges connecting the N nodes in it.
+It is required to find a subgraph of the given graph with the following properties:
+- The subgraph contains all the nodes present in the original graph.
+- The subgraph is of minimum overall weight (sum of all edges) among all such subgraphs.
+- It is also required that there is exactly one,
+    exclusive path between any two nodes of the subgraph.
+"""
+
 import math
 
 from src.graph import UndirectedGraph
@@ -5,12 +14,7 @@ from src.graph import UndirectedGraph
 
 def minimum_spanning_tree(adjacency_list):
     """
-    Given a graph which consists of several edges connecting the N nodes in it.
-    It is required to find a subgraph of the given graph with the following properties:
-    - The subgraph contains all the nodes present in the original graph.
-    - The subgraph is of minimum overall weight (sum of all edges) among all such subgraphs.
-    - It is also required that there is exactly one,
-      exclusive path between any two nodes of the subgraph.
+    Get minimum spanning tree for graph represented as adjacency list
     """
     remain_vertices = adjacency_list.copy()
     edges_by_vertex = {}
@@ -28,7 +32,8 @@ def minimum_spanning_tree(adjacency_list):
         for edge in adjacent_edges:
             adjacent_vertex = edge.end
             is_not_visited = adjacent_vertex in remain_vertices
-            is_lighter = edge.weight < __get_weight_or_inf(edges_by_vertex[adjacent_vertex])
+            is_lighter = edge.weight < __get_weight_or_inf(
+                edges_by_vertex[adjacent_vertex])
             if is_not_visited and is_lighter:
                 edges_by_vertex[adjacent_vertex] = edge
     return mst
@@ -45,7 +50,8 @@ def __find_vertex_with_min_weight(vertices, edges_by_vertex):
     for vertex in vertices:
         if min_weight_vertex is None:
             min_weight_vertex = vertex
-        min_weight_vertex = __get_lighter_vertex(edges_by_vertex, vertex, min_weight_vertex)
+        min_weight_vertex = __get_lighter_vertex(
+            edges_by_vertex, vertex, min_weight_vertex)
     return min_weight_vertex
 
 

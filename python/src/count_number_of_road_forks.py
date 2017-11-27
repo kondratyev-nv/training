@@ -1,12 +1,18 @@
+"""
+Consider the forest as an N x M grid.
+Each cell is either empty (represented by .) or blocked by a tree (represented by X).
+You can move LEFT, RIGHT, UP, and DOWN through empty cells,
+but you cannot travel through a tree cell. Starting cell is marked
+with the character M, and the target cell is marked with a *.
+The upper-left corner is indexed as (0, 0).
+Find a number of times you are able to move in more than one direction.
+"""
+
+
 def count_number_of_road_forks(field):
     """
-    Consider the forest as an N x M grid.
-    Each cell is either empty (represented by .) or blocked by a tree (represented by X).
-    You can move LEFT, RIGHT, UP, and DOWN through empty cells,
-    but you cannot travel through a tree cell. Starting cell is marked
-    with the character M, and the target cell is marked with a *.
-    The upper-left corner is indexed as (0, 0).
-    Find a number of times you are able to move in more than one direction.
+    Returns number of times you are able to move in more
+    than one direction by a given forest
 
     :param field: Array of strings that represent forest
     :return: number of road forks
@@ -14,29 +20,29 @@ def count_number_of_road_forks(field):
     graph = {}
     start = None
     end = None
-    n = len(field)
-    m = len(field[0])
+    height = len(field)
+    width = len(field[0])
     for i, row in enumerate(field):
         for j, symbol in enumerate(row):
             if symbol == 'X':
                 continue
 
-            index = __linear_index(i, j, n, m)
+            index = __linear_index(i, j, width)
             if symbol == 'M':
                 start = index
             if symbol == '*':
                 end = index
 
             graph[index] = []
-            if __can_go_to(i - 1, j, n, m):
+            if __can_go_to(i - 1, j, height, width):
                 if field[i - 1][j] != 'X':
-                    neighbor_index = __linear_index(i - 1, j, n, m)
+                    neighbor_index = __linear_index(i - 1, j, width)
                     graph[neighbor_index].append(index)
                     graph[index].append(neighbor_index)
 
-            if __can_go_to(i, j - 1, n, m):
+            if __can_go_to(i, j - 1, height, width):
                 if field[i][j - 1] != 'X':
-                    neighbor_index = __linear_index(i, j - 1, n, m)
+                    neighbor_index = __linear_index(i, j - 1, width)
                     graph[neighbor_index].append(index)
                     graph[index].append(neighbor_index)
 
@@ -88,9 +94,9 @@ def __build_path(start, end, previous):
     return [start] + path
 
 
-def __linear_index(i, j, n, m):
-    return i * m + j
+def __linear_index(i, j, width):
+    return i * width + j
 
 
-def __can_go_to(i, j, n, m):
-    return 0 <= i < n and 0 <= j < m
+def __can_go_to(i, j, width, height):
+    return 0 <= i < width and 0 <= j < height
