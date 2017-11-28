@@ -1,14 +1,21 @@
+"""
+We define super digit of an integer x using the following rules:
+- If x has only 1 digit, then its super digit is x.
+- Otherwise, the super digit of x is equal to the super digit of the digit-sum of x.
+    Here, digit-sum of a number is defined as the sum of its digits.
+You are given two numbers n and k. You have to calculate the super digit of P.
+P is created when number n is concatenated k times.
+"""
+
+
 def get_recursive_digit_sum(number, repeats):
     """
-    We define super digit of an integer x using the following rules:
-    - If x has only 1 digit, then its super digit is x.
-    - Otherwise, the super digit of x is equal to the super digit of the digit-sum of x.
-      Here, digit-sum of a number is defined as the sum of its digits.
-    You are given two numbers n and k. You have to calculate the super digit of P.
-    P is created when number n is concatenated k times.
+    Returns the super digit of a number that is created
+    by concatenating number repeats times
     """
-    ns = __get_recursive_digit_sum(number)
-    return __get_recursive_digit_sum(str(ns) * repeats)
+
+    number_superdigit = __get_recursive_digit_sum(number)
+    return __get_recursive_digit_sum(str(number_superdigit) * repeats)
 
 
 def __get_recursive_digit_sum(number):

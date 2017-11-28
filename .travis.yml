@@ -2,22 +2,47 @@ matrix:
   include:
     - language: python
       python: 3.6
+      install:
+        - pip install coverage
+        - pip install codecov
+
       before_script:
         - cd python
       script:
-        - python3 -m unittest discover -v --pattern *_tests.py
+        - coverage run --source=src -m unittest discover -v --pattern *_tests.py
+      after_success:
+        - codecov
 
     - language: java
       jdk: openjdk8
       dist: trusty
       before_script:
         - cd java
+      after_success:
+        - bash <(curl -s https://codecov.io/bash)
 
     - language: cpp
       compiler: gcc
       dist: trusty
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - gcc-5
+            - g++-5
+            - lcov
       before_script:
         - cd cpp
       script:
+        - sudo unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc-5 /usr/bin/gcc
+        - sudo unlink /usr/bin/g++ && sudo ln -s /usr/bin/g++-5 /usr/bin/g++
         - ./build.sh
-      
+      after_success:
+        # Creating report
+        - cd ${TRAVIS_BUILD_DIR}
+        - lcov --directory . --capture --output-file coverage.info # capture coverage info
+        - lcov --remove coverage.info '/usr/*' 'test/*' --output-file coverage.info # filter out system
+        - lcov --list coverage.info #debug info
+        # Uploading report to CodeCov
+        - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
