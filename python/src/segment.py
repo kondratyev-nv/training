@@ -1,4 +1,6 @@
-"""Module contains structure to represent one dimensional interval"""
+"""
+Module contains structure to represent one dimensional interval
+"""
 
 
 class Segment:
@@ -12,7 +14,13 @@ class Segment:
         self.end = end
 
     def length(self):
+        """
+        Get length of interval
+        """
         return self.end - self.start
 
     def contains(self, point):
+        """
+        Returns True if interval contains point
+        """
         return self.start <= point and point <= self.end
