@@ -17,6 +17,8 @@ set(LIB_PROJECTS_DIR ${PROJECT_SOURCE_DIR}/lib)
 #-------------------
 file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 #-------------------
 # Test
 #-------------------

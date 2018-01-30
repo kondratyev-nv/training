@@ -1,53 +1,13 @@
 {
     "configurations": [
         {
-            "name": "Linux",
-            "includePath": [
-                "${workspaceRoot}/include",
-                "${workspaceRoot}/build/lib/gtest/src/googletest/googletest/include",
-                "${C_HEADERS_PATH}",
-                "${CPP_HEADERS_PATH}",
-                "/usr/include/c++/7/x86_64-redhat-linux/",
-                "/usr/lib/gcc/x86_64-redhat-linux/7/include/"
-            ],
-            "defines": [],
-            "browse": {
-                "path": [
-                    "${workspaceRoot}/include",
-                    "${workspaceRoot}/build/lib/gtest/src/googletest/googletest/include",
-                    "${C_HEADERS_PATH}",
-                    "${CPP_HEADERS_PATH}",
-                    "/usr/include/c++/7/x86_64-redhat-linux/",
-                    "/usr/lib/gcc/x86_64-redhat-linux/7/include/"
-                ],
-                "limitSymbolsToIncludedHeaders": false,
-                "databaseFilename": ""
-            },
-            "intelliSenseMode": "clang-x64"
-        },
-        {
-            "name": "Win32",
-            "includePath": [
-                "${workspaceRoot}/include",
-                "${workspaceRoot}/build/lib/gtest/src/googletest/googletest/include",
-                "${C_HEADERS_PATH}",
-                "${CPP_HEADERS_PATH}"
-            ],
+            "name": "Default",
+            "compileCommands": "./build/compile_commands.json",
             "defines": [
                 "_DEBUG",
                 "UNICODE"
             ],
-            "browse": {
-                "limitSymbolsToIncludedHeaders": false,
-                "databaseFilename": "",
-                "path": [
-                    "${workspaceRoot}/include",
-                    "${workspaceRoot}/build/lib/gtest/src/googletest/googletest/include",
-                    "${C_HEADERS_PATH}",
-                    "${CPP_HEADERS_PATH}"
-                ]
-            },
-            "intelliSenseMode": "msvc-x64"
+            "intelliSenseMode": "clang-x64"
         }
     ],
     "version": 3
