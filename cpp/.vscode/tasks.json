@@ -14,7 +14,7 @@
             "windows": {
                 "command": "cmd",
                 "args": [
-                    "/C if not exist \"build\" mkdir build"
+                    "/C if not exist build mkdir build"
                 ]
             }
         },
