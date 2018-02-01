@@ -2,6 +2,23 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "clean",
+            "command": "",
+            "linux": {
+                "command": "rm",
+                "args": [
+                    "-rf",
+                    "build"
+                ]
+            },
+            "windows": {
+                "command": "cmd",
+                "args": [
+                    "/C rmdir /S /Q .\\build"
+                ]
+            }
+        },
+        {
             "label": "create_build_directory",
             "command": "",
             "linux": {
@@ -23,8 +40,6 @@
             "command": "cmake",
             "args": [
                 "-DCMAKE_BUILD_TYPE=Debug",
-                "-G",
-                "CodeBlocks - Unix Makefiles",
                 ".."
             ],
             "options": {
