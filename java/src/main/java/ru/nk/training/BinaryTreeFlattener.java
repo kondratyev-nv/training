@@ -3,14 +3,15 @@ package ru.nk.training;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Queue;
 
 import ru.nk.training.DataStructures.BinaryTreeNode;
 
 /**
- * 
- * @author nkondratyev
- *
+ * Given a binary tree, flatten it to list, breadth-first.
+ * If any node is absent in a tree there should be an empty
+ * element in the list.
  */
 public class BinaryTreeFlattener {
     private final BinaryTreeHeightFinder heightFinder;
@@ -19,8 +20,8 @@ public class BinaryTreeFlattener {
         this.heightFinder = heightFinder;
     }
 
-    public <T> List<BinaryTreeNode<T>> flatten(BinaryTreeNode<T> root) {
-        List<BinaryTreeNode<T>> list = new ArrayList<>();
+    public <T> List<Optional<T>> flatten(BinaryTreeNode<T> root) {
+        List<Optional<T>> list = new ArrayList<>();
         int maxLevel = heightFinder.depth(root);
         Queue<NodeWithLevel<T>> remaining = new LinkedList<NodeWithLevel<T>>() {
             {
@@ -29,7 +30,7 @@ public class BinaryTreeFlattener {
         };
         while (!remaining.isEmpty()) {
             NodeWithLevel<T> nwl = remaining.poll();
-            list.add(nwl.node);
+            list.add(Optional.ofNullable(nwl.node).map(n -> n.value));
             if (nwl.level < maxLevel) {
                 remaining.add(NodeWithLevel.from(nwl.left(), nwl.level + 1));
                 remaining.add(NodeWithLevel.from(nwl.right(), nwl.level + 1));
