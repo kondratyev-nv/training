@@ -5,6 +5,54 @@
 
 Solutions to various programming challenges in Java, C++ and Python.
 
+## How to build
+
+### Java
+
+Java 8 and Maven are required. To build and run tests
+
+    cd java
+    mvn clean test
+
+### Python
+
+Python 3.5 is required. To run tests
+
+    cd python
+    python -m unittest discover -v --pattern *_tests.py
+
+To run tests with coverage 
+
+    coverage run --source=src -m unittest discover -v --pattern *_tests.py
+
+To run tests in VSCode [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) can be used.
+
+### C++
+
+To build from VSCode open cpp directory (`code cpp`) and run build task. To run tests after build execute test task.
+
+#### Linux
+
+On Linux gcc-5 and g++-5 are required. To build and run tests from the console go to the cpp directory (`cd ./cpp/`) and run `./build.sh` or 
+
+    mkdir -p build
+    cd build
+    cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" ..
+    cmake --build .
+    ctest -VV
+
+To build and run tests with coverage use `./build_with_coverage.sh`.
+
+#### Windows
+
+MinGW 6.3.0 (with packages mingw-developer-toolkit, mingw32-base, mingw32-gcc-g++, msys-base and mingw32-pthreads-w32) and CMake are required. Pathes to the CMake and MinGW binaries should be in your PATH variable. Also for VSCode IntelliSense to work environment variable MINGW_PATH need to be specified and should point to MinGW installation directory (C:\\MinGW by default). To build and run tests from the command line go to the cpp directory (`cd .\cpp`) and run `.\build.bat` or
+
+    if not exist build mkdir build
+    cd build
+    cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" ..
+    cmake --build .
+    ctest -VV
+
 ## Currently solved challenges
 
 ### Trie implementation - [Java](java/src/main/java/ru/nk/training/Trie.java)

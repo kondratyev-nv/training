@@ -5,4 +5,4 @@
 
 long long surface_area(const std::vector<std::vector<int>>& figure);
 
-#endif // SURFACE_AREA_HPP
+#endif  // SURFACE_AREA_HPP

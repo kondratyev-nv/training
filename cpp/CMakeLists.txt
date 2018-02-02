@@ -3,7 +3,8 @@ project(training)
 cmake_minimum_required(VERSION 3.2)
 
 find_package(Threads REQUIRED)
-set(CMAKE_CXX_FLAGS "-std=c++14 -Wall -pedantic -fno-inline -pthread ${CMAKE_CXX_FLAGS}")
+set(CMAKE_CXX_STANDARD 14)
+add_definitions(-ansi -pedantic -Wall -Wno-deprecated -fno-inline -pthread)
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules/)
 
 #-------------------
@@ -16,6 +17,8 @@ set(LIB_PROJECTS_DIR ${PROJECT_SOURCE_DIR}/lib)
 # Module source
 #-------------------
 file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 #-------------------
 # Test
@@ -30,22 +33,9 @@ APPEND_COVERAGE_COMPILER_FLAGS()
 file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 add_executable(${PROJECT_TEST_NAME} ${TEST_SRC_FILES} ${SRC_FILES})
 add_dependencies(${PROJECT_TEST_NAME} googletest)
-
-if (NOT MINGW)
-    target_link_libraries(${PROJECT_TEST_NAME}
-            ${GTEST_LIBS_DIR}/libgtest.a
-            ${GTEST_LIBS_DIR}/libgtest_main.a
-            ${CMAKE_THREAD_LIBS_INIT}
-    )
-else ()
-    target_link_libraries(${PROJECT_TEST_NAME}
-            debug ${GTEST_LIBS_DIR}/DebugLibs/${CMAKE_FIND_LIBRARY_PREFIXES}gtest${CMAKE_FIND_LIBRARY_SUFFIXES}
-            optimized ${GTEST_LIBS_DIR}/ReleaseLibs/${CMAKE_FIND_LIBRARY_PREFIXES}gtest${CMAKE_FIND_LIBRARY_SUFFIXES}
-    )
-    target_link_libraries(${PROJECT_TEST_NAME}
-            debug ${GTEST_LIBS_DIR}/DebugLibs/${CMAKE_FIND_LIBRARY_PREFIXES}gtest_main${CMAKE_FIND_LIBRARY_SUFFIXES}
-            optimized ${GTEST_LIBS_DIR}/ReleaseLibs/${CMAKE_FIND_LIBRARY_PREFIXES}gtest_main${CMAKE_FIND_LIBRARY_SUFFIXES}
-    )
-endif ()
-
+target_link_libraries(${PROJECT_TEST_NAME}
+    pthread
+    ${GTEST_LIBS_DIR}/libgtest.a
+    ${GTEST_LIBS_DIR}/libgtest_main.a
+)
 add_test(test ${PROJECT_TEST_NAME})

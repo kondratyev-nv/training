@@ -8,38 +8,42 @@ typedef unsigned long long ull;
 typedef unsigned int uint;
 typedef unordered_map<uint, unordered_map<uint, ull>> cache_t;
 
-bool try_get_cached(const cache_t& cache, int remains, uint previous_index,
+bool try_get_cached(const cache_t& cache,
+                    int remains,
+                    uint previous_index,
                     ull* result) {
-    auto it1 = cache.find(remains);
-    if (it1 == cache.end()) {
-        return false;
-    }
-    auto combinations_by_previous = it1->second;
-    auto it2 = combinations_by_previous.find(previous_index);
-    if (it2 == combinations_by_previous.end()) {
-        return false;
-    }
-    *result = it2->second;
-    return true;
+  auto it1 = cache.find(remains);
+  if (it1 == cache.end()) {
+    return false;
+  }
+  auto combinations_by_previous = it1->second;
+  auto it2 = combinations_by_previous.find(previous_index);
+  if (it2 == combinations_by_previous.end()) {
+    return false;
+  }
+  *result = it2->second;
+  return true;
 }
 
-ull count_ways_to_make_change(const vector<uint>& coins, cache_t& cache,
-                              uint previous_index, int remains) {
-    if (remains < 0) {
-        return 0;
-    }
-    if (remains == 0) {
-        return 1;
-    }
-    ull count = 0;
-    if (try_get_cached(cache, remains, previous_index, &count)) {
-        return count;
-    }
-    for (uint i = previous_index; i < coins.size(); ++i) {
-        count += count_ways_to_make_change(coins, cache, i, remains - coins[i]);
-    }
-    cache[remains][previous_index] = count;
+ull count_ways_to_make_change(const vector<uint>& coins,
+                              cache_t& cache,
+                              uint previous_index,
+                              int remains) {
+  if (remains < 0) {
+    return 0;
+  }
+  if (remains == 0) {
+    return 1;
+  }
+  ull count = 0;
+  if (try_get_cached(cache, remains, previous_index, &count)) {
     return count;
+  }
+  for (uint i = previous_index; i < coins.size(); ++i) {
+    count += count_ways_to_make_change(coins, cache, i, remains - coins[i]);
+  }
+  cache[remains][previous_index] = count;
+  return count;
 }
 
 /**
@@ -51,6 +55,6 @@ ull count_ways_to_make_change(const vector<uint>& coins, cache_t& cache,
  * {1, 1, 1}, {1, 2}, and {3}.
  */
 ull count_ways_to_make_change(const vector<uint>& coins, int money) {
-    cache_t cache;
-    return count_ways_to_make_change(coins, cache, 0, money);
+  cache_t cache;
+  return count_ways_to_make_change(coins, cache, 0, money);
 }

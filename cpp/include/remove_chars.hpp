@@ -4,6 +4,6 @@
 #include <string>
 #include <vector>
 
-void remove_chars(std::string &s, const std::vector<char> &to_remove);
+void remove_chars(std::string& s, const std::vector<char>& to_remove);
 
 #endif  // REMOVE_CHARS_HPP

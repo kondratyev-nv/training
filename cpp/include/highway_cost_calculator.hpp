@@ -4,18 +4,20 @@
 #include <unordered_map>
 
 /**
- * You are planning the next FIFA World Cup and you are counting the number of highways 
- * that need to be built to connect the cities with the venue. Your country has n cities 
- * and all cities lie on a single straight road called “Highway Road”. 
- * If you want to go from City x to City y (where x <= y), you need to go through city 
- * x, x + 1, x + 2, .., y - 1, y. The requirements for the highways are as follows:
+ * You are planning the next FIFA World Cup and you are counting the number of
+ * highways that need to be built to connect the cities with the venue. Your
+ * country has n cities and all cities lie on a single straight road called
+ * “Highway Road”. If you want to go from City x to City y (where x <= y), you
+ * need to go through city x, x + 1, x + 2, .., y - 1, y. The requirements for
+ * the highways are as follows:
  * - All games will be held in the n-th city.
- * - New bidirectional roads, called "Super Highways", need to be built such that 
- *   it is possible to visit the n-th city from any other city directly.
- * You also have the cost to fulfil the second condition. The engineering team knows 
- * that if the length of a Super Highway is l, then it will cost l^k, where k is an integer 
- * constant. The length of Super Highway between city x and y is |x - y|. For this problem, 
- * you need to find only a rough estimation of the cost, hence, find Total Cost Modulo 1000000009.
+ * - New bidirectional roads, called "Super Highways", need to be built such
+ * that it is possible to visit the n-th city from any other city directly. You
+ * also have the cost to fulfil the second condition. The engineering team knows
+ * that if the length of a Super Highway is l, then it will cost l^k, where k is
+ * an integer constant. The length of Super Highway between city x and y is |x -
+ * y|. For this problem, you need to find only a rough estimation of the cost,
+ * hence, find Total Cost Modulo 1000000009.
  */
 class highway_cost_calculator {
  public:
