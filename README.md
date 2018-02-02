@@ -33,7 +33,7 @@ To build from VSCode open cpp directory (`code cpp`) and run build task. To run 
 
 #### Linux
 
-On Linux gcc-5 and g++-5 are required. To build and run tests from the console go to the cpp directory (`cd ./cpp/`) and run `./build.sh` or 
+On Linux gcc-5 and g++-5 and CMake 3.2 are required. To build and run tests from the console go to the cpp directory (`cd ./cpp/`) and run `./build.sh` or 
 
     mkdir -p build
     cd build
@@ -41,11 +41,11 @@ On Linux gcc-5 and g++-5 are required. To build and run tests from the console g
     cmake --build .
     ctest -VV
 
-To build and run tests with coverage use `./build_with_coverage.sh`.
+To build and run tests with coverage use `./build_with_coverage.sh`. You will need lcov installed for this.
 
 #### Windows
 
-MinGW 6.3.0 (with packages mingw-developer-toolkit, mingw32-base, mingw32-gcc-g++, msys-base and mingw32-pthreads-w32) and CMake are required. Pathes to the CMake and MinGW binaries should be in your PATH variable. Also for VSCode IntelliSense to work environment variable MINGW_PATH need to be specified and should point to MinGW installation directory (C:\\MinGW by default). To build and run tests from the command line go to the cpp directory (`cd .\cpp`) and run `.\build.bat` or
+MinGW 6.3.0 (with packages mingw-developer-toolkit, mingw32-base, mingw32-gcc-g++, msys-base and mingw32-pthreads-w32) and CMake 3.2 are required. Pathes to the CMake and MinGW binaries should be in your PATH variable. Also for VSCode IntelliSense to work environment variable MINGW_PATH need to be specified and should point to MinGW installation directory (C:\\MinGW by default). To build and run tests from the command line go to the cpp directory (`cd .\cpp`) and run `.\build.bat` or
 
     if not exist build mkdir build
     cd build
@@ -255,4 +255,15 @@ Madison, is a little girl who is fond of toys. Her friend Mason works in a toy m
 
 ### Flatten Binary Tree - [Java](java/src/main/java/ru/nk/training/BinaryTreeFlattener.java)
 
-Given a binary tree, flatten it to list, breadth-first. If any node is absent in a tree there should be an empty element in the list.
+ Given a binary tree, map it to lists of values by level, breadth-first. If any node is absent in the tree there should be an empty element in the level list. For example the binary tree
+ 
+        1
+     /    \
+    2      3
+     \
+      4
+ should be mapped to lists
+ 
+    [1]
+    [2, 3]
+    [X, 4, X, X]
