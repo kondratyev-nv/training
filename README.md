@@ -252,3 +252,7 @@ You also have the cost to fulfil the second condition. The engineering team know
 ### 3D Surface Area - [C++](cpp/src/surface_area.cpp)
 
 Madison, is a little girl who is fond of toys. Her friend Mason works in a toy manufacturing factory. Mason has a 2D board A of size `H` x `W` with `H` rows and `W` columns. The board is divided into cells of size 1 x 1 with each cell indicated by it's coordinate `(i, j)`. The cell `(i, j)` has an integer `A`<sub>`ij`</sub> written on it. To create the toy Mason stacks `A`<sub>`ij`</sub> number of cubes of size 1 x 1 x 1 on the cell `(i, j)`. Given the description of the board showing the values of `A`<sub>`ij`</sub> and that the price of the toy is equal to the 3D surface area find the price of the toy.
+
+### Flatten Binary Tree - [Java](java/src/main/java/ru/nk/training/BinaryTreeFlattener.java)
+
+Given a binary tree, flatten it to list, breadth-first. If any node is absent in a tree there should be an empty element in the list.
