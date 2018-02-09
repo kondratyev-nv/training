@@ -1,8 +1,3 @@
-
-#include "remove_chars.hpp"
-
-#include <set>
-
 /**
  * Write an efficient function that deletes characters from an ASCII string. Use
  * the prototype
@@ -12,6 +7,11 @@
  * and a remove of "aeiou", the function should transform str to
  * "Bttl f th Vwls: Hw vs. Grzny".
  */
+
+#include "remove_chars.hpp"
+
+#include <set>
+
 void remove_chars(std::string& s, const std::vector<char>& to_remove) {
   std::set<char> chars_to_remove(to_remove.cbegin(), to_remove.cend());
   size_t removed_count = 0;

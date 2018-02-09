@@ -166,6 +166,8 @@ You are given two arrays `A` and `B` each containing `n` integers. You need to c
 
 ### Count patterns - [Python](python/src/count_patterns.py)
 
+[Week of Code 33 - Pattern Count](https://www.hackerrank.com/contests/w33/challenges/pattern-count)
+
 A string `s` contains many patterns of the form `1(0+)1` where `(0+)` represents any non-empty consecutive sequence of zeros. The patterns are allowed to overlap. For example, consider string `1101001`, we can see there are two consecutive sequences `1(0)1` and `1(00)1` which are of the form `1(0+)1`. Find the total number of patterns of the form `1(0+)1` that occur in `s`.
 
 ### Find longest palindromic subsequence - [Java](java/src/main/java/ru/nk/training/LongestPalindromicSubsequenceFinder.java)
@@ -177,6 +179,8 @@ Given a string, find a longest palindromic subsequence in it. A longest palindro
 Given a string find out if symbols can be rearranged to a palindrom.
 
 ### Find longest palindromic subsequence that can be obtained with specific transformations - [Java](java/src/main/java/ru/nk/training/LongestPalindromicSubsequenceWithTransformationFinder.java)
+
+[Week of Code 33 - Transform to Palindrome](https://www.hackerrank.com/contests/w33/challenges/transform-to-palindrome)
 
 The alphabet system consists of `n` letters, denoted by the integers from `1` to `n`. Some letters can be transformed to other letters. A transformation is denoted by a pair of two letters, `x -> y`. Using this transformation, you can replace letter `x` with letter `y`. Transformations also have additional properties:
  - If letter `x` can be transformed to letter `y` using a transformation, then letter `y` can be transformed to letter `x` as well.
@@ -243,6 +247,8 @@ Consider a big party where a log register for guest’s entry and exit times is 
 
 ### Highway Construction - [C++](cpp/include/highway_cost_calculator.hpp)
 
+[Week of Code 35 - Highway Construction](https://www.hackerrank.com/contests/w35/challenges/highway-construction)
+
 You are planning the next FIFA World Cup and you are counting the number of highways that need to be built to connect the cities with the venue. Your country has n cities and all cities lie on a single straight road called “Highway Road”. If you want to go from City `x` to City `y` (where `x` ≤ `y`), you need to go through city `x`, `x + 1`, `x + 2`, .., `y - 1`, `y`. The requirements for the highways are as follows:
  - All games will be held in the `n`-th city.
  - New bidirectional roads, called "Super Highways", need to be built such that it is possible to visit the `n`-th city from any other city directly. 
@@ -250,6 +256,8 @@ You are planning the next FIFA World Cup and you are counting the number of high
 You also have the cost to fulfil the second condition. The engineering team knows that if the length of a Super Highway is `l`, then it will cost `l`<sup>`k`</sup>, where k is an integer constant. The length of Super Highway between city `x` and `y` is `|x - y|`. For this problem, you need to find only a rough estimation of the cost, hence, find Total Cost Modulo 1000000009.
 
 ### 3D Surface Area - [C++](cpp/src/surface_area.cpp)
+
+[Week of Code 35 - 3D Surface Area](https://www.hackerrank.com/contests/w35/challenges/3d-surface-area)
 
 Madison, is a little girl who is fond of toys. Her friend Mason works in a toy manufacturing factory. Mason has a 2D board A of size `H` x `W` with `H` rows and `W` columns. The board is divided into cells of size 1 x 1 with each cell indicated by it's coordinate `(i, j)`. The cell `(i, j)` has an integer `A`<sub>`ij`</sub> written on it. To create the toy Mason stacks `A`<sub>`ij`</sub> number of cubes of size 1 x 1 x 1 on the cell `(i, j)`. Given the description of the board showing the values of `A`<sub>`ij`</sub> and that the price of the toy is equal to the 3D surface area find the price of the toy.
 
@@ -267,3 +275,19 @@ Madison, is a little girl who is fond of toys. Her friend Mason works in a toy m
     [1]
     [2, 3]
     [X, 4, X, X]
+
+### Race Against Time - [C++](cpp/src/race_min_time.cpp)
+
+[Week of Code 36 - A Race Against Time](https://www.hackerrank.com/contests/w36/challenges/a-race-against-time)
+
+A relay race is being organised in a school for middle school students by two high school students, Mason and Madison. Mason starts with the baton and Madison receives the baton at the final destination. There are middle school students in between Mason and Madison, and each of their heights is given. Mason's height, too, is given. Initially, the baton is with Mason and it is passed to the destination in a manner similar to a relay race.
+ 
+1. At any moment,the current baton carrier has an option to hand over the baton to the student at the current position or to continue to the next position. However, if the student at the given position is taller than the current baton carrier, it is mandatory to hand over the baton because it is a safer option according to Mason.
+1. It takes one second to move between consecutive positions.
+1. Whenever the baton is handed over , there is a time and price associated with it.
+1. The time taken, in seconds, is the absolute difference between the heights of the current baton carrier and the student to whom the baton is handed.
+1. The student to whom the baton is passed charges a given price.
+ 
+Note: Price charged can be negative too.
+ 
+The baton must be sent to Madison in the minimum possible sum of time and price. Complete the function Solve which takes the number of middle school students, Mason's height, and heights and prices charged by middle school students as input, and return the minimum possible sum of time and price required for the baton to reach Madison.

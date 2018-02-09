@@ -1,3 +1,9 @@
+/**
+ * You are given two rectangles, each defined by an upper-left (UL) corner and a
+ * lower-right (LR) corner.
+ * Both rectangles’ edges will always be parallel to the x or y axis.
+ * Write a function that determines whether the two rectangles overlap.
+ */
 
 #include "rectangles_intersect.hpp"
 
@@ -17,12 +23,6 @@ bool is_point_below(const p2d& a, const p2d& b) {
   return !is_point_above(a, b);
 }
 
-/**
- * You are given two rectangles, each defined by an upper-left (UL) corner and a
- * lower-right (LR) corner.
- * Both rectangles’ edges will always be parallel to the x or y axis.
- * Write a function that determines whether the two rectangles overlap.
- */
 bool rectangles_intersect(const rectangle& r1, const rectangle& r2) {
   const p2d& r1rb = r1.rb;
   const p2d& r1lt = r1.lt;
