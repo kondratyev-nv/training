@@ -1,4 +1,4 @@
-#ifndef RACE_MINTIME_HPP
+#ifndef RACE_MIN_TIME_HPP
 #define RACE_MIN_TIME_HPP
 
 #include <vector>
