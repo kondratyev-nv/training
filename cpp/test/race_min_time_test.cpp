@@ -26,8 +26,7 @@ TEST(race_min_time, returns_min_path_when_has_multiple_negatives) {
   auto path = race_min_time({7, 8, 2, 3, 9, 4, 5}, {0, 10, -5, 10, 5, -8, -6});
   EXPECT_EQ(16, path);
 
-  path = race_min_time({7, 0, 3, 0, 3, 4, 1, 8, 2},
-                       {0, 8, -3, -7, -9, -3, -10, 6, -3});
+  path = race_min_time({7, 0, 3, 0, 3, 4, 1, 8, 2}, {0, 8, -3, -7, -9, -3, -10, 6, -3});
   EXPECT_EQ(4, path);
 }
 

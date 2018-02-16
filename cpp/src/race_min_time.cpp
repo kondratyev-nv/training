@@ -49,11 +49,7 @@ bool try_get_cached(cache_t const& cache, size_t i, int h, long long& r) {
   return true;
 }
 
-long long race_min_time(cache_t& cache,
-                        vector<int> const& heights,
-                        vector<int> const& prices,
-                        size_t i,
-                        int h) {
+long long race_min_time(cache_t& cache, vector<int> const& heights, vector<int> const& prices, size_t i, int h) {
   if (i >= heights.size() - 1) {
     return 1;
   }
@@ -62,14 +58,13 @@ long long race_min_time(cache_t& cache,
     return price;
   }
   if (heights[i + 1] > h) {
-    cache[i][h] = race_min_time(cache, heights, prices, i + 1, heights[i + 1]) +
-                  abs(heights[i + 1] - h) + prices[i + 1] + 1;
+    cache[i][h] =
+        race_min_time(cache, heights, prices, i + 1, heights[i + 1]) + abs(heights[i + 1] - h) + prices[i + 1] + 1;
     return cache[i][h];
   }
   if (prices[i + 1] < 0) {
     long long pass =
-        race_min_time(cache, heights, prices, i + 1, heights[i + 1]) +
-        abs(heights[i + 1] - h) + prices[i + 1];
+        race_min_time(cache, heights, prices, i + 1, heights[i + 1]) + abs(heights[i + 1] - h) + prices[i + 1];
     long long skip = race_min_time(cache, heights, prices, i + 1, h);
     cache[i][h] = min(pass, skip) + 1;
     return cache[i][h];

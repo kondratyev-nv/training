@@ -57,10 +57,7 @@ long long highway_cost_calculator::c(long long i, long long j) {
   return cc[i][j];
 }
 
-long long highway_cost_calculator::egcd(long long a,
-                                        long long b,
-                                        long long& x,
-                                        long long& y) {
+long long highway_cost_calculator::egcd(long long a, long long b, long long& x, long long& y) {
   long long g = a;
   x = 1;
   y = 0;

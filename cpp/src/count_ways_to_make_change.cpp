@@ -17,10 +17,7 @@ typedef unsigned long long ull;
 typedef unsigned int uint;
 typedef unordered_map<uint, unordered_map<uint, ull>> cache_t;
 
-bool try_get_cached(const cache_t& cache,
-                    int remains,
-                    uint previous_index,
-                    ull* result) {
+bool try_get_cached(const cache_t& cache, int remains, uint previous_index, ull* result) {
   auto it1 = cache.find(remains);
   if (it1 == cache.end()) {
     return false;
@@ -34,10 +31,7 @@ bool try_get_cached(const cache_t& cache,
   return true;
 }
 
-ull count_ways_to_make_change(const vector<uint>& coins,
-                              cache_t& cache,
-                              uint previous_index,
-                              int remains) {
+ull count_ways_to_make_change(const vector<uint>& coins, cache_t& cache, uint previous_index, int remains) {
   if (remains < 0) {
     return 0;
   }

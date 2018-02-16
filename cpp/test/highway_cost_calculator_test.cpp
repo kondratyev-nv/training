@@ -65,8 +65,7 @@ TEST_F(highway_cost_calculator_test, returns_zero_cost_for_single_city) {
   EXPECT_EQ(0, cost);
 }
 
-TEST_F(highway_cost_calculator_test,
-       returns_same_cost_as_naive_implementation) {
+TEST_F(highway_cost_calculator_test, returns_same_cost_as_naive_implementation) {
   for (int i = 1; i < 100; ++i) {
     for (int j = 1; j < 10; ++j) {
       auto se = highway_cost_naive(i, j, 1000000009);
