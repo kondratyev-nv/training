@@ -1,5 +1,6 @@
-#include "reverse_words.hpp"
 #include "gtest/gtest.h"
+
+#include "reverse_words.hpp"
 
 TEST(reverse_words, do_not_modifies_empty_string) {
   std::string s = "";

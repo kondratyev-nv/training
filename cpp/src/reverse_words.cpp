@@ -1,3 +1,9 @@
+/**
+ * Write a program to reverse each word in a sentence.
+ * For example, if input string is "Hello World"
+ * then the output should be "olleH dlroW".
+ */
+
 #include "reverse_words.hpp"
 
 #include <algorithm>
@@ -20,11 +26,6 @@ void reverse_word(string& sentence, size_t from, size_t to) {
   }
 }
 
-/**
- * Write a program to reverse each word in a sentence.
- * For example, if input string is "Hello World"
- * then the output should be "olleH dlroW".
- */
 void reverse_words(string& sentence) {
   size_t word_start = find_next_word(sentence, 0);
   while (word_start < sentence.length()) {

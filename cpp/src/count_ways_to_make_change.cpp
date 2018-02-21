@@ -1,3 +1,12 @@
+/**
+ * You have m types of coins available in infinite quantities where
+ * the value of each coin is given in the array C.
+ * Can you determine the number of ways of making change for n units
+ * using the given types of coins? For example, if m = 4,
+ * and C = [8, 3, 1, 2], we can make change for n = 3 units in three ways:
+ * {1, 1, 1}, {1, 2}, and {3}.
+ */
+
 #include "count_ways_to_make_change.hpp"
 
 #include <unordered_map>
@@ -46,14 +55,6 @@ ull count_ways_to_make_change(const vector<uint>& coins,
   return count;
 }
 
-/**
- * You have m types of coins available in infinite quantities where
- * the value of each coin is given in the array C.
- * Can you determine the number of ways of making change for n units
- * using the given types of coins? For example, if m = 4,
- * and C = [8, 3, 1, 2], we can make change for n = 3 units in three ways:
- * {1, 1, 1}, {1, 2}, and {3}.
- */
 ull count_ways_to_make_change(const vector<uint>& coins, int money) {
   cache_t cache;
   return count_ways_to_make_change(coins, cache, 0, money);

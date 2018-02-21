@@ -1,8 +1,3 @@
-#include "surface_area.hpp"
-#include <cstdlib>
-
-using namespace std;
-
 /**
  * Madison, is a little girl who is fond of toys.
  * Her friend Mason works in a toy manufacturing factory.
@@ -14,6 +9,13 @@ using namespace std;
  * and that the price of the toy is equal to the 3D surface area find the price
  * of the toy.
  */
+
+#include "surface_area.hpp"
+
+#include <cstdlib>
+
+using namespace std;
+
 long long surface_area(const std::vector<std::vector<int>>& figure) {
   if (figure.empty() || figure[0].empty()) {
     return 0;

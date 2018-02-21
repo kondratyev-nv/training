@@ -1,6 +1,7 @@
+#include "gtest/gtest.h"
+
 #include <algorithm>
 
-#include "gtest/gtest.h"
 #include "remove_chars.hpp"
 
 TEST(remove_chars_test, does_not_change_string_when_no_chars_to_remove) {
