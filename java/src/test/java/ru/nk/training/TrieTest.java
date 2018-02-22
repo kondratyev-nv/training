@@ -3,8 +3,10 @@ package ru.nk.training;
 import org.junit.Before;
 import org.junit.Test;
 
+import static java.util.Arrays.asList;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.Assert.assertEquals;
-import static ru.nk.training.TestUtils.AssertHelper.assertSortedArraysEqual;
+import static org.junit.Assert.assertThat;
 
 public class TrieTest {
 
@@ -17,27 +19,27 @@ public class TrieTest {
 
     @Test
     public void returnsAllStringsWhenFindEmptyString() throws Exception {
-        String[] words = new String[]{ "abc", "abd", "bcd" };
+        String[] words = new String[]{"abc", "abd", "bcd"};
         for (String word : words) {
             trie.add(word);
         }
-        assertSortedArraysEqual(words, trie.words(""));
+        assertThat(asList(words), containsInAnyOrder(trie.words("")));
         assertEquals(3, trie.wordCount(""));
     }
 
     @Test
     public void returnsAllStringsBySpecifiedPrefix() throws Exception {
-        String[] words = new String[]{ "abc", "abd", "bcd" };
+        String[] words = new String[]{"abc", "abd", "bcd"};
         for (String word : words) {
             trie.add(word);
         }
-        assertSortedArraysEqual(new String[]{ "abc", "abd" }, trie.words("a"));
+        assertThat(asList("abc", "abd"), containsInAnyOrder(trie.words("a")));
         assertEquals(2, trie.wordCount("a"));
     }
 
     @Test
     public void returnsEmptyArrayWhenNoWordsWithPrefix() throws Exception {
-        String[] words = new String[]{ "abc", "abd", "bcd" };
+        String[] words = new String[]{"abc", "abd", "bcd"};
         for (String word : words) {
             trie.add(word);
         }
@@ -47,31 +49,31 @@ public class TrieTest {
 
     @Test
     public void canAcceptDuplicatesButDoesNotReturnThem() throws Exception {
-        String[] words = new String[]{ "abc", "abd", "bcd", "abc", "bcd" };
+        String[] words = new String[]{"abc", "abd", "bcd", "abc", "bcd"};
         for (String word : words) {
             trie.add(word);
         }
-        assertSortedArraysEqual(new String[]{ "abc", "abd", "bcd" }, trie.words(""));
+        assertThat(asList("abc", "abd", "bcd"), containsInAnyOrder(trie.words("")));
         assertEquals(3, trie.wordCount(""));
     }
 
     @Test
     public void returnsWordsThatAreSubstrings() throws Exception {
-        String[] words = new String[]{ "abcd", "abc", "abcde" };
+        String[] words = new String[]{"abcd", "abc", "abcde"};
         for (String word : words) {
             trie.add(word);
         }
-        assertSortedArraysEqual(words, trie.words(""));
+        assertThat(asList(words), containsInAnyOrder(trie.words("")));
         assertEquals(3, trie.wordCount(""));
     }
 
     @Test
     public void returnsWordsByPrefixThatIsCompleteWord() throws Exception {
-        String[] words = new String[]{ "abcd", "abc", "abcde" };
+        String[] words = new String[]{"abcd", "abc", "abcde"};
         for (String word : words) {
             trie.add(word);
         }
-        assertSortedArraysEqual(words, trie.words("abc"));
+        assertThat(asList(words), containsInAnyOrder(trie.words("abc")));
         assertEquals(3, trie.wordCount("abc"));
     }
 }
