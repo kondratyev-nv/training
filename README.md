@@ -262,16 +262,17 @@ You also have the cost to fulfil the second condition. The engineering team know
 
 Madison, is a little girl who is fond of toys. Her friend Mason works in a toy manufacturing factory. Mason has a 2D board A of size `H` x `W` with `H` rows and `W` columns. The board is divided into cells of size 1 x 1 with each cell indicated by it's coordinate `(i, j)`. The cell `(i, j)` has an integer `A`<sub>`ij`</sub> written on it. To create the toy Mason stacks `A`<sub>`ij`</sub> number of cubes of size 1 x 1 x 1 on the cell `(i, j)`. Given the description of the board showing the values of `A`<sub>`ij`</sub> and that the price of the toy is equal to the 3D surface area find the price of the toy.
 
-### Map Binary Tree by Levels - [Java](java/src/main/java/ru/nk/training//BinaryTreeLevelMapper.java)
+### Map Binary Tree by Levels - [Java](java/src/main/java/ru/nk/training/BinaryTreeLevelMapper.java)
 
- Given a binary tree, map it to lists of values by level, breadth-first. If any node is absent in the tree there should be an empty element in the level list. For example the binary tree
+Given a binary tree, map it to lists of values by level, breadth-first. If any node is absent in the tree there should be an empty element in the level list. For example the binary tree
  
         1
      /    \
     2      3
      \
       4
- should be mapped to lists
+ 
+should be mapped to lists
  
     [1]
     [2, 3]
@@ -292,3 +293,29 @@ A relay race is being organised in a school for middle school students by two hi
 Note: Price charged can be negative too.
  
 The baton must be sent to Madison in the minimum possible sum of time and price. Complete the function Solve which takes the number of middle school students, Mason's height, and heights and prices charged by middle school students as input, and return the minimum possible sum of time and price required for the baton to reach Madison.
+
+### Flatten Binary Tree to Linked List - [Java](java/src/main/java/ru/nk/training/BinaryTreeFlattener.java)
+
+[Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list)
+
+Given a binary tree, flatten it to a linked list in-place. For example, given
+
+        1
+       / \
+      2   5
+     / \   \
+    3   4   6
+
+The flattened tree should look like:
+
+    1
+     \
+      2
+       \
+        3
+         \
+          4
+           \
+            5
+             \
+              6
