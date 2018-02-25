@@ -319,3 +319,19 @@ The flattened tree should look like:
             5
              \
               6
+
+### Cubes and Cylinders - [Python](python/src/max_stored_packages.py)
+
+[Cubes and Cylinders](https://www.hackerrank.com/contests/university-codesprint-4/challenges/cubes-and-cylinders)
+
+You are in charge of storing some of the inventory in a company. There are different types of packages. The total number of packages and the number of packages of each type is known to you. Also, each package is cube-shaped, with edge length given.
+
+Packages can only be stored in cylindrical containers which have a circular opening of given radius. Each container can hold a particular number of packages. We may assume that each container is tall enough that it can accommodate the total height of all the packages.
+
+As part of company policy, you must ensure the following holds:
+
+- Each package can only be kept on top of another package.
+- The package must not touch the sides of the cylinder, even at a single point. The packages may touch boundaries with each other or with the base of the cylinder.
+- You have to choose which packages go into which containers. Discard packages that can't be stored.
+
+What is the maximum number of packages that can be put in the containers?
