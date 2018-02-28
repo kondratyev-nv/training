@@ -3,15 +3,33 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceRoot}",
+                "/usr/include/c++/5",
+                "/usr/include/x86_64-linux-gnu/c++/5",
+                "/usr/include/c++/5/backward",
+                "/usr/lib/gcc/x86_64-linux-gnu/5/include",
+                "/usr/local/include",
+                "/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed",
+                "/usr/include/x86_64-linux-gnu",
                 "/usr/include",
-                "/usr/local/include"
+                "${workspaceRoot}/include",
+                "${workspaceRoot}/build/lib/gtest/src/googletest/googletest/include",
+                "${workspaceRoot}/build/lib/gtest/src/googletest/googlemock/include"
             ],
             "defines": [],
+            "intelliSenseMode": "clang-x64",
             "browse": {
                 "path": [
+                    "/usr/include/c++/5",
+                    "/usr/include/x86_64-linux-gnu/c++/5",
+                    "/usr/include/c++/5/backward",
+                    "/usr/lib/gcc/x86_64-linux-gnu/5/include",
+                    "/usr/local/include",
+                    "/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed",
+                    "/usr/include/x86_64-linux-gnu",
                     "/usr/include",
-                    "/usr/local/include"
+                    "${workspaceRoot}/include",
+                    "${workspaceRoot}/build/lib/gtest/src/googletest/googletest/include",
+                    "${workspaceRoot}/build/lib/gtest/src/googletest/googlemock/include"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
@@ -20,15 +38,33 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceRoot}",
+                "/usr/include/c++/5",
+                "/usr/include/x86_64-linux-gnu/c++/5",
+                "/usr/include/c++/5/backward",
+                "/usr/lib/gcc/x86_64-linux-gnu/5/include",
+                "/usr/local/include",
+                "/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed",
+                "/usr/include/x86_64-linux-gnu",
                 "/usr/include",
-                "/usr/local/include"
+                "${workspaceRoot}/include",
+                "${workspaceRoot}/build/lib/gtest/src/googletest/googletest/include",
+                "${workspaceRoot}/build/lib/gtest/src/googletest/googlemock/include"
             ],
             "defines": [],
+            "intelliSenseMode": "clang-x64",
             "browse": {
                 "path": [
+                    "/usr/include/c++/5",
+                    "/usr/include/x86_64-linux-gnu/c++/5",
+                    "/usr/include/c++/5/backward",
+                    "/usr/lib/gcc/x86_64-linux-gnu/5/include",
+                    "/usr/local/include",
+                    "/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed",
+                    "/usr/include/x86_64-linux-gnu",
                     "/usr/include",
-                    "/usr/local/include"
+                    "${workspaceRoot}/include",
+                    "${workspaceRoot}/build/lib/gtest/src/googletest/googletest/include",
+                    "${workspaceRoot}/build/lib/gtest/src/googletest/googlemock/include"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
@@ -37,21 +73,39 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceRoot}",
-                "${env:CPP_INCLUDE_PATH}"
+                "${MINGW_PATH}/lib/gcc/mingw32/6.3.0/include/c++",
+                "${MINGW_PATH}/lib/gcc/mingw32/6.3.0/include/c++/mingw32",
+                "${MINGW_PATH}/lib/gcc/mingw32/6.3.0/include/c++/backward",
+                "${MINGW_PATH}/lib/gcc/mingw32/6.3.0/include",
+                "${MINGW_PATH}/lib/gcc/mingw32/6.3.0/../../../../include",
+                "${MINGW_PATH}/lib/gcc/mingw32/6.3.0/include-fixed",
+                "${MINGW_PATH}/lib/gcc/mingw32/6.3.0/../../../../mingw32/include",
+                "${workspaceRoot}/include",
+                "${workspaceRoot}/build/lib/gtest/src/googletest/googletest/include",
+                "${workspaceRoot}/build/lib/gtest/src/googletest/googlemock/include"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE"
             ],
+            "intelliSenseMode": "clang-x64",
             "browse": {
-                "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": "",
                 "path": [
-                    "${workspaceRoot}",
-                    "${env:CPP_INCLUDE_PATH}"
-                ]
+                    "${MINGW_PATH}/lib/gcc/mingw32/6.3.0/include/c++",
+                    "${MINGW_PATH}/lib/gcc/mingw32/6.3.0/include/c++/mingw32",
+                    "${MINGW_PATH}/lib/gcc/mingw32/6.3.0/include/c++/backward",
+                    "${MINGW_PATH}/lib/gcc/mingw32/6.3.0/include",
+                    "${MINGW_PATH}/lib/gcc/mingw32/6.3.0/../../../../include",
+                    "${MINGW_PATH}/lib/gcc/mingw32/6.3.0/include-fixed",
+                    "${MINGW_PATH}/lib/gcc/mingw32/6.3.0/../../../../mingw32/include",
+                    "${workspaceRoot}/include",
+                    "${workspaceRoot}/build/lib/gtest/src/googletest/googletest/include",
+                    "${workspaceRoot}/build/lib/gtest/src/googletest/googlemock/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
             }
         }
-    ]
+    ],
+    "version": 3
 }

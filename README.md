@@ -1,6 +1,58 @@
 # Training project
 
+[![Build Status](https://travis-ci.org/kondratyev-nv/training.svg?branch=master)](https://travis-ci.org/kondratyev-nv/training)
+[![Coverage](https://codecov.io/gh/kondratyev-nv/training/branch/master/graph/badge.svg)](https://codecov.io/gh/kondratyev-nv/training)
+[![Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](UNLICENSE)
+
 Solutions to various programming challenges in Java, C++ and Python.
+
+## How to build
+
+### Java
+
+Java 8 and Maven are required. To build and run tests
+
+    cd java
+    mvn clean test
+
+### Python
+
+Python 3.5 is required. To run tests
+
+    cd python
+    python -m unittest discover -v --pattern *_tests.py
+
+To run tests with coverage 
+
+    coverage run --source=src -m unittest discover -v --pattern *_tests.py
+
+To run tests in VSCode [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) can be used.
+
+### C++
+
+To build from VSCode open cpp directory (`code cpp`) and run build task. To run tests after build execute test task.
+
+#### Linux
+
+On Linux gcc-5 and g++-5 and CMake 3.2 are required. To build and run tests from the console go to the cpp directory (`cd ./cpp/`) and run `./build.sh` or 
+
+    mkdir -p build
+    cd build
+    cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" ..
+    cmake --build .
+    ctest -VV
+
+To build and run tests with coverage use `./build_with_coverage.sh`. You will need lcov installed for this.
+
+#### Windows
+
+MinGW 6.3.0 (with packages mingw-developer-toolkit, mingw32-base, mingw32-gcc-g++, msys-base and mingw32-pthreads-w32) and CMake 3.2 are required. Pathes to the CMake and MinGW binaries should be in your PATH variable. Also for VSCode IntelliSense to work environment variable MINGW_PATH need to be specified and should point to MinGW installation directory (C:\\MinGW by default). To build and run tests from the command line go to the cpp directory (`cd .\cpp`) and run `.\build.bat` or
+
+    if not exist build mkdir build
+    cd build
+    cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" ..
+    cmake --build .
+    ctest -VV
 
 ## Currently solved challenges
 
@@ -115,6 +167,8 @@ You are given two arrays `A` and `B` each containing `n` integers. You need to c
 
 ### Count patterns - [Python](python/src/count_patterns.py)
 
+[Week of Code 33 - Pattern Count](https://www.hackerrank.com/contests/w33/challenges/pattern-count)
+
 A string `s` contains many patterns of the form `1(0+)1` where `(0+)` represents any non-empty consecutive sequence of zeros. The patterns are allowed to overlap. For example, consider string `1101001`, we can see there are two consecutive sequences `1(0)1` and `1(00)1` which are of the form `1(0+)1`. Find the total number of patterns of the form `1(0+)1` that occur in `s`.
 
 ### Find longest palindromic subsequence - [Java](java/src/main/java/ru/nk/training/LongestPalindromicSubsequenceFinder.java)
@@ -127,8 +181,141 @@ Given a string find out if symbols can be rearranged to a palindrom.
 
 ### Find longest palindromic subsequence that can be obtained with specific transformations - [Java](java/src/main/java/ru/nk/training/LongestPalindromicSubsequenceWithTransformationFinder.java)
 
+[Week of Code 33 - Transform to Palindrome](https://www.hackerrank.com/contests/w33/challenges/transform-to-palindrome)
+
 The alphabet system consists of `n` letters, denoted by the integers from `1` to `n`. Some letters can be transformed to other letters. A transformation is denoted by a pair of two letters, `x -> y`. Using this transformation, you can replace letter `x` with letter `y`. Transformations also have additional properties:
  - If letter `x` can be transformed to letter `y` using a transformation, then letter `y` can be transformed to letter `x` as well.
  - If letter `x` can be transformed to letter `y` and letter `y` can be transformed to letter `z`, then letter `x` can be transformed to letter `z` as well.
  
 You are given a sequence `s` comprising of `m` letters. You are given `k` transformations that can be applied to `s`. You may apply transformations to zero or more letters in the sequence. When a transformation is applied to a letter, the other letters of the string remain unaffected. You can also apply a single transformation multiple times on the same sequence. Find the length of the longest possible palindromic subsequence after applying zero or more transformations on the letters of the given sequence.
+
+### Word Break - [Java](java/src/main/java/ru/nk/training/StringByWordsSplitter.java)
+
+Given a non-empty string `s` and a dictionary of words containing non-empty words, determine if `s` can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain duplicate words. For example, given `s = "leetcode"`, `dict = ["leet", "code"]` return space separated sentence `"leet code"`.
+
+### Find number of available positions in matrix - [Java](java/src/main/java/ru/nk/training/MatrixAvailablePositionsCounter.java)
+
+You are given `n x m` matrix and a list of tracks that always run in straight horizontal lines along a row. In other words, the start and end points of a track are `(r, c1)` and `(r, c2)`, where `r` represents the row number, `c1` represents the starting column, and `c2` represents the ending column of the track. Determine the number of cell that is not occupied by a track.
+
+### Recursive Digit Sum - [Python](python/src/get_recursive_digit_sum.py)
+
+We define super digit of an integer `x` using the following rules:
+- If `x` has only 1 digit, then its super digit is `x`.
+- Otherwise, the super digit of `x` is equal to the super digit of the digit-sum of `x`. Here, digit-sum of a number is defined as the sum of its digits.
+
+You are given two numbers `n` and `k`. You have to calculate the super digit of `P`. `P` is created when number `n` is concatenated `k` times.
+
+### Find Minimum Spanning Tree (MST) - [Python](python/src/minimum_spanning_tree.py)
+
+Given a graph which consists of several edges connecting the N nodes in it. It is required to find a subgraph of the given graph with the following properties:
+- The subgraph contains all the nodes present in the original graph.
+- The subgraph is of minimum overall weight (sum of all edges) among all such subgraphs.
+- It is also required that there is exactly one, exclusive path between any two nodes of the subgraph.
+
+### Min Stack - [Java](java/src/main/java/ru/nk/training/MinStack.java)
+
+Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+- `push(x)` - Push element x onto stack.
+- `pop()` - Removes the element on top of the stack.
+- `peek()` - Get the top element.
+- `getMin()` - Retrieve the minimum element in the stack.
+
+### Balanced Brackets - [Java](java/src/main/java/ru/nk/training/BalancedBracketsChecker.java)
+
+A bracket is considered to be any one of the following characters: `(`, `)`, `{`, `}`, `[`, or `]`. Two brackets are considered to be a matched pair if the an opening bracket (i.e., `(`, `[`, or `{`) occurs to the left of a closing bracket (i.e., `)`, `]`, or `}`) of the exact same type. There are three types of matched pairs of brackets: `[]`, `{}`, and `()`. A matching pair of brackets is not balanced if the set of brackets it encloses are not matched. For example, `{[(])}` is not balanced because the contents in between `{` and `}` are not balanced. The pair of square brackets encloses a single, unbalanced opening bracket, `(`, and the pair of parentheses encloses a single, unbalanced closing square bracket, `]`. By this logic, we say a sequence of brackets is considered to be balanced if the following conditions are met:
+- It contains no unmatched brackets.
+- The subset of brackets enclosed within the confines of a matched pair of brackets is also a matched pair of brackets.
+
+Given  strings of brackets, determine whether each sequence of brackets is balanced.
+
+### Is This a Binary Search Tree? - [Java](java/src/main/java/ru/nk/training/BinarySearchTreeChecker.java)
+
+Given the root node of a binary tree, can you determine if it's also a binary search tree. A binary tree is a binary search tree when the following ordering requirements are satisfied:
+- The value of every node in a node's left subtree is less than the data value of that node.
+- The value of every node in a node's right subtree is greater than the data value of that node.
+
+### Average of Fibonacci numbers - [Java](java/src/main/java/ru/nk/training/AverageOfFibonacciNumbersFinder.java)
+
+Find the average of first `n` numbers from Fibonacci sequence using Java streams
+
+### Reverse each word in a string - [C++](cpp/src/reverse_words.cpp)
+
+Write a program to reverse each word in a sentence. For example, if input string is "Hello World" then the output should be "olleH dlroW".
+
+### Find the point where maximum intervals overlap - [Python](python/src/max_segment_intersections.py)
+
+Consider a big party where a log register for guest’s entry and exit times is maintained. Find the time at which there are maximum guests in the party. Note that entries in register are not in any order.
+
+### Highway Construction - [C++](cpp/include/highway_cost_calculator.hpp)
+
+[Week of Code 35 - Highway Construction](https://www.hackerrank.com/contests/w35/challenges/highway-construction)
+
+You are planning the next FIFA World Cup and you are counting the number of highways that need to be built to connect the cities with the venue. Your country has n cities and all cities lie on a single straight road called “Highway Road”. If you want to go from City `x` to City `y` (where `x` ≤ `y`), you need to go through city `x`, `x + 1`, `x + 2`, .., `y - 1`, `y`. The requirements for the highways are as follows:
+ - All games will be held in the `n`-th city.
+ - New bidirectional roads, called "Super Highways", need to be built such that it is possible to visit the `n`-th city from any other city directly. 
+
+You also have the cost to fulfil the second condition. The engineering team knows that if the length of a Super Highway is `l`, then it will cost `l`<sup>`k`</sup>, where k is an integer constant. The length of Super Highway between city `x` and `y` is `|x - y|`. For this problem, you need to find only a rough estimation of the cost, hence, find Total Cost Modulo 1000000009.
+
+### 3D Surface Area - [C++](cpp/src/surface_area.cpp)
+
+[Week of Code 35 - 3D Surface Area](https://www.hackerrank.com/contests/w35/challenges/3d-surface-area)
+
+Madison, is a little girl who is fond of toys. Her friend Mason works in a toy manufacturing factory. Mason has a 2D board A of size `H` x `W` with `H` rows and `W` columns. The board is divided into cells of size 1 x 1 with each cell indicated by it's coordinate `(i, j)`. The cell `(i, j)` has an integer `A`<sub>`ij`</sub> written on it. To create the toy Mason stacks `A`<sub>`ij`</sub> number of cubes of size 1 x 1 x 1 on the cell `(i, j)`. Given the description of the board showing the values of `A`<sub>`ij`</sub> and that the price of the toy is equal to the 3D surface area find the price of the toy.
+
+### Map Binary Tree by Levels - [Java](java/src/main/java/ru/nk/training/BinaryTreeLevelMapper.java)
+
+Given a binary tree, map it to lists of values by level, breadth-first. If any node is absent in the tree there should be an empty element in the level list. For example the binary tree
+ 
+        1
+     /    \
+    2      3
+     \
+      4
+ 
+should be mapped to lists
+ 
+    [1]
+    [2, 3]
+    [X, 4, X, X]
+
+### Race Against Time - [C++](cpp/src/race_min_time.cpp)
+
+[Week of Code 36 - A Race Against Time](https://www.hackerrank.com/contests/w36/challenges/a-race-against-time)
+
+A relay race is being organised in a school for middle school students by two high school students, Mason and Madison. Mason starts with the baton and Madison receives the baton at the final destination. There are middle school students in between Mason and Madison, and each of their heights is given. Mason's height, too, is given. Initially, the baton is with Mason and it is passed to the destination in a manner similar to a relay race.
+ 
+1. At any moment,the current baton carrier has an option to hand over the baton to the student at the current position or to continue to the next position. However, if the student at the given position is taller than the current baton carrier, it is mandatory to hand over the baton because it is a safer option according to Mason.
+1. It takes one second to move between consecutive positions.
+1. Whenever the baton is handed over , there is a time and price associated with it.
+1. The time taken, in seconds, is the absolute difference between the heights of the current baton carrier and the student to whom the baton is handed.
+1. The student to whom the baton is passed charges a given price.
+ 
+Note: Price charged can be negative too.
+ 
+The baton must be sent to Madison in the minimum possible sum of time and price. Complete the function Solve which takes the number of middle school students, Mason's height, and heights and prices charged by middle school students as input, and return the minimum possible sum of time and price required for the baton to reach Madison.
+
+### Flatten Binary Tree to Linked List - [Java](java/src/main/java/ru/nk/training/BinaryTreeFlattener.java)
+
+[Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list)
+
+Given a binary tree, flatten it to a linked list in-place. For example, given
+
+        1
+       / \
+      2   5
+     / \   \
+    3   4   6
+
+The flattened tree should look like:
+
+    1
+     \
+      2
+       \
+        3
+         \
+          4
+           \
+            5
+             \
+              6

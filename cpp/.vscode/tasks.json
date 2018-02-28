@@ -2,7 +2,24 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "taskName": "create_build_directory",
+            "label": "clean",
+            "command": "",
+            "linux": {
+                "command": "rm",
+                "args": [
+                    "-rf",
+                    "build"
+                ]
+            },
+            "windows": {
+                "command": "cmd",
+                "args": [
+                    "/C rmdir /S /Q .\\build"
+                ]
+            }
+        },
+        {
+            "label": "create_build_directory",
             "command": "",
             "linux": {
                 "command": "mkdir",
@@ -14,33 +31,28 @@
             "windows": {
                 "command": "cmd",
                 "args": [
-                    "/C",
-                    "if not exist \"build\" mkdir build"
+                    "/C if not exist build mkdir build"
                 ]
-            },
-            "isShellCommand": true,
-            "showOutput": "always"
+            }
         },
         {
-            "taskName": "cmake_generate",
+            "label": "cmake_generate",
             "command": "cmake",
             "args": [
                 "-DCMAKE_BUILD_TYPE=Debug",
                 "-G",
-                "'CodeBlocks - Unix Makefiles'",
+                "Unix Makefiles",
                 ".."
             ],
             "options": {
                 "cwd": "${workspaceRoot}/build"
             },
-            "isShellCommand": true,
-            "showOutput": "always",
             "dependsOn": [
                 "create_build_directory"
             ]
         },
         {
-            "taskName": "cmake_build",
+            "label": "cmake_build",
             "command": "cmake",
             "args": [
                 "--build",
@@ -49,15 +61,17 @@
             "options": {
                 "cwd": "${workspaceRoot}/build"
             },
-            "isShellCommand": true,
-            "showOutput": "always",
-            "isBuildCommand": true,
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
             "dependsOn": [
                 "cmake_generate"
-            ]
+            ],
+            "problemMatcher": []
         },
         {
-            "taskName": "cmake_test",
+            "label": "cmake_test",
             "command": "ctest",
             "args": [
                 "-VV"
@@ -65,7 +79,10 @@
             "options": {
                 "cwd": "${workspaceRoot}/build"
             },
-            "isTestCommand": true
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
         }
     ]
 }

@@ -28,10 +28,7 @@ public class EvenTreeCounter {
      * @return Number of edges
      */
     public int getNumberOfEdgesToRemove() {
-        int n = getNumberOfEdgesToRemove(0);
-        if (n <= 0 || n % 2 == 1) {
-            throw new IllegalArgumentException();
-        }
+        getNumberOfEdgesToRemove(0);
         return counter;
     }
 
