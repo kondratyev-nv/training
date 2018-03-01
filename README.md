@@ -155,6 +155,8 @@ Evaluate the value of an arithmetic expression in Reverse Polish Notation. Valid
 
 ### Count ways of making change - [C++](cpp/src/count_ways_to_make_change.cpp)
 
+[HackerRank - The Coin Change Problem](https://www.hackerrank.com/challenges/coin-change)
+
 You have `m` types of coins available in infinite quantities where the value of each coin is given in the array `C`. Can you determine the number of ways of making change for `n` units using the given types of coins? For example, if `m = 4`, and `C = [8, 3, 1, 2]`, we can make change for `n = 3` units in three ways: `{1, 1, 1}`, `{1, 2}`, and `{3}`.
 
 ### Count number of pairs by difference - [Java](java/src/main/java/ru/nk/training/PairsByDifferenceCounter.java)
@@ -167,7 +169,7 @@ You are given two arrays `A` and `B` each containing `n` integers. You need to c
 
 ### Count patterns - [Python](python/src/count_patterns.py)
 
-[Week of Code 33 - Pattern Count](https://www.hackerrank.com/contests/w33/challenges/pattern-count)
+[HackerRank - Week of Code 33 - Pattern Count](https://www.hackerrank.com/contests/w33/challenges/pattern-count)
 
 A string `s` contains many patterns of the form `1(0+)1` where `(0+)` represents any non-empty consecutive sequence of zeros. The patterns are allowed to overlap. For example, consider string `1101001`, we can see there are two consecutive sequences `1(0)1` and `1(00)1` which are of the form `1(0+)1`. Find the total number of patterns of the form `1(0+)1` that occur in `s`.
 
@@ -181,7 +183,7 @@ Given a string find out if symbols can be rearranged to a palindrom.
 
 ### Find longest palindromic subsequence that can be obtained with specific transformations - [Java](java/src/main/java/ru/nk/training/LongestPalindromicSubsequenceWithTransformationFinder.java)
 
-[Week of Code 33 - Transform to Palindrome](https://www.hackerrank.com/contests/w33/challenges/transform-to-palindrome)
+[HackerRank - Week of Code 33 - Transform to Palindrome](https://www.hackerrank.com/contests/w33/challenges/transform-to-palindrome)
 
 The alphabet system consists of `n` letters, denoted by the integers from `1` to `n`. Some letters can be transformed to other letters. A transformation is denoted by a pair of two letters, `x -> y`. Using this transformation, you can replace letter `x` with letter `y`. Transformations also have additional properties:
  - If letter `x` can be transformed to letter `y` using a transformation, then letter `y` can be transformed to letter `x` as well.
@@ -222,6 +224,8 @@ Design a stack that supports push, pop, top, and retrieving the minimum element 
 
 ### Balanced Brackets - [Java](java/src/main/java/ru/nk/training/BalancedBracketsChecker.java)
 
+[HackerRank - Balanced Brackets](https://www.hackerrank.com/challenges/balanced-brackets)
+
 A bracket is considered to be any one of the following characters: `(`, `)`, `{`, `}`, `[`, or `]`. Two brackets are considered to be a matched pair if the an opening bracket (i.e., `(`, `[`, or `{`) occurs to the left of a closing bracket (i.e., `)`, `]`, or `}`) of the exact same type. There are three types of matched pairs of brackets: `[]`, `{}`, and `()`. A matching pair of brackets is not balanced if the set of brackets it encloses are not matched. For example, `{[(])}` is not balanced because the contents in between `{` and `}` are not balanced. The pair of square brackets encloses a single, unbalanced opening bracket, `(`, and the pair of parentheses encloses a single, unbalanced closing square bracket, `]`. By this logic, we say a sequence of brackets is considered to be balanced if the following conditions are met:
 - It contains no unmatched brackets.
 - The subset of brackets enclosed within the confines of a matched pair of brackets is also a matched pair of brackets.
@@ -248,7 +252,7 @@ Consider a big party where a log register for guest’s entry and exit times is 
 
 ### Highway Construction - [C++](cpp/include/highway_cost_calculator.hpp)
 
-[Week of Code 35 - Highway Construction](https://www.hackerrank.com/contests/w35/challenges/highway-construction)
+[HackerRank - Week of Code 35 - Highway Construction](https://www.hackerrank.com/contests/w35/challenges/highway-construction)
 
 You are planning the next FIFA World Cup and you are counting the number of highways that need to be built to connect the cities with the venue. Your country has n cities and all cities lie on a single straight road called “Highway Road”. If you want to go from City `x` to City `y` (where `x` ≤ `y`), you need to go through city `x`, `x + 1`, `x + 2`, .., `y - 1`, `y`. The requirements for the highways are as follows:
  - All games will be held in the `n`-th city.
@@ -258,7 +262,7 @@ You also have the cost to fulfil the second condition. The engineering team know
 
 ### 3D Surface Area - [C++](cpp/src/surface_area.cpp)
 
-[Week of Code 35 - 3D Surface Area](https://www.hackerrank.com/contests/w35/challenges/3d-surface-area)
+[HackerRank - Week of Code 35 - 3D Surface Area](https://www.hackerrank.com/contests/w35/challenges/3d-surface-area)
 
 Madison, is a little girl who is fond of toys. Her friend Mason works in a toy manufacturing factory. Mason has a 2D board A of size `H` x `W` with `H` rows and `W` columns. The board is divided into cells of size 1 x 1 with each cell indicated by it's coordinate `(i, j)`. The cell `(i, j)` has an integer `A`<sub>`ij`</sub> written on it. To create the toy Mason stacks `A`<sub>`ij`</sub> number of cubes of size 1 x 1 x 1 on the cell `(i, j)`. Given the description of the board showing the values of `A`<sub>`ij`</sub> and that the price of the toy is equal to the 3D surface area find the price of the toy.
 
@@ -280,7 +284,7 @@ should be mapped to lists
 
 ### Race Against Time - [C++](cpp/src/race_min_time.cpp)
 
-[Week of Code 36 - A Race Against Time](https://www.hackerrank.com/contests/w36/challenges/a-race-against-time)
+[HackerRank - Week of Code 36 - A Race Against Time](https://www.hackerrank.com/contests/w36/challenges/a-race-against-time)
 
 A relay race is being organised in a school for middle school students by two high school students, Mason and Madison. Mason starts with the baton and Madison receives the baton at the final destination. There are middle school students in between Mason and Madison, and each of their heights is given. Mason's height, too, is given. Initially, the baton is with Mason and it is passed to the destination in a manner similar to a relay race.
  
@@ -296,7 +300,7 @@ The baton must be sent to Madison in the minimum possible sum of time and price.
 
 ### Flatten Binary Tree to Linked List - [Java](java/src/main/java/ru/nk/training/BinaryTreeFlattener.java)
 
-[Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list)
+[LeetCode - Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list)
 
 Given a binary tree, flatten it to a linked list in-place. For example, given
 
@@ -322,7 +326,7 @@ The flattened tree should look like:
 
 ### Trapping Rain Water - [Java](java/src/main/java/ru/nk/training/TrappedWaterFinder.java)
 
-[Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water)
+[LeetCode - Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water)
 
 Given `n` non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
 
