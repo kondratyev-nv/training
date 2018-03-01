@@ -3,50 +3,54 @@ package ru.nk.training;
 /**
  * Given n non-negative integers representing an elevation map
  * where the width of each bar is 1, compute how much water it is able to trap after raining.
- *
+ * <p>
  * For example, given [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1], return 6.
  */
 public class TrappedWaterFinder {
     public int findTrappedWaterUnits(int[] elevationMap) {
-        int index = 1, units = 0;
-        while (index < elevationMap.length) {
-            index = nextHill(elevationMap, index);
-            int maxHeight = elevationMap[index - 1];
-            Pit pit = countUnitsInPit(elevationMap, index, maxHeight);
-            if (pit.rightHillIndex < elevationMap.length) {
-                units += pit.units;
+        if (elevationMap == null) {
+            throw new IllegalArgumentException();
+        }
+        if (elevationMap.length < 3) {
+            return 0;
+        }
+        int[] maxHeightFromLeft = getMaxLeftHeights(elevationMap);
+        int[] maxHeightFromRight = getMaxRightHeights(elevationMap);
+        int units = 0;
+        for (int i = 0; i < elevationMap.length; ++i) {
+            int minMaxHeight = Math.min(maxHeightFromLeft[i], maxHeightFromRight[i]);
+            if (minMaxHeight <= 0) {
+                continue;
             }
-            index = pit.rightHillIndex;
+            if (elevationMap[i] > minMaxHeight) {
+                continue;
+            }
+            units += minMaxHeight - elevationMap[i];
         }
         return units;
     }
 
-    private int nextHill(int[] elevationMap, int from) {
-        int index = from;
-        while (index < elevationMap.length && elevationMap[index] >= elevationMap[index - 1]) {
-            index++;
+    private int[] getMaxLeftHeights(int[] elevationMap) {
+        int maxHeight = 0;
+        int[] maxHeightFromLeft = new int[elevationMap.length];
+        for (int i = 1; i < elevationMap.length; ++i) {
+            if (elevationMap[i] < elevationMap[i - 1] && elevationMap[i - 1] > maxHeight) {
+                maxHeight = elevationMap[i - 1];
+            }
+            maxHeightFromLeft[i] = maxHeight;
         }
-        return index;
+        return maxHeightFromLeft;
     }
 
-    private Pit countUnitsInPit(int[] elevationMap, int from, int maxHeight) {
-        int index = from, units = 0;
-        while (index < elevationMap.length && elevationMap[index] < maxHeight) {
-            units += maxHeight - elevationMap[index];
-            index++;
+    private int[] getMaxRightHeights(int[] elevationMap) {
+        int maxHeight = 0;
+        int[] maxHeightFromRight = new int[elevationMap.length];
+        for (int i = elevationMap.length - 2; i >= 0; --i) {
+            if (elevationMap[i] < elevationMap[i + 1] && elevationMap[i + 1] > maxHeight) {
+                maxHeight = elevationMap[i + 1];
+            }
+            maxHeightFromRight[i] = maxHeight;
         }
-        return new Pit(from, index, units);
-    }
-
-    private static class Pit {
-        public final int leftHillIndex;
-        public final int rightHillIndex;
-        public final int units;
-
-        public Pit(int leftHillIndex, int rightHillIndex, int units) {
-            this.leftHillIndex = leftHillIndex;
-            this.rightHillIndex = rightHillIndex;
-            this.units = units;
-        }
+        return maxHeightFromRight;
     }
 }
