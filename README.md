@@ -62,6 +62,8 @@ Implementation of Trie data structure designed to add words, count number of wor
 
 ### Count stars - [Java](java/src/main/java/ru/nk/training/StarCounter.java)
 
+[LeetCode - Number of Islands](https://leetcode.com/problems/number-of-islands)
+
 For this problem, you should write a program which counts the number of stars visible in a bitmap image. An image consists of pixels, and each pixel is either black or white (represented by the characters `#` and `-`, respectively). All black pixels are considered to be part of the sky, and each white pixel is considered to be part of a star. White pixels that are adjacent vertically or horizontally are part of the same star.
 
 ### Checking intersection of rectangles - [Java](java/src/main/java/ru/nk/training/RectangleIntersectionChecker.java), [C++](cpp/src/rectangles_intersect.cpp)
@@ -69,6 +71,8 @@ For this problem, you should write a program which counts the number of stars vi
 You are given two rectangles, each defined by an upper-left (UL) corner and a lower-right (LR) corner. Both rectangles’ edges will always be parallel to the x or y axis. Write a function that determines whether the two rectangles overlap.
 
 ### Least Recently Used (LRU) cache - [Java](java/src/main/java/ru/nk/training/LruCache.java)
+
+[LeetCode - LRU Cache](https://leetcode.com/problems/lru-cache)
 
 Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: `get` and `put`.
  - `get(key)` - Get the value of the key if the key exists in the cache, otherwise return `null`. 
@@ -131,9 +135,13 @@ Your algorithms have become so good at predicting the market that you now know w
 
 ### Rotate matrix - [Java](java/src/main/java/ru/nk/training/MatrixRotator.java)
 
+[LeetCode - Rotate Image](https://leetcode.com/problems/rotate-image)
+
 Given an image represented by a NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
 
 ### Check if linked list has cycle - [Java](java/src/main/java/ru/nk/training/LinkedListCycleChecker.java)
+
+[LeetCode - Linked List Cycle](https://leetcode.com/problems/linked-list-cycle)
 
 You are given a linked list with at least one node that is either null-terminated (acyclic) or ends in a cycle (cyclic). Write a function that takes a pointer to the head of a list and determines whether the list is cyclic or acyclic. Your function should return false if the list is acyclic and true if it is cyclic. You may not modify the list in any way.
 
@@ -175,6 +183,8 @@ A string `s` contains many patterns of the form `1(0+)1` where `(0+)` represents
 
 ### Find longest palindromic subsequence - [Java](java/src/main/java/ru/nk/training/LongestPalindromicSubsequenceFinder.java)
 
+[LeetCode -  Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring)
+
 Given a string, find a longest palindromic subsequence in it. A longest palindromic subsequence is a sequence that appears in the same relative order, but not necessarily contiguous (not substring) and palindrome in nature (means the subsequence will read same from the front and back).
 
 ### Given a string find out if symbols can be rearranged to a palindrom - [Python](python/src/can_rearrange_to_palindrom.py)
@@ -192,6 +202,8 @@ The alphabet system consists of `n` letters, denoted by the integers from `1` to
 You are given a sequence `s` comprising of `m` letters. You are given `k` transformations that can be applied to `s`. You may apply transformations to zero or more letters in the sequence. When a transformation is applied to a letter, the other letters of the string remain unaffected. You can also apply a single transformation multiple times on the same sequence. Find the length of the longest possible palindromic subsequence after applying zero or more transformations on the letters of the given sequence.
 
 ### Word Break - [Java](java/src/main/java/ru/nk/training/StringByWordsSplitter.java)
+
+[LeetCode - Word Break](https://leetcode.com/problems/word-break)
 
 Given a non-empty string `s` and a dictionary of words containing non-empty words, determine if `s` can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain duplicate words. For example, given `s = "leetcode"`, `dict = ["leet", "code"]` return space separated sentence `"leet code"`.
 
@@ -216,6 +228,8 @@ Given a graph which consists of several edges connecting the N nodes in it. It i
 
 ### Min Stack - [Java](java/src/main/java/ru/nk/training/MinStack.java)
 
+[LeetCode - Min Stack](https://leetcode.com/problems/min-stack)
+
 Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 - `push(x)` - Push element x onto stack.
 - `pop()` - Removes the element on top of the stack.
@@ -224,7 +238,7 @@ Design a stack that supports push, pop, top, and retrieving the minimum element 
 
 ### Balanced Brackets - [Java](java/src/main/java/ru/nk/training/BalancedBracketsChecker.java)
 
-[HackerRank - Balanced Brackets](https://www.hackerrank.com/challenges/balanced-brackets)
+[HackerRank - Balanced Brackets](https://www.hackerrank.com/challenges/balanced-brackets), [LeetCode - Valid Parentheses](https://leetcode.com/problems/valid-parentheses)
 
 A bracket is considered to be any one of the following characters: `(`, `)`, `{`, `}`, `[`, or `]`. Two brackets are considered to be a matched pair if the an opening bracket (i.e., `(`, `[`, or `{`) occurs to the left of a closing bracket (i.e., `)`, `]`, or `}`) of the exact same type. There are three types of matched pairs of brackets: `[]`, `{}`, and `()`. A matching pair of brackets is not balanced if the set of brackets it encloses are not matched. For example, `{[(])}` is not balanced because the contents in between `{` and `}` are not balanced. The pair of square brackets encloses a single, unbalanced opening bracket, `(`, and the pair of parentheses encloses a single, unbalanced closing square bracket, `]`. By this logic, we say a sequence of brackets is considered to be balanced if the following conditions are met:
 - It contains no unmatched brackets.
