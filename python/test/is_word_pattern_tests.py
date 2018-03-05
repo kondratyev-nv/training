@@ -31,6 +31,9 @@ class is_word_pattern_tests(unittest.TestCase):
     def test_returns_false_for_same_pattern_matching_different_words(self):
         self.assertFalse(is_word_pattern("aaaa", "dog cat cat dog"))
 
+    def test_returns_false_when_word_not_match_pattern(self):
+        self.assertFalse(is_word_pattern("abaa", "dog cat cat dog"))
+
 
 if __name__ == '__main__':
     unittest.main()
