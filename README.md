@@ -159,6 +159,8 @@ Implementation of interval map - data structure that maps half-open intervals of
 
 ### Evaluate Reverse Polish Notation - [Python](python/src/evaluate_reverse_polish_notation.py)
 
+[LeetCode - Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation)
+
 Evaluate the value of an arithmetic expression in Reverse Polish Notation. Valid operators are `+`, `-`, `*`, `/`. Each operand may be an integer or another expression. Result of division operation is rounded to nearest integer.
 
 ### Count ways of making change - [C++](cpp/src/count_ways_to_make_change.cpp)
@@ -351,3 +353,16 @@ For example, given `[0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]`, return `6`.
          |###|~~~~~|###||###|~~~~~|###||###||###||###||###||###|
     ============================================================
       0    1    0    2    1    0    1    3    2    1    2    1  
+
+### Word Pattern - [Python](python/src/is_word_pattern.py)
+
+[LeetCode - Word Pattern](https://leetcode.com/problems/word-pattern)
+
+Given a pattern and a string `str`, find if `str` follows the same pattern. Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in `str`. Examples:
+
+ - pattern = `"abba"`, str = `"dog cat cat dog"` should return true.
+ - pattern = `"abba"`, str = `"dog cat cat fish"` should return false.
+ - pattern = `"aaaa"`, str = `"dog cat cat dog"` should return false.
+ - pattern = `"abba"`, str = `"dog dog dog dog"` should return false.
+
+Notes: You may assume pattern contains only lowercase letters, and `str` contains lowercase letters separated by a single space. 
