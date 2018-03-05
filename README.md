@@ -366,3 +366,9 @@ Given a pattern and a string `str`, find if `str` follows the same pattern. Here
  - pattern = `"abba"`, str = `"dog dog dog dog"` should return false.
 
 Notes: You may assume pattern contains only lowercase letters, and `str` contains lowercase letters separated by a single space. 
+
+### Unbounded knapsack - [Python](python/src/unbounded_knapsack.py)
+
+[HackerRank - Knapsack](https://www.hackerrank.com/challenges/unbounded-knapsack)
+
+Given a knapsack weight `W` and a set of `n` items with certain value `val`<sub>`i`</sub> and weight `wt`<sub>`i`</sub>, we need to calculate minimum amount that could make up this quantity exactly. This is different from classical Knapsack problem, here we are allowed to use unlimited number of instances of an item.
