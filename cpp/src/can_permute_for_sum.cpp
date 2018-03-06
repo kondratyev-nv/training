@@ -16,23 +16,16 @@
 using namespace std;
 
 bool can_permute_for_sum(vector<int> const& a, vector<int> const& b, int k) {
+  if (a.size() != b.size()) {
+    return false;
+  }
   vector<int> sorted_a = a;
   sort(sorted_a.begin(), sorted_a.end());
-  map<int, int> counter;
-  for (int v : b) {
-    counter[v] += 1;
-  }
-  for (int v : sorted_a) {
-    if (v >= k) {
-      continue;
-    }
-    auto suitable_item = counter.lower_bound(k - v);
-    if (suitable_item == counter.end()) {
+  vector<int> sorted_b = b;
+  sort(sorted_b.begin(), sorted_b.end(), greater<int>());
+  for (size_t index = 0; index < a.size(); ++index) {
+    if (sorted_a[index] + sorted_b[index] < k) {
       return false;
-    }
-    suitable_item->second -= 1;
-    if (suitable_item->second < 1) {
-      counter.erase(suitable_item);
     }
   }
   return true;
