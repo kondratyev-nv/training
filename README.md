@@ -366,3 +366,11 @@ Given a pattern and a string `str`, find if `str` follows the same pattern. Here
  - pattern = `"abba"`, str = `"dog dog dog dog"` should return false.
 
 Notes: You may assume pattern contains only lowercase letters, and `str` contains lowercase letters separated by a single space. 
+
+### Permuting Two Arrays - [C++](cpp/src/can_permute_for_sum.cpp)
+
+[HackerRank - Permuting Two Arrays](https://www.hackerrank.com/challenges/two-arrays)
+
+Consider two `n`-element arrays of integers, `A` and `B`. You want to permute them into some `A'` and `B'` such that the relation `a_i' + b_i' >= k` holds for all `i` where `0 <= i < n`. For example, if `A = [0, 1]`, `B = [0, 2]`, and `k = 1`, a valid `A'`, `B'` satisfying our relation would be `A' = [1 , 0]` and `B' = [0, 2]`.
+
+Print `YES` if some permutations `A'` and `B'`, exist satisfying the relation above. If no valid permutations exist, print `NO` instead.
