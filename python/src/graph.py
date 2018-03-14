@@ -26,8 +26,8 @@ class Graph:
         """
         Add edge with specified weight connecting start and end nodes
         """
-        if start not in self.adjacency_list:
-            self.adjacency_list[start] = []
+        self.add_vertex(start)
+        self.add_vertex(end)
         self.adjacency_list[start].append(Edge(start, end, weight))
 
     def add_vertex(self, vertex):
@@ -43,11 +43,19 @@ class Graph:
         """
         return self.adjacency_list
 
-    def get_edges(self):
+    def get_edges(self, vertex=None):
         """
         Get all edges of the graph
         """
-        return [edge for edges in self.adjacency_list.values() for edge in edges]
+        if vertex is None:
+            return [edge for edges in self.adjacency_list.values() for edge in edges]
+        return self.adjacency_list[vertex]
+
+    def get_vertices(self):
+        """
+        Get all vertices of the graph
+        """
+        return self.adjacency_list.keys()
 
 
 class UndirectedGraph:
@@ -77,8 +85,38 @@ class UndirectedGraph:
         """
         return self.graph.get_adjacency_list()
 
-    def get_edges(self):
+    def get_edges(self, vertex=None):
         """
         Get all edges of the graph
         """
-        return self.graph.get_edges()
+        return self.graph.get_edges(vertex)
+
+    def get_vertices(self):
+        """
+        Get all vertices of the graph
+        """
+        return self.graph.get_vertices()
+
+    def vertices_to_components(self):
+        """
+        Build dictionary of vertices to connected component keys
+        """
+        vertex_to_component = {}
+        key = 0
+        vertices = self.get_vertices()
+        for vertex in vertices:
+            if vertex not in vertex_to_component:
+                self.__build_component(vertex, vertex_to_component, key)
+                key += 1
+        return vertex_to_component
+
+    def __build_component(self, vertex, vertex_to_component, key):
+        """
+        Assing current component key value to the vertex and
+        for all other connected vertices
+        """
+        if vertex in vertex_to_component:
+            return
+        vertex_to_component[vertex] = key
+        for edge in self.get_edges(vertex):
+            self.__build_component(edge.end, vertex_to_component, key)

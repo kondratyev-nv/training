@@ -374,3 +374,9 @@ Notes: You may assume pattern contains only lowercase letters, and `str` contain
 Consider two `n`-element arrays of integers, `A` and `B`. You want to permute them into some `A'` and `B'` such that the relation `a_i' + b_i' >= k` holds for all `i` where `0 <= i < n`. For example, if `A = [0, 1]`, `B = [0, 2]`, and `k = 1`, a valid `A'`, `B'` satisfying our relation would be `A' = [1 , 0]` and `B' = [0, 2]`.
 
 Print `YES` if some permutations `A'` and `B'`, exist satisfying the relation above. If no valid permutations exist, print `NO` instead.
+
+### Journey to the Moon - [Python](python/src/count_possible_astronaut_pairs.py)
+
+[HackerRank - Journey to the Moon](https://www.hackerrank.com/challenges/journey-to-the-moon)
+
+The member states of the UN are planning to send two people to the Moon. But there is a problem. In line with their principles of global unity, they want to pair astronauts of two different countries. There are `N` trained astronauts numbered from `0` to `N - 1`. But those in charge of the mission did not receive information about the citizenship of each astronaut. The only information they have is that some particular pairs of astronauts belong to the same country. Your task is to compute in how many ways they can pick a pair of astronauts belonging to different countries. Assume that you are provided enough pairs to let you identify the groups of astronauts even though you might not know their country directly. For instance, if `1`, `2`, `3` are astronauts from the same country; it is sufficient to mention that `(1, 2)` and `(2, 3)` are pairs of astronauts from the same country without providing information about a third pair `(1, 3)`.
