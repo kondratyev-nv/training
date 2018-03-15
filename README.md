@@ -110,7 +110,7 @@ Implement a routine that prints all possible orderings of the characters in a st
 
 ### Get number of combination to obtain specified sum - [Java](java/src/main/java/ru/nk/training/SumCombinationsFinder.java)
 
-[HackerRank - Recursion: Davis' Staircase](https://www.hackerrank.com/challenges/ctci-recursive-staircase)
+[HackerRank - Recursion: Davis' Staircase](https://www.hackerrank.com/challenges/ctci-recursive-staircase),
 [GeeksforGeeks - Count ways to reach the n’th stair](https://www.geeksforgeeks.org/count-ways-reach-nth-stair)
 
 Davis has s staircases in his house, and he likes to climb each staircase 1, 2, or 3 steps at a time. Being a very precocious child, he wonders how many ways there are to reach the top of the staircase. Given the respective heights for each of the s staircases in his house, find and print the number of ways he can climb each staircase on a new line.
@@ -198,7 +198,7 @@ Given a string, find a longest palindromic subsequence in it. A longest palindro
 
 ### Given a string find out if symbols can be rearranged to a palindrom - [Python](python/src/can_rearrange_to_palindrom.py)
 
-[GeeksforGeeks - Check if characters of a given string can be rearranged to form a palindrome](https://www.geeksforgeeks.org/check-characters-given-string-can-rearranged-form-palindrome)
+[GeeksforGeeks - Check if characters of a given string can be rearranged to form a palindrome](https://www.geeksforgeeks.org/check-characters-given-string-can-rearranged-form-palindrome),
 [LeetCode - Palindrome Permutation](https://leetcode.com/articles/palindrome-permutation)
 
 Given a string find out if symbols can be rearranged to a palindrom.
@@ -254,7 +254,8 @@ Design a stack that supports push, pop, top, and retrieving the minimum element 
 
 ### Balanced Brackets - [Java](java/src/main/java/ru/nk/training/BalancedBracketsChecker.java)
 
-[HackerRank - Balanced Brackets](https://www.hackerrank.com/challenges/balanced-brackets), [LeetCode - Valid Parentheses](https://leetcode.com/problems/valid-parentheses)
+[HackerRank - Balanced Brackets](https://www.hackerrank.com/challenges/balanced-brackets),
+[LeetCode - Valid Parentheses](https://leetcode.com/problems/valid-parentheses)
 
 A bracket is considered to be any one of the following characters: `(`, `)`, `{`, `}`, `[`, or `]`. Two brackets are considered to be a matched pair if the an opening bracket (i.e., `(`, `[`, or `{`) occurs to the left of a closing bracket (i.e., `)`, `]`, or `}`) of the exact same type. There are three types of matched pairs of brackets: `[]`, `{}`, and `()`. A matching pair of brackets is not balanced if the set of brackets it encloses are not matched. For example, `{[(])}` is not balanced because the contents in between `{` and `}` are not balanced. The pair of square brackets encloses a single, unbalanced opening bracket, `(`, and the pair of parentheses encloses a single, unbalanced closing square bracket, `]`. By this logic, we say a sequence of brackets is considered to be balanced if the following conditions are met:
 - It contains no unmatched brackets.
@@ -393,7 +394,7 @@ Print `YES` if some permutations `A'` and `B'`, exist satisfying the relation ab
 
 ### Unbounded knapsack - [Python](python/src/unbounded_knapsack.py)
 
-[HackerRank - Knapsack](https://www.hackerrank.com/challenges/unbounded-knapsack)
+[HackerRank - Knapsack](https://www.hackerrank.com/challenges/unbounded-knapsack),
 [GeeksforGeeks - Unbounded Knapsack (Repetition of items allowed)](https://www.geeksforgeeks.org/unbounded-knapsack-repetition-items-allowed)
 
 Given a knapsack weight `W` and a set of `n` items with certain value `val`<sub>`i`</sub> and weight `wt`<sub>`i`</sub>, we need to calculate minimum amount that could make up this quantity exactly. This is different from classical Knapsack problem, here we are allowed to use unlimited number of instances of an item.
