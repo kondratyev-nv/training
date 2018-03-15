@@ -110,6 +110,9 @@ Implement a routine that prints all possible orderings of the characters in a st
 
 ### Get number of combination to obtain specified sum - [Java](java/src/main/java/ru/nk/training/SumCombinationsFinder.java)
 
+[HackerRank - Recursion: Davis' Staircase](https://www.hackerrank.com/challenges/ctci-recursive-staircase)
+[GeeksforGeeks - Count ways to reach the n’th stair](https://www.geeksforgeeks.org/count-ways-reach-nth-stair)
+
 Davis has s staircases in his house, and he likes to climb each staircase 1, 2, or 3 steps at a time. Being a very precocious child, he wonders how many ways there are to reach the top of the staircase. Given the respective heights for each of the s staircases in his house, find and print the number of ways he can climb each staircase on a new line.
 
 ### Height of a tree - [Java](java/src/main/java/ru/nk/training/BinaryTreeHeightFinder.java)
@@ -131,6 +134,8 @@ the right, reorganise the tree to improve its balance while maintaining the prop
 
 ### Maximize profit on stock - [Java](java/src/main/java/ru/nk/training/StocksProfitCalculator.java)
 
+[HackerRank - Stock Maximize](https://www.hackerrank.com/challenges/stockmax)
+
 Your algorithms have become so good at predicting the market that you now know what the share price of Wooden Orange Toothpicks Inc. (WOT) will be for the next N days. Each day, you can either buy one share of WOT, sell any number of shares of WOT that you own, or not make any transaction at all. What is the maximum profit you can obtain with an optimum trading strategy?
 
 ### Rotate matrix - [Java](java/src/main/java/ru/nk/training/MatrixRotator.java)
@@ -150,6 +155,8 @@ You are given a linked list with at least one node that is either null-terminate
 Write two conversion routines. The first routine converts a string to a signed integer. You may assume that the string contains only digits and the minus character ('-'), that it is a properly formatted integer number, and that the number is within the range of an int type. The second routine converts a signed integer stored as an int back to a string.
 
 ### Add one to big integer - [Python](python/src/add_one_to_big_integer.py)
+
+[LeetCode - Plus One](https://leetcode.com/problems/plus-one)
 
 Given a non-negative integer represented as a non-empty array of digits, plus one to the integer. You may assume the integer do not contain any leading zero, except the number 0 itself. The digits are stored such that the most significant digit is at the head of the list.
 
@@ -191,6 +198,9 @@ Given a string, find a longest palindromic subsequence in it. A longest palindro
 
 ### Given a string find out if symbols can be rearranged to a palindrom - [Python](python/src/can_rearrange_to_palindrom.py)
 
+[GeeksforGeeks - Check if characters of a given string can be rearranged to form a palindrome](https://www.geeksforgeeks.org/check-characters-given-string-can-rearranged-form-palindrome)
+[LeetCode - Palindrome Permutation](https://leetcode.com/articles/palindrome-permutation)
+
 Given a string find out if symbols can be rearranged to a palindrom.
 
 ### Find longest palindromic subsequence that can be obtained with specific transformations - [Java](java/src/main/java/ru/nk/training/LongestPalindromicSubsequenceWithTransformationFinder.java)
@@ -215,6 +225,8 @@ You are given `n x m` matrix and a list of tracks that always run in straight ho
 
 ### Recursive Digit Sum - [Python](python/src/get_recursive_digit_sum.py)
 
+[HackerRank - Super Digit](https://www.hackerrank.com/challenges/super-digit)
+
 We define super digit of an integer `x` using the following rules:
 - If `x` has only 1 digit, then its super digit is `x`.
 - Otherwise, the super digit of `x` is equal to the super digit of the digit-sum of `x`. Here, digit-sum of a number is defined as the sum of its digits.
@@ -222,6 +234,8 @@ We define super digit of an integer `x` using the following rules:
 You are given two numbers `n` and `k`. You have to calculate the super digit of `P`. `P` is created when number `n` is concatenated `k` times.
 
 ### Find Minimum Spanning Tree (MST) - [Python](python/src/minimum_spanning_tree.py)
+
+[HackerRank - Prim's (MST): Special Subtree](https://www.hackerrank.com/challenges/primsmstsub)
 
 Given a graph which consists of several edges connecting the N nodes in it. It is required to find a subgraph of the given graph with the following properties:
 - The subgraph contains all the nodes present in the original graph.
@@ -249,6 +263,8 @@ A bracket is considered to be any one of the following characters: `(`, `)`, `{`
 Given  strings of brackets, determine whether each sequence of brackets is balanced.
 
 ### Is This a Binary Search Tree? - [Java](java/src/main/java/ru/nk/training/BinarySearchTreeChecker.java)
+
+[HackerRank - Trees: Is This a Binary Search Tree?](https://www.hackerrank.com/challenges/ctci-is-binary-search-tree)
 
 Given the root node of a binary tree, can you determine if it's also a binary search tree. A binary tree is a binary search tree when the following ordering requirements are satisfied:
 - The value of every node in a node's left subtree is less than the data value of that node.
