@@ -178,6 +178,9 @@ You have `m` types of coins available in infinite quantities where the value of 
 
 ### Count number of pairs by difference - [Java](java/src/main/java/ru/nk/training/PairsByDifferenceCounter.java)
 
+[HackerRank - Pairs](https://www.hackerrank.com/challenges/pairs),
+[GeeksforGeeks - Count all distinct pairs with difference equal to k](https://www.geeksforgeeks.org/count-pairs-difference-equal-k)
+
 Given `N` integers, count the number of pairs of integers whose difference is `K`.
 
 ### Find minimum sum with different indices - [Java](java/src/main/java/ru/nk/training/MinimumSumWithDifferentIndicesFinder.java)
