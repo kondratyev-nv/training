@@ -185,6 +185,8 @@ Given `N` integers, count the number of pairs of integers whose difference is `K
 
 ### Find minimum sum with different indices - [Java](java/src/main/java/ru/nk/training/MinimumSumWithDifferentIndicesFinder.java)
 
+[HackerRank - Week of Code 33 - Twin Arrays](https://www.hackerrank.com/contests/w33/challenges/twin-arrays)
+
 You are given two arrays `A` and `B` each containing `n` integers. You need to choose exactly one number from `A` and exactly one number from `B` such that the index of the two chosen numbers is not same and the sum of the two chosen values is minimum.
 
 ### Count patterns - [Python](python/src/count_patterns.py)
