@@ -58,6 +58,8 @@ MinGW 6.3.0 (with packages mingw-developer-toolkit, mingw32-base, mingw32-gcc-g+
 
 ### Trie implementation - [Java](java/src/main/java/ru/nk/training/Trie.java)
 
+[HackerRank - Tries: Contacts](https://www.hackerrank.com/challenges/ctci-contacts)
+
 Implementation of Trie data structure designed to add words, count number of words by specified prefix, and to obtaining words that start with the specified prefix.
 
 ### Count stars - [Java](java/src/main/java/ru/nk/training/StarCounter.java)
