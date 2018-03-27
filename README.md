@@ -232,6 +232,8 @@ Given a non-empty string `s` and a dictionary of words containing non-empty word
 
 ### Find number of available positions in matrix - [Java](java/src/main/java/ru/nk/training/MatrixAvailablePositionsCounter.java)
 
+[HackerRank - Gridland Metro](https://www.hackerrank.com/challenges/gridland-metro)
+
 You are given `n x m` matrix and a list of tracks that always run in straight horizontal lines along a row. In other words, the start and end points of a track are `(r, c1)` and `(r, c2)`, where `r` represents the row number, `c1` represents the starting column, and `c2` represents the ending column of the track. Determine the number of cell that is not occupied by a track.
 
 ### Recursive Digit Sum - [Python](python/src/get_recursive_digit_sum.py)
