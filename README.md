@@ -417,3 +417,13 @@ Given a knapsack weight `W` and a set of `n` items with certain value `val`<sub>
 [HackerRank - Journey to the Moon](https://www.hackerrank.com/challenges/journey-to-the-moon)
 
 The member states of the UN are planning to send two people to the Moon. But there is a problem. In line with their principles of global unity, they want to pair astronauts of two different countries. There are `N` trained astronauts numbered from `0` to `N - 1`. But those in charge of the mission did not receive information about the citizenship of each astronaut. The only information they have is that some particular pairs of astronauts belong to the same country. Your task is to compute in how many ways they can pick a pair of astronauts belonging to different countries. Assume that you are provided enough pairs to let you identify the groups of astronauts even though you might not know their country directly. For instance, if `1`, `2`, `3` are astronauts from the same country; it is sufficient to mention that `(1, 2)` and `(2, 3)` are pairs of astronauts from the same country without providing information about a third pair `(1, 3)`.
+
+### Ice Cream Parlor - [C++](cpp/src/find_pair_by_sum.cpp)
+
+[HackerRank - Hash Tables: Ice Cream Parlor](https://www.hackerrank.com/challenges/ctci-ice-cream-parlor)
+
+Each time Sunny and Johnny take a trip to the Ice Cream Parlor, they pool together `m` dollars for ice cream. On any given day, the parlor offers a line of `n` flavors. Each flavor, `i`, is numbered sequentially with a unique ID number from `1` to `n` and has a cost, `cost`<sub>`i`</sub>, associated with it.
+
+Given the value of `m` and the cost of each flavor for `t` trips to the Ice Cream Parlor, help Sunny and Johnny choose two distinct flavors such that they spend their entire pool of money during each visit. For each trip to the parlor, print the ID numbers for the two types of ice cream that Sunny and Johnny purchase as two space-separated integers on a new line. You must print the smaller ID first and the larger ID second.
+
+Note: Two ice creams having unique IDs `i` and `j` may have the same cost (i.e., `cost`<sub>`i`</sub> == `cost`<sub>`j`</sub>).
