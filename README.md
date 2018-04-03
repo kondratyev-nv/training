@@ -418,6 +418,12 @@ Given a knapsack weight `W` and a set of `n` items with certain value `val`<sub>
 
 The member states of the UN are planning to send two people to the Moon. But there is a problem. In line with their principles of global unity, they want to pair astronauts of two different countries. There are `N` trained astronauts numbered from `0` to `N - 1`. But those in charge of the mission did not receive information about the citizenship of each astronaut. The only information they have is that some particular pairs of astronauts belong to the same country. Your task is to compute in how many ways they can pick a pair of astronauts belonging to different countries. Assume that you are provided enough pairs to let you identify the groups of astronauts even though you might not know their country directly. For instance, if `1`, `2`, `3` are astronauts from the same country; it is sufficient to mention that `(1, 2)` and `(2, 3)` are pairs of astronauts from the same country without providing information about a third pair `(1, 3)`.
 
+### Sum of subnumbers [Python](python/src/subnumbers_sum.py)
+
+[HackerRank - Sam and sub-strings](https://www.hackerrank.com/challenges/sam-and-substrings)
+
+Samantha and Sam are playing a game. They have `N` balls in front of them, each ball numbered from `0` to `9`, except the first ball which is numbered from `1` to `9`. Samantha calculates all the sub-strings of the number thus formed, one by one. If the sub-string is `S`, Sam has to throw S candies into an initially empty box. At the end of the game, Sam has to find out the total number of candies in the box, `T`. As `T` can be large, Samantha asks Sam to tell `T % (10^9+7)` instead. If Sam answers correctly, he can keep all the candies. Sam can't take all this Maths and asks for your help.
+
 ### Ice Cream Parlor - [C++](cpp/src/find_pair_by_sum.cpp)
 
 [HackerRank - Hash Tables: Ice Cream Parlor](https://www.hackerrank.com/challenges/ctci-ice-cream-parlor)
