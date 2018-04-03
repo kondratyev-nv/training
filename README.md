@@ -433,3 +433,9 @@ Each time Sunny and Johnny take a trip to the Ice Cream Parlor, they pool togeth
 Given the value of `m` and the cost of each flavor for `t` trips to the Ice Cream Parlor, help Sunny and Johnny choose two distinct flavors such that they spend their entire pool of money during each visit. For each trip to the parlor, print the ID numbers for the two types of ice cream that Sunny and Johnny purchase as two space-separated integers on a new line. You must print the smaller ID first and the larger ID second.
 
 Note: Two ice creams having unique IDs `i` and `j` may have the same cost (i.e., `cost`<sub>`i`</sub> == `cost`<sub>`j`</sub>).
+
+### Sort huge numbers - [C++](cpp/src/sort_huge_numbers.cpp)
+
+[HackerRank - Big Sorting](https://www.hackerrank.com/challenges/big-sorting)
+
+Consider an array of numeric strings, `unsorted`, where each string is a positive number with anywhere from 1 to 10<sup>6</sup> digits. Sort the array's elements in non-decreasing (i.e., ascending) order of their real-world integer values and print each element of the sorted array on a new line.
