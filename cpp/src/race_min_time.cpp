@@ -1,5 +1,5 @@
 /**
- * A relay race is being organised in a school for middle school students by two
+ * A relay race is being organized in a school for middle school students by two
  * high school students, Mason and Madison. Mason starts with the baton and
  * Madison receives the baton at the final destination. There are middle school
  * students in between Mason and Madison, and each of their heights is given.
