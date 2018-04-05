@@ -18,10 +18,6 @@ void sort_huge_numbers(std::vector<std::string>& values) {
          if (a.length() != b.length()) {
            return a.length() < b.length();
          }
-         auto diff = mismatch(a.begin(), a.end(), b.begin());
-         if (diff.first != a.end()) {
-           return *diff.first < *diff.second;
-         }
-         return false;
+         return a < b;
        });
 }
