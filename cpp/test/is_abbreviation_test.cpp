@@ -48,3 +48,8 @@ TEST(is_abbreviation,
      returns_false_for_string_without_lowercase_or_uppercase_symbol) {
   EXPECT_FALSE(is_abbreviation("babaABbbAb", "ABAA"));
 }
+
+TEST(is_abbreviation,
+     returns_false_for_when_abbreviation_is_longer_than_original) {
+  EXPECT_FALSE(is_abbreviation("Ab", "ABAA"));
+}

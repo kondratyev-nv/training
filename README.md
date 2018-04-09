@@ -440,7 +440,7 @@ Note: Two ice creams having unique IDs `i` and `j` may have the same cost (i.e.,
 
 Consider an array of numeric strings, `unsorted`, where each string is a positive number with anywhere from 1 to 10<sup>6</sup> digits. Sort the array's elements in non-decreasing (i.e., ascending) order of their real-world integer values and print each element of the sorted array on a new line.
 
-### Is abbreviation - [C++]()
+### Is abbreviation - [C++](cpp/src/is_abbreviation.cpp)
 
 [HackerRank - Abbreviation](https://www.hackerrank.com/challenges/abbr)
 
