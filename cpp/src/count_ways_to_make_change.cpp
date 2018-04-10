@@ -18,8 +18,8 @@ typedef unsigned long long ull;
 typedef unsigned int uint;
 
 ull count_ways_to_make_change(const vector<uint>& coins, int money) {
-  function<ull(uint, int)> count_ways_to_make_change = cached_fn(
-      function<ull(uint, int)>([&](uint previous_index, int remains) -> ull {
+  function<ull(uint, int)> count_ways_to_make_change =
+      cached_fn<ull(uint, int)>([&](uint previous_index, int remains) -> ull {
         if (remains < 0) {
           return 0;
         }
@@ -31,6 +31,6 @@ ull count_ways_to_make_change(const vector<uint>& coins, int money) {
           count += count_ways_to_make_change(i, remains - coins[i]);
         }
         return count;
-      }));
+      });
   return count_ways_to_make_change(0, money);
 }

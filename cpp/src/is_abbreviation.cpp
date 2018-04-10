@@ -34,7 +34,7 @@ bool is_abbreviation(string const& a, string const& b) {
   }
   int last_uppercase_index = last_uppercase(a);
   function<bool(int, int)> is_abbreviation =
-      cached_fn(function<bool(int, int)>([&](int as, int bs) -> bool {
+      cached_fn<bool(int, int)>([&](int as, int bs) -> bool {
         if (bs >= (int)b.length()) {
           return as > last_uppercase_index;
         }
@@ -47,6 +47,6 @@ bool is_abbreviation(string const& a, string const& b) {
           }
         }
         return false;
-      }));
+      });
   return is_abbreviation(0, 0);
 }

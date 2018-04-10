@@ -6,11 +6,15 @@
 #include "cache.hpp"
 
 namespace details {
-template <typename ReturnType, typename... Args>
-class cached_fn_ {
- public:
-  cached_fn_(std::function<ReturnType(Args...)> const& f) : f_(f) {}
+template <typename F>
+class cached_fn_;
 
+template <typename ReturnType, typename... Args>
+class cached_fn_<ReturnType(Args...)> {
+ public:
+  template <typename F>
+  cached_fn_(F f) : f_(f) {}
+  
   ReturnType operator()(Args... args) {
     ReturnType cached_result;
     if (cache_.try_get(&cached_result, args...)) {
@@ -27,11 +31,9 @@ class cached_fn_ {
 };
 }  // namespace details
 
-template <typename ReturnType, typename... Args>
-std::function<ReturnType(Args...)> cached_fn(
-    std::function<ReturnType(Args...)> f) {
-  return std::function<ReturnType(Args...)>(
-      details::cached_fn_<ReturnType, Args...>(f));
+template <typename F>
+std::function<F> cached_fn(std::function<F> f) {
+  return std::function<F>(details::cached_fn_<F>(f));
 }
 
 #endif  // CACHED_FN_HPP
