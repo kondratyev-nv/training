@@ -1,6 +1,5 @@
 #include "gtest/gtest.h"
 
-#include <iostream>
 #include "cached_fn.hpp"
 
 using namespace std;
@@ -80,7 +79,6 @@ class adder {
  public:
   static bool was_called;
   int operator()(int a, int b) {
-    cout << "called adder with a = " << a << ", b = " << b << endl;
     was_called = true;
     return a + b;
   }
@@ -90,7 +88,7 @@ bool adder::was_called = false;
 
 TEST(cached_fn, functor_called_once_for_two_calls_with_same_args) {
   adder a;
-  
+
   auto cached_add = cached_fn<int(int, int)>(a);
   EXPECT_EQ(3, cached_add(1, 2));
   EXPECT_TRUE(a.was_called);
