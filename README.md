@@ -439,3 +439,13 @@ Note: Two ice creams having unique IDs `i` and `j` may have the same cost (i.e.,
 [HackerRank - Big Sorting](https://www.hackerrank.com/challenges/big-sorting)
 
 Consider an array of numeric strings, `unsorted`, where each string is a positive number with anywhere from 1 to 10<sup>6</sup> digits. Sort the array's elements in non-decreasing (i.e., ascending) order of their real-world integer values and print each element of the sorted array on a new line.
+
+### Is abbreviation - [C++](cpp/src/is_abbreviation.cpp)
+
+[HackerRank - Abbreviation](https://www.hackerrank.com/challenges/abbr)
+
+You can perform the following operation on some string, `a`:
+- Capitalize zero or more of `a`'s lowercase letters at some index `i` (i.e., make them uppercase).
+- Delete all of the remaining lowercase letters in `a`.
+
+Given `q` queries in the form of two strings, `a` and `b`, determine if it's possible to make `a` equal to `b` by performing the above operation on `a`. If `a` can be transformed into `b`, print `YES` on a new line; otherwise, print `NO`.
