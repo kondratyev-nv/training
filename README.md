@@ -449,3 +449,14 @@ You can perform the following operation on some string, `a`:
 - Delete all of the remaining lowercase letters in `a`.
 
 Given `q` queries in the form of two strings, `a` and `b`, determine if it's possible to make `a` equal to `b` by performing the above operation on `a`. If `a` can be transformed into `b`, print `YES` on a new line; otherwise, print `NO`.
+
+### Counting Inversions - [C++](cpp/src/sort_with_invertions_counting.cpp)
+
+[HackerRank - Merge Sort: Counting Inversions](https://www.hackerrank.com/challenges/ctci-merge-sort),
+[GeeksforGeeks - Count Inversions in an array](https://www.geeksforgeeks.org/counting-inversions)
+
+In an array, `arr`, the elements at indices `i` and `j` (where `i` < `j`) form an inversion if `arr`<sub>`i`</sub> > `arr`<sub>`j`</sub>. In other words, inverted elements `arr`<sub>`i`</sub> and `arr`<sub>`j`</sub> are considered to be "out of order". To correct an inversion, we can swap adjacent elements.
+
+For example, consider `arr = [2, 4, 1]`. It has two inversions: (2, 1) and (4, 1). To sort the array, we must perform the following two swaps to correct the inversions: swap(`arr`<sub>`1`</sub>, `arr`<sub>`2`</sub>) and swap(`arr`<sub>`0`</sub>, `arr`<sub>`1`</sub>)
+
+Print the number of inversions that must be swapped to sort an array on a new line.
