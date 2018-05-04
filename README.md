@@ -449,3 +449,9 @@ You can perform the following operation on some string, `a`:
 - Delete all of the remaining lowercase letters in `a`.
 
 Given `q` queries in the form of two strings, `a` and `b`, determine if it's possible to make `a` equal to `b` by performing the above operation on `a`. If `a` can be transformed into `b`, print `YES` on a new line; otherwise, print `NO`.
+
+### Maximum pairwise product - [C++](cpp/src/maximum_pairwise_product.cpp)
+
+[GeeksforGeeks - Find a pair with maximum product in array of Integers](https://www.geeksforgeeks.org/return-a-pair-with-maximum-product-in-array-of-integers)
+
+Find the maximum product of two distinct numbers in a sequence of non-negative integers.
