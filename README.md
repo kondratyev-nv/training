@@ -449,3 +449,15 @@ You can perform the following operation on some string, `a`:
 - Delete all of the remaining lowercase letters in `a`.
 
 Given `q` queries in the form of two strings, `a` and `b`, determine if it's possible to make `a` equal to `b` by performing the above operation on `a`. If `a` can be transformed into `b`, print `YES` on a new line; otherwise, print `NO`.
+
+### Fibonacci numbers - [C++](cpp/src/fibonacci_numbers.cpp)
+
+1. Given an integer `n`, find the `n`-th Fibonacci number `F`<sub>`n`</sub>.
+1. Given two integers `n` and `m`, output `F`<sub>`n`</sub> `mod` `m` (that is, the remainder of `F`<sub>`n`</sub> when divided by `m`).
+1. Given an integer `n`, find the last digit of the sum `F`<sub>`0`</sub> + `F`<sub>`1`</sub> + ... + `F`<sub>`n`</sub>.
+1. Given two non-negative integers `m` and `n`, where `m` ≤ `n`, find the last digit of the sum `F`<sub>`m`</sub> + `F`<sub>`m+1`</sub> + ... + `F`<sub>`n`</sub>.
+
+### GCD and LCM - [C++](cpp/src/gcd.cpp)
+
+1. Given two integers `a` and `b`, find their greatest common divisor.
+1. Given two integers `a` and `b`, find their least common multiple.
