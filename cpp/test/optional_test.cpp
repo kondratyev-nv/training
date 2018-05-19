@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
 
+#include <functional>
 #include <string>
 #include <unordered_map>
 #include "optional.hpp"
