@@ -449,3 +449,23 @@ You can perform the following operation on some string, `a`:
 - Delete all of the remaining lowercase letters in `a`.
 
 Given `q` queries in the form of two strings, `a` and `b`, determine if it's possible to make `a` equal to `b` by performing the above operation on `a`. If `a` can be transformed into `b`, print `YES` on a new line; otherwise, print `NO`.
+
+### Maximize loot - [C++](cpp/src/maximize_loot.cpp)
+
+A thief finds much more loot than his bag can fit. Help him to find the most valuable combination of items assuming that any fraction of a loot item can be put into his bag. The goal of this code problem is to implement an algorithm for the fractional knapsack problem. The first line of the input contains the number `n` of items and the capacity `W` of a knapsack. The next `n` lines define the values and weights of the items. The `i`-th line contains integers `v`<sub>`i`</sub> and `w`<sub>`i`</sub> — the value and the weight of `i`-th item, respectively.
+
+### Maximum advertisement revenue - [C++](cpp/src/maximum_advertisement_revenue.cpp)
+
+Given two sequences `a`<sub>`1`</sub>, `a`<sub>`2`</sub>, ..., `a`<sub>`n`</sub> (`a`<sub>`i`</sub> is the profit per click of the `i`-th ad) and `b`<sub>`1`</sub>, `b`<sub>`2`</sub>, ..., `b`<sub>`n`</sub> (`b`<sub>`i`</sub> is the average number of clicks per day of the `i`-th slot), we need to partition them into `n` pairs (`a`<sub>`i`</sub>, `b`<sub>`j`</sub>) such that the sum of their products is maximized.
+
+### Maximum number of prizes - [C++](cpp/src/maximum_number_of_prizes.cpp)
+
+The goal of this problem is to represent a given positive integer `n` as a sum of as many pairwise distinct positive integers as possible. That is, to find the maximum `k` such that `n` can be written as `a`<sub>`1`</sub> + `a`<sub>`2`</sub> + ..., + `a`<sub>`k`</sub> where `a`<sub>`1`</sub>, ..., `a`<sub>`k`</sub> are positive integers and `a`<sub>`i`</sub> != `a`<sub>`j`</sub> for all 1 ≤ `i` < `j` ≤ `k`.
+
+### Money change - [C++](cpp/src/money_change.cpp)
+
+The goal in this problem is to find the minimum number of coins needed to change the input value (an integer) into coins with denominations 1, 5, and 10.
+
+### Maximum salary - [C++](cpp/src/maximum_salary.cpp)
+
+Compose the largest number out of a set of integers. The first line of the input contains an integer `n`. The second line contains integers `a`<sub>`1`</sub>, `a`<sub>`2`</sub>, ..., `a`<sub>`n`</sub>. Output the largest number that can be composed out of `a`<sub>`1`</sub>, `a`<sub>`2`</sub>, ..., `a`<sub>`n`</sub>.
