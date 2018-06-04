@@ -4,8 +4,8 @@
 #include <vector>
 
 struct loot_item {
-  int weight;
-  int value;
+    int weight;
+    int value;
 };
 
 double maximize_loot(int weight_limit, std::vector<loot_item> const& items);

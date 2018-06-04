@@ -12,18 +12,18 @@
 using namespace std;
 
 set<int> maximum_number_of_prizes(int n) {
-  if (n < 0) {
-    throw invalid_argument("number of prizes must be non negative");
-  }
-  set<int> numbers;
-  int number = 1;
-  while (n > 0) {
-    while ((n - number > 0) && (n - number <= number)) {
-      number++;
+    if (n < 0) {
+        throw invalid_argument("number of prizes must be non negative");
     }
-    n -= number;
-    numbers.insert(number);
-    number++;
-  }
-  return numbers;
+    set<int> numbers;
+    int number = 1;
+    while (n > 0) {
+        while ((n - number > 0) && (n - number <= number)) {
+            number++;
+        }
+        n -= number;
+        numbers.insert(number);
+        number++;
+    }
+    return numbers;
 }
