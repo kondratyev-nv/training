@@ -23,24 +23,24 @@
 using namespace std;
 
 pair<int, int> find_pair_by_sum(vector<int> const& values, int target_sum) {
-  unordered_map<int, set<size_t>> values_map;
-  for (size_t i = 0; i < values.size(); ++i) {
-    values_map[values[i]].insert(i);
-  }
-  for (auto value_entry : values_map) {
-    int value = value_entry.first;
-    auto other_value_entry = values_map.find(target_sum - value);
-    if (other_value_entry == values_map.end()) {
-      continue;
+    unordered_map<int, set<size_t>> values_map;
+    for (size_t i = 0; i < values.size(); ++i) {
+        values_map[values[i]].insert(i);
     }
-    auto other_indices = other_value_entry->second;
-    for (int index : value_entry.second) {
-      for (int other_index : other_indices) {
-        if (index != other_index) {
-          return {min(index, other_index), max(index, other_index)};
+    for (auto value_entry : values_map) {
+        int value = value_entry.first;
+        auto other_value_entry = values_map.find(target_sum - value);
+        if (other_value_entry == values_map.end()) {
+            continue;
         }
-      }
+        auto other_indices = other_value_entry->second;
+        for (int index : value_entry.second) {
+            for (int other_index : other_indices) {
+                if (index != other_index) {
+                    return {min(index, other_index), max(index, other_index)};
+                }
+            }
+        }
     }
-  }
-  return {-1, -1};
+    return {-1, -1};
 }

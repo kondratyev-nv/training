@@ -1,5 +1,5 @@
 {
-    "C_Cpp.clang_format_style": "Chromium",
+    "C_Cpp.clang_format_style": "file",
     "C_Cpp.intelliSenseEngine": "Default",
     "C_Cpp.intelliSenseEngineFallback": "Disabled",
     "C_Cpp.autoAddFileAssociations": false

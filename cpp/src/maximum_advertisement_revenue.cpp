@@ -12,22 +12,20 @@
 
 using namespace std;
 
-long long maximum_advertisement_revenue(vector<int> const& profit_per_click,
-                                        vector<int> const& average_clicks) {
-  if (profit_per_click.size() != average_clicks.size()) {
-    throw invalid_argument("lists are not of equal size");
-  }
+long long maximum_advertisement_revenue(vector<int> const& profit_per_click, vector<int> const& average_clicks) {
+    if (profit_per_click.size() != average_clicks.size()) {
+        throw invalid_argument("lists are not of equal size");
+    }
 
-  vector<int> profit_per_click_sorted = profit_per_click;
-  sort(profit_per_click_sorted.begin(), profit_per_click_sorted.end());
+    vector<int> profit_per_click_sorted = profit_per_click;
+    sort(profit_per_click_sorted.begin(), profit_per_click_sorted.end());
 
-  vector<int> average_clicks_sorted = average_clicks;
-  sort(average_clicks_sorted.begin(), average_clicks_sorted.end());
+    vector<int> average_clicks_sorted = average_clicks;
+    sort(average_clicks_sorted.begin(), average_clicks_sorted.end());
 
-  long long revenue = 0;
-  for (size_t index = 0; index < profit_per_click_sorted.size(); ++index) {
-    revenue += (long long)profit_per_click_sorted[index] *
-               (long long)average_clicks_sorted[index];
-  }
-  return revenue;
+    long long revenue = 0;
+    for (size_t index = 0; index < profit_per_click_sorted.size(); ++index) {
+        revenue += (long long)profit_per_click_sorted[index] * (long long)average_clicks_sorted[index];
+    }
+    return revenue;
 }
