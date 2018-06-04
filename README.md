@@ -464,8 +464,16 @@ The goal of this problem is to represent a given positive integer `n` as a sum o
 
 ### Money change - [C++](cpp/src/money_change.cpp)
 
-The goal in this problem is to find the minimum number of coins needed to change the input value (an integer) into coins with denominations 1, 5, and 10.
+The goal in this problem is to find the minimum number of coins needed to change the input value (an integer) into coins with various denominations.
 
 ### Maximum salary - [C++](cpp/src/maximum_salary.cpp)
 
 Compose the largest number out of a set of integers. The first line of the input contains an integer `n`. The second line contains integers `a`<sub>`1`</sub>, `a`<sub>`2`</sub>, ..., `a`<sub>`n`</sub>. Output the largest number that can be composed out of `a`<sub>`1`</sub>, `a`<sub>`2`</sub>, ..., `a`<sub>`n`</sub>.
+
+### Longest common subsequence - [C++](cpp/src/longest_common_subsequence.cpp)
+
+Given two or three sequences of integers, find the longest common subsequence and print it as a line of space-separated integers. If there are multiple common subsequences with the same maximum length, print any one of them.
+
+### Primitive calculator - [C++](cpp/src/primitive_calculator.cpp)
+
+You are given a primitive calculator that can perform the following three operations with the current number `x`: multiply `x` by 2, multiply `x` by 3, or add 1 to `x`. Your goal is given a positive integer `n`, find the minimum number of operations needed to obtain the number `n` starting from the number 1.
