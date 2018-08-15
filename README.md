@@ -469,3 +469,19 @@ The goal in this problem is to find the minimum number of coins needed to change
 ### Maximum salary - [C++](cpp/src/maximum_salary.cpp)
 
 Compose the largest number out of a set of integers. The first line of the input contains an integer `n`. The second line contains integers `a`<sub>`1`</sub>, `a`<sub>`2`</sub>, ..., `a`<sub>`n`</sub>. Output the largest number that can be composed out of `a`<sub>`1`</sub>, `a`<sub>`2`</sub>, ..., `a`<sub>`n`</sub>.
+
+### Has negative cycle - [Python](python/src/has_negative_cycle.py)
+
+Given an directed graph with possibly negative edge weights and with `n` vertices and `m` edges, check whether it contains a cycle of negative weight.
+
+### Is bipartite - [Python](python/src/is_bipartite.py)
+
+Given an undirected graph with `n` vertices and `m` edges, check whether it is bipartite. An undirected graph is called bipartite if its vertices can be split into two parts such that each edge of the graph joins to vertices from different parts. Bipartite graphs arise naturally in applications where a graph is used to model connections between objects of two different types (say, boys and girls; or students and dormitories).
+
+### Is bipartite - [Python](python/src/is_bipartite.py)
+
+Given an undirected graph with `n` vertices and `m` edges, check whether it is bipartite. An undirected graph is called bipartite if its vertices can be split into two parts such that each edge of the graph joins to vertices from different parts. Bipartite graphs arise naturally in applications where a graph is used to model connections between objects of two different types (say, boys and girls; or students and dormitories).
+
+### Topological sort - [Python](python/src/topological_sort.py)
+
+Compute a topological ordering of a given directed acyclic graph (DAG) with `n` vertices and `m` edges.
