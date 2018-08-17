@@ -2,6 +2,7 @@ import unittest
 
 from src.graph import Graph
 from src.topological_sort import topological_sort
+from test.matchers import any_of
 
 
 class topological_sort_tests(unittest.TestCase):
@@ -41,7 +42,8 @@ class topological_sort_tests(unittest.TestCase):
         g.add_edge(3, 1, 1)
         has_cycle, vertices = topological_sort(g)
         self.assertEqual(False, has_cycle)
-        self.assertEqual([2, 1, 4, 3], vertices)
+        print("any_of =", any_of(1, 2) == 1)
+        self.assertEqual(any_of([2, 1, 4, 3], [2, 1, 3, 4]), vertices)
 
     def test_returns_none_for_graph_with_cycle(self):
         g = Graph()
