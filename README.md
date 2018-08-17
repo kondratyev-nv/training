@@ -478,9 +478,9 @@ Given an directed graph with possibly negative edge weights and with `n` vertice
 
 Given an undirected graph with `n` vertices and `m` edges, check whether it is bipartite. An undirected graph is called bipartite if its vertices can be split into two parts such that each edge of the graph joins to vertices from different parts. Bipartite graphs arise naturally in applications where a graph is used to model connections between objects of two different types (say, boys and girls; or students and dormitories).
 
-### Is bipartite - [Python](python/src/is_bipartite.py)
+### Connected components - [Python](python/src/vertices_to_components.py)
 
-Given an undirected graph with `n` vertices and `m` edges, check whether it is bipartite. An undirected graph is called bipartite if its vertices can be split into two parts such that each edge of the graph joins to vertices from different parts. Bipartite graphs arise naturally in applications where a graph is used to model connections between objects of two different types (say, boys and girls; or students and dormitories).
+Given an undirected graph with `n` vertices and `m` edges, compute the number of connected components in it.
 
 ### Topological sort - [Python](python/src/topological_sort.py)
 

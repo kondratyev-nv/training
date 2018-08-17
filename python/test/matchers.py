@@ -1,5 +1,12 @@
+"""
+Additional matchers to use with assertions
+"""
+
 
 def any_of(*args):
+    """
+    Matches to any of the specified arguments with == operator
+    """
     class AnyOfMatcher:
         def __init__(self, values):
             self.values = values
