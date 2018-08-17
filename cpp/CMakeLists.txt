@@ -1,6 +1,6 @@
 project(training)
 
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.9)
 
 find_package(Threads REQUIRED)
 set(CMAKE_CXX_STANDARD 14)
@@ -38,4 +38,6 @@ target_link_libraries(${PROJECT_TEST_NAME}
     ${GTEST_LIBS_DIR}/libgtest.a
     ${GTEST_LIBS_DIR}/libgtest_main.a
 )
-add_test(test ${PROJECT_TEST_NAME})
+
+include(GoogleTest)
+gtest_add_tests(TARGET ${PROJECT_TEST_NAME})
