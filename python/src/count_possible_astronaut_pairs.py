@@ -15,6 +15,7 @@ providing information about a third pair (1, 3).
 """
 
 from src.graph import UndirectedGraph
+from src.vertices_to_components import vertices_to_components
 
 
 def count_possible_astronaut_pairs(total_astronauts, astronauts_connections):
@@ -27,7 +28,7 @@ def count_possible_astronaut_pairs(total_astronauts, astronauts_connections):
         graph.add_vertex(astronaut)
     for connection in astronauts_connections:
         graph.add_edge(connection[0], connection[1], 0)
-    country_by_astronaut = graph.vertices_to_components()
+    country_by_astronaut = vertices_to_components(graph)
     count_by_country = {}
     for astronaut, country in country_by_astronaut.items():
         count_by_country[country] = count_by_country.get(country, 0) + 1
