@@ -1,26 +1,33 @@
 package ru.nk.training;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CharRemoverTest {
     private CharRemover remover;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         remover = new CharRemover();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void failsOnNullString() {
-        remover.remove(null, "a");
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> remover.remove(null, "a")
+        );
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void failsOnNullToRemoveString() {
-        remover.remove("a", null);
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> remover.remove("a", null)
+        );
     }
 
     @Test

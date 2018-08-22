@@ -14,5 +14,7 @@
             "pattern": "**/*.cpp",
             "command": "./build_with_coverage.sh"
         }
-    ]
+    ],
+    "gtestExplorer.executable": "build/training_test",
+    "gtestExplorer.cwd": "build"
 }

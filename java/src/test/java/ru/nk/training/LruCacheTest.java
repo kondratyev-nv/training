@@ -1,11 +1,14 @@
 package ru.nk.training;
 
-import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Tests for LRU cache")
 public class LruCacheTest {
     @Test
+    @DisplayName("Can add values to cache without exceeding capacity")
     public void canAddAndGetValues() {
         LruCache<Integer, String> cache = new LruCache<>(2);
         cache.put(1, "a");
@@ -16,6 +19,7 @@ public class LruCacheTest {
     }
 
     @Test
+    @DisplayName("Returns actual size and does not exceeds the capacity")
     public void canGetSize() {
         LruCache<Integer, String> cache = new LruCache<>(2);
         cache.put(1, "a");
@@ -23,9 +27,13 @@ public class LruCacheTest {
 
         cache.put(2, "b");
         assertEquals(2, cache.size());
+
+        cache.put(3, "c");
+        assertEquals(2, cache.size());
     }
 
     @Test
+    @DisplayName("Removes oldest values when adding more elements than capacity")
     public void removesValuesWhenCapacityExceeds() {
         LruCache<Integer, String> cache = new LruCache<>(2);
         cache.put(1, "a");
@@ -39,6 +47,7 @@ public class LruCacheTest {
     }
 
     @Test
+    @DisplayName("Getting the values from the cache updates usage information for oldest items")
     public void removesLeastUsedByGetFromStartWhenCapacityExceeds() {
         LruCache<Integer, String> cache = new LruCache<>(3);
         cache.put(1, "a");
@@ -57,6 +66,7 @@ public class LruCacheTest {
     }
 
     @Test
+    @DisplayName("Getting the values from the cache updates usage information for recently accessed items")
     public void removesLeastUsedByGetFromEndWhenCapacityExceeds() {
         LruCache<Integer, String> cache = new LruCache<>(3);
         cache.put(1, "a");
@@ -75,6 +85,7 @@ public class LruCacheTest {
     }
 
     @Test
+    @DisplayName("Updating values in the cache updates usage information for latest items")
     public void removesLeastUsedByAddFromStartWhenCapacityExceeds() {
         LruCache<Integer, String> cache = new LruCache<>(3);
         cache.put(1, "a");
@@ -93,6 +104,7 @@ public class LruCacheTest {
     }
 
     @Test
+    @DisplayName("Updating values in the cache updates usage information for recently accessed items")
     public void removesLeastUsedByAddFromEndWhenCapacityExceeds() {
         LruCache<Integer, String> cache = new LruCache<>(3);
         cache.put(1, "a");

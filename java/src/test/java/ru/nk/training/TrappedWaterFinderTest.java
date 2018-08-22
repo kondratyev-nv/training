@@ -1,21 +1,25 @@
 package ru.nk.training;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class TrappedWaterFinderTest {
     private TrappedWaterFinder finder;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         finder = new TrappedWaterFinder();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsWhenNullArrayIsPassed() {
-        finder.findTrappedWaterUnits(null);
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> finder.findTrappedWaterUnits(null)
+        );
     }
 
     @Test

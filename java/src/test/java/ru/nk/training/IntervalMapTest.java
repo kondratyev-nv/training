@@ -1,75 +1,78 @@
 package ru.nk.training;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import ru.nk.training.IntervalMap.Interval;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import ru.nk.training.IntervalMap.Interval;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class IntervalMapTest {
     private IntervalMap<Integer, Integer> map;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         map = new IntervalMap<>(0);
     }
 
     @Test
-    public void returnsDefaultValueIfNoIntervalWasInserted() throws Exception {
+    public void returnsDefaultValueIfNoIntervalWasInserted() {
         assertEquals(0, (long) map.get(5));
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void throwsWhenBeginningOfTheIntervalIsGreaterThanEnd() throws Exception {
-        map.set(20, 10, 5);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void throwsWhenIntervalIsEmpty() throws Exception {
-        map.set(10, 10, 5);
+    @Test
+    public void throwsWhenBeginningOfTheIntervalIsGreaterThanEnd() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> map.set(20, 10, 5)
+        );
     }
 
     @Test
-    public void returnsDefaultValueWhenKeyIsOutsideInterval() throws Exception {
+    public void throwsWhenIntervalIsEmpty() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> map.set(10, 10, 5)
+        );
+    }
+
+    @Test
+    public void returnsDefaultValueWhenKeyIsOutsideInterval() {
         map.set(10, 20, 5);
         assertEquals(0, (long) map.get(5));
         assertEquals(0, (long) map.get(25));
     }
 
     @Test
-    public void returnsValueWhenKeyIsInsideInterval() throws Exception {
+    public void returnsValueWhenKeyIsInsideInterval() {
         map.set(10, 20, 5);
         assertEquals(5, (long) map.get(15));
     }
 
     @Test
-    public void returnsValueWhenKeyEqualsToTheBeginningOfInterval() throws Exception {
+    public void returnsValueWhenKeyEqualsToTheBeginningOfInterval() {
         map.set(10, 20, 5);
         assertEquals(5, (long) map.get(10));
     }
 
     @Test
-    public void returnsDefaultValueWhenKeyEqualsToTheEndOfInterval() throws Exception {
+    public void returnsDefaultValueWhenKeyEqualsToTheEndOfInterval() {
         map.set(10, 20, 5);
         assertEquals(0, (long) map.get(20));
     }
 
     @Test
-    public void returnsDefaultValueWhenKeyIsBetweenIntervals() throws Exception {
+    public void returnsDefaultValueWhenKeyIsBetweenIntervals() {
         map.set(10, 20, 1);
         map.set(30, 40, 2);
         assertEquals(0, (long) map.get(25));
     }
 
     @Test
-    public void canOverrideLeftPartOfExistingInterval() throws Exception {
+    public void canOverrideLeftPartOfExistingInterval() {
         map.set(15, 30, 2);
         map.set(10, 20, 1);
         assertEquals(4, map.size());
@@ -81,7 +84,7 @@ public class IntervalMapTest {
     }
 
     @Test
-    public void canOverrideRightPartOfExistingInterval() throws Exception {
+    public void canOverrideRightPartOfExistingInterval() {
         map.set(10, 20, 1);
         map.set(15, 30, 2);
         assertEquals(1, (long) map.get(12));
@@ -89,14 +92,14 @@ public class IntervalMapTest {
     }
 
     @Test
-    public void canOverrideExistingInterval() throws Exception {
+    public void canOverrideExistingInterval() {
         map.set(10, 20, 1);
         map.set(10, 20, 2);
         assertEquals(2, (long) map.get(15));
     }
 
     @Test
-    public void canOverrideExistingIntervalWithLargerKey() throws Exception {
+    public void canOverrideExistingIntervalWithLargerKey() {
         map.set(10, 20, 1);
         map.set(10, 30, 2);
         assertEquals(3, map.size());
@@ -107,7 +110,7 @@ public class IntervalMapTest {
     }
 
     @Test
-    public void canSplitExistingIntervalWithSmallerKey() throws Exception {
+    public void canSplitExistingIntervalWithSmallerKey() {
         map.set(10, 30, 2);
         map.set(10, 20, 1);
         assertEquals(4, map.size());
@@ -118,7 +121,7 @@ public class IntervalMapTest {
     }
 
     @Test
-    public void canOverrideMultipleIntervals() throws Exception {
+    public void canOverrideMultipleIntervals() {
         map.set(10, 20, 1);
         map.set(20, 30, 2);
         map.set(30, 40, 3);
@@ -132,7 +135,7 @@ public class IntervalMapTest {
     }
 
     @Test
-    public void canInsertInsideOfExistingInterval() throws Exception {
+    public void canInsertInsideOfExistingInterval() {
         map.set(10, 40, 1);
         map.set(20, 30, 2);
         assertEquals(1, (long) map.get(15));
@@ -141,18 +144,18 @@ public class IntervalMapTest {
     }
 
     @Test
-    public void returnsSizeOfOneWhenNoIntervalsInserted() throws Exception {
+    public void returnsSizeOfOneWhenNoIntervalsInserted() {
         assertEquals(1, map.size());
     }
 
     @Test
-    public void returnsSizeOfThreeWhenSingleIntervalInserted() throws Exception {
+    public void returnsSizeOfThreeWhenSingleIntervalInserted() {
         map.set(0, 5, 1);
         assertEquals(3, map.size());
     }
 
     @Test
-    public void returnsSizeWhenMultipleIntervalsInserted() throws Exception {
+    public void returnsSizeWhenMultipleIntervalsInserted() {
         map.set(0, 5, 1);
         map.set(5, 10, 2);
         map.set(10, 15, 2);
@@ -160,7 +163,7 @@ public class IntervalMapTest {
     }
 
     @Test
-    public void removesIntervalsWhenOverridingThem() throws Exception {
+    public void removesIntervalsWhenOverridingThem() {
         map.set(10, 20, 1);
         map.set(20, 30, 2);
         map.set(30, 40, 3);
@@ -170,7 +173,7 @@ public class IntervalMapTest {
     }
 
     @Test
-    public void canIterateAllIntervalsHasOverridedIntervals() throws Exception {
+    public void canIterateAllIntervalsHasOverridedIntervals() {
         map.set(10, 20, 1);
         map.set(20, 30, 2);
         map.set(30, 40, 3);
@@ -190,7 +193,7 @@ public class IntervalMapTest {
     }
 
     @Test
-    public void canIterateEmptyMap() throws Exception {
+    public void canIterateEmptyMap() {
         assertEquals(1, map.size());
 
         assertAllIntervalsIterable(new ArrayList<Interval<Integer, Integer>>() {
@@ -201,7 +204,7 @@ public class IntervalMapTest {
     }
 
     @Test
-    public void canIterateMapWithSingleInsertedInterval() throws Exception {
+    public void canIterateMapWithSingleInsertedInterval() {
         map.set(0, 5, 1);
         assertEquals(3, map.size());
 

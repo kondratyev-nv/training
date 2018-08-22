@@ -1,19 +1,19 @@
 package ru.nk.training;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import ru.nk.training.DataStructures.LinkedListBuilder;
 import ru.nk.training.DataStructures.LinkedListNode;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LinkedListCycleCheckerTest {
     private LinkedListBuilder<Integer> builder;
     private LinkedListCycleChecker checker;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         builder = new LinkedListBuilder<>();
         checker = new LinkedListCycleChecker();
     }
