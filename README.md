@@ -470,6 +470,22 @@ The goal in this problem is to find the minimum number of coins needed to change
 
 Compose the largest number out of a set of integers. The first line of the input contains an integer `n`. The second line contains integers `a`<sub>`1`</sub>, `a`<sub>`2`</sub>, ..., `a`<sub>`n`</sub>. Output the largest number that can be composed out of `a`<sub>`1`</sub>, `a`<sub>`2`</sub>, ..., `a`<sub>`n`</sub>.
 
+### Has negative cycle - [Python](python/src/has_negative_cycle.py)
+
+Given an directed graph with possibly negative edge weights and with `n` vertices and `m` edges, check whether it contains a cycle of negative weight.
+
+### Is bipartite - [Python](python/src/is_bipartite.py)
+
+Given an undirected graph with `n` vertices and `m` edges, check whether it is bipartite. An undirected graph is called bipartite if its vertices can be split into two parts such that each edge of the graph joins to vertices from different parts. Bipartite graphs arise naturally in applications where a graph is used to model connections between objects of two different types (say, boys and girls; or students and dormitories).
+
+### Connected components - [Python](python/src/vertices_to_components.py)
+
+Given an undirected graph with `n` vertices and `m` edges, compute the number of connected components in it.
+
+### Topological sort - [Python](python/src/topological_sort.py)
+
+Compute a topological ordering of a given directed acyclic graph (DAG) with `n` vertices and `m` edges.
+
 ### Convert array into heap - [C++](cpp/include/heapify.hpp)
 
 The first step of the HeapSort algorithm is to create a heap from the array you want to sort. Your task is to implement this first step and convert a given array of integers into a heap. You will do that by applying a certain number of swaps to the array. Swap is an operation which exchanges elements a `i` and a `j` of the array a for some `i` and `j`. You will need to convert the array into a heap using only O(n) swaps, as was described in the lectures. Note that you will need to use a min-heap instead of a max-heap in this problem.
