@@ -35,9 +35,11 @@ add_executable(${PROJECT_TEST_NAME} ${TEST_SRC_FILES} ${SRC_FILES})
 add_dependencies(${PROJECT_TEST_NAME} googletest)
 target_link_libraries(${PROJECT_TEST_NAME}
     pthread
+    stdc++fs
     ${GTEST_LIBS_DIR}/libgtest.a
     ${GTEST_LIBS_DIR}/libgtest_main.a
 )
 
 include(GoogleTest)
-gtest_add_tests(TARGET ${PROJECT_TEST_NAME})
+gtest_add_tests(TARGET ${PROJECT_TEST_NAME}
+                WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/test)

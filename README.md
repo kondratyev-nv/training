@@ -485,3 +485,11 @@ Given an undirected graph with `n` vertices and `m` edges, compute the number of
 ### Topological sort - [Python](python/src/topological_sort.py)
 
 Compute a topological ordering of a given directed acyclic graph (DAG) with `n` vertices and `m` edges.
+
+### Convert array into heap - [C++](cpp/include/heapify.hpp)
+
+The first step of the HeapSort algorithm is to create a heap from the array you want to sort. Your task is to implement this first step and convert a given array of integers into a heap. You will do that by applying a certain number of swaps to the array. Swap is an operation which exchanges elements a `i` and a `j` of the array a for some `i` and `j`. You will need to convert the array into a heap using only O(n) swaps, as was described in the lectures. Note that you will need to use a min-heap instead of a max-heap in this problem.
+
+### Parallel processing - [Python](python/src/parallel_processing.py)
+
+You have a program which is parallelized and uses `n` independent threads to process the given list of `m` jobs. Threads take jobs in the order they are given in the input. If there is a free thread, it immediately takes the next job from the list. If a thread has started processing a job, it doesn’t interrupt or stop until it finishes processing the job. If several threads try to take jobs from the list simultaneously, the thread with smaller index takes the job. For each job you know exactly how long will it take any thread to process this job, and this time is the same for all the threads. You need to determine for each job which thread will process it and when will it start processing.
