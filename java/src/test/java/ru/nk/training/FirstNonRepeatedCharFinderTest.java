@@ -1,27 +1,35 @@
 package ru.nk.training;
 
-import static org.junit.Assert.*;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.NoSuchElementException;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class FirstNonRepeatedCharFinderTest {
     private FirstNonRepeatedCharFinder finder;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         finder = new FirstNonRepeatedCharFinder();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void failsOnNullString() {
-        finder.firstNonRepeatedChar(null);
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> finder.firstNonRepeatedChar(null)
+        );
     }
 
-    @Test(expected = NoSuchElementException.class)
+    @Test
     public void failsOnEmptyString() {
-        finder.firstNonRepeatedChar("");
+        assertThrows(
+                NoSuchElementException.class,
+                () -> finder.firstNonRepeatedChar("")
+        );
     }
 
     @Test
@@ -39,8 +47,11 @@ public class FirstNonRepeatedCharFinderTest {
         assertEquals('b', finder.firstNonRepeatedChar("aabccdeef"));
     }
 
-    @Test(expected = NoSuchElementException.class)
+    @Test
     public void failsWhenAllCharsRepeated() {
-        finder.firstNonRepeatedChar("aabbccddeeff");
+        assertThrows(
+                NoSuchElementException.class,
+                () -> finder.firstNonRepeatedChar("aabbccddeeff")
+        );
     }
 }

@@ -1,30 +1,39 @@
 package ru.nk.training;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@DisplayName("Tests for calculating average of fibonacci numbers with Stream's")
 public class AverageOfFibonacciNumbersFinderTest {
     private AverageOfFibonacciNumbersFinder finder;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         finder = new AverageOfFibonacciNumbersFinder();
     }
 
     @Test
-    public void countAverageFor5() throws Exception {
+    @DisplayName("Returns correct average of the first 5 fibonacci numbers")
+    public void countAverageFor5() {
         assertEquals(2.4, finder.average(5), 0.01);
     }
 
     @Test
-    public void countAverageFor1() throws Exception {
+    @DisplayName("Returns correct average for the single fibonacci number")
+    public void countAverageFor1() {
         assertEquals(1.0, finder.average(1), 0.01);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void countAverageFor0() throws Exception {
-        finder.average(0);
+    @Test
+    @DisplayName("Throws on when fibonacci number is less than 1")
+    public void countAverageFor0() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> finder.average(0)
+        );
     }
 }

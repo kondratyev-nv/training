@@ -1,9 +1,10 @@
 package ru.nk.training;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * @author Natalia Kondratyeva
@@ -12,14 +13,17 @@ import static org.junit.Assert.assertArrayEquals;
 public class ArrayRotatorTest {
     private ArrayRotator rotation;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         rotation = new ArrayRotator();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsWhenArrayIsNull() {
-        rotation.rotate(null, 0);
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> rotation.rotate(null, 0)
+        );
     }
 
     @Test
@@ -37,28 +41,28 @@ public class ArrayRotatorTest {
     }
 
     @Test
-    public void shiftByZeroDoesNotChangeArray() throws Exception {
+    public void shiftByZeroDoesNotChangeArray() {
         int[] a = new int[]{ 1, 2, 3 };
         rotation.rotate(a, 0);
         assertArrayEquals(new int[]{ 1, 2, 3 }, a);
     }
 
     @Test
-    public void canShiftBy1() throws Exception {
+    public void canShiftBy1() {
         int[] a = new int[]{ 1, 2, 3 };
         rotation.rotate(a, 1);
         assertArrayEquals(new int[]{ 2, 3, 1 }, a);
     }
 
     @Test
-    public void canShiftBy2() throws Exception {
+    public void canShiftBy2() {
         int[] a = new int[]{ 1, 2, 3, 4 };
         rotation.rotate(a, 2);
         assertArrayEquals(new int[]{ 3, 4, 1, 2 }, a);
     }
 
     @Test
-    public void canShiftBySizeOfArray() throws Exception {
+    public void canShiftBySizeOfArray() {
         int[] a = new int[]{ 1, 2, 3, 4 };
         rotation.rotate(a, a.length);
         assertArrayEquals(new int[]{ 1, 2, 3, 4 }, a);
