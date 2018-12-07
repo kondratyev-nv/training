@@ -1,19 +1,19 @@
 package ru.nk.training;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import ru.nk.training.DataStructures.BinarySearchTreeBuilder;
 import ru.nk.training.DataStructures.BinaryTreeNode;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class BinaryTreeCommonAncestorFinderTest {
     private BinaryTreeCommonAncestorFinder finder;
     private BinarySearchTreeBuilder<Integer> builder;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         finder = new BinaryTreeCommonAncestorFinder();
         builder = new BinarySearchTreeBuilder<>(Integer::compareTo);
     }

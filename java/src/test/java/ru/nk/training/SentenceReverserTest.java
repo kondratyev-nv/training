@@ -1,21 +1,25 @@
 package ru.nk.training;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class SentenceReverserTest {
     private SentenceReverser reverser;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         reverser = new SentenceReverser();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void failsOnNullString() {
-        reverser.reverseWords(null, ' ');
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> reverser.reverseWords(null, ' ')
+        );
     }
 
     @Test

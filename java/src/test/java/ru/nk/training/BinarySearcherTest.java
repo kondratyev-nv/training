@@ -1,27 +1,32 @@
 package ru.nk.training;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BinarySearcherTest {
     private BinarySearcher searcher;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         searcher = new BinarySearcher();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void failsOnNullArray() {
-        searcher.binarySearch(null, 0);
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> searcher.binarySearch(null, 0)
+        );
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void failsOnEmptyArray() {
-        searcher.binarySearch(new int[0], 0);
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> searcher.binarySearch(new int[0], 0)
+        );
     }
 
     @Test

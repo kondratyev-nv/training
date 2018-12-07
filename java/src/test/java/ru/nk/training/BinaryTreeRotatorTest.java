@@ -1,25 +1,28 @@
 package ru.nk.training;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import ru.nk.training.DataStructures.BinarySearchTreeBuilder;
 import ru.nk.training.DataStructures.BinaryTreeNode;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BinaryTreeRotatorTest {
     private BinaryTreeRotator rotator;
     private BinarySearchTreeBuilder<Integer> builder;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         rotator = new BinaryTreeRotator();
         builder = new BinarySearchTreeBuilder<>(Integer::compareTo);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void failsOnNullRoot() {
-        rotator.rotateRight(null);
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> rotator.rotateRight(null)
+        );
     }
 
     @Test

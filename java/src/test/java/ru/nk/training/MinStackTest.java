@@ -1,20 +1,18 @@
 package ru.nk.training;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Comparator;
 import java.util.EmptyStackException;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MinStackTest {
     private MinStack<Integer> stack;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         stack = new MinStack<>(new Comparator<Integer>() {
 
             @Override
@@ -24,19 +22,28 @@ public class MinStackTest {
         });
     }
 
-    @Test(expected = EmptyStackException.class)
+    @Test
     public void throwsForGetMinWhenStackIsEmpty() {
-        stack.getMin();
+        assertThrows(
+                EmptyStackException.class,
+                () -> stack.getMin()
+        );
     }
 
-    @Test(expected = EmptyStackException.class)
+    @Test
     public void throwsForPopWhenStackIsEmpty() {
-        stack.pop();
+        assertThrows(
+                EmptyStackException.class,
+                () -> stack.pop()
+        );
     }
 
-    @Test(expected = EmptyStackException.class)
+    @Test
     public void throwsForPeekWhenStackIsEmpty() {
-        stack.peek();
+        assertThrows(
+                EmptyStackException.class,
+                () -> stack.peek()
+        );
     }
 
     @Test

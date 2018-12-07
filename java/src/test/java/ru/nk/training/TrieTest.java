@@ -1,25 +1,25 @@
 package ru.nk.training;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static java.util.Arrays.asList;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TrieTest {
 
     private Trie trie;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         trie = new Trie();
     }
 
     @Test
-    public void returnsAllStringsWhenFindEmptyString() throws Exception {
-        String[] words = new String[]{"abc", "abd", "bcd"};
+    public void returnsAllStringsWhenFindEmptyString() {
+        String[] words = new String[]{ "abc", "abd", "bcd" };
         for (String word : words) {
             trie.add(word);
         }
@@ -28,8 +28,8 @@ public class TrieTest {
     }
 
     @Test
-    public void returnsAllStringsBySpecifiedPrefix() throws Exception {
-        String[] words = new String[]{"abc", "abd", "bcd"};
+    public void returnsAllStringsBySpecifiedPrefix() {
+        String[] words = new String[]{ "abc", "abd", "bcd" };
         for (String word : words) {
             trie.add(word);
         }
@@ -38,8 +38,8 @@ public class TrieTest {
     }
 
     @Test
-    public void returnsEmptyArrayWhenNoWordsWithPrefix() throws Exception {
-        String[] words = new String[]{"abc", "abd", "bcd"};
+    public void returnsEmptyArrayWhenNoWordsWithPrefix() {
+        String[] words = new String[]{ "abc", "abd", "bcd" };
         for (String word : words) {
             trie.add(word);
         }
@@ -48,8 +48,8 @@ public class TrieTest {
     }
 
     @Test
-    public void canAcceptDuplicatesButDoesNotReturnThem() throws Exception {
-        String[] words = new String[]{"abc", "abd", "bcd", "abc", "bcd"};
+    public void canAcceptDuplicatesButDoesNotReturnThem() {
+        String[] words = new String[]{ "abc", "abd", "bcd", "abc", "bcd" };
         for (String word : words) {
             trie.add(word);
         }
@@ -58,8 +58,8 @@ public class TrieTest {
     }
 
     @Test
-    public void returnsWordsThatAreSubstrings() throws Exception {
-        String[] words = new String[]{"abcd", "abc", "abcde"};
+    public void returnsWordsThatAreSubstrings() {
+        String[] words = new String[]{ "abcd", "abc", "abcde" };
         for (String word : words) {
             trie.add(word);
         }
@@ -68,8 +68,8 @@ public class TrieTest {
     }
 
     @Test
-    public void returnsWordsByPrefixThatIsCompleteWord() throws Exception {
-        String[] words = new String[]{"abcd", "abc", "abcde"};
+    public void returnsWordsByPrefixThatIsCompleteWord() {
+        String[] words = new String[]{ "abcd", "abc", "abcde" };
         for (String word : words) {
             trie.add(word);
         }

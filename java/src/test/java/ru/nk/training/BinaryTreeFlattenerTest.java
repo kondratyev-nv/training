@@ -1,15 +1,16 @@
 package ru.nk.training;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import ru.nk.training.DataStructures.BinaryTreeNode;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BinaryTreeFlattenerTest {
     BinaryTreeFlattener flattener;
-    @Before
-    public void setUp() throws Exception {
+
+    @BeforeEach
+    public void setUp() {
         flattener = new BinaryTreeFlattener();
     }
 
