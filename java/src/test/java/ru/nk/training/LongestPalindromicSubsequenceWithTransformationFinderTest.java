@@ -1,42 +1,52 @@
 package ru.nk.training;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import ru.nk.training.DataStructures.Edge;
 
 import java.util.ArrayList;
-import org.junit.Before;
-import org.junit.Test;
 
-import ru.nk.training.DataStructures.Edge;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class LongestPalindromicSubsequenceWithTransformationFinderTest {
     private LongestPalindromicSubsequenceWithTransformationFinder finder;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         finder = new LongestPalindromicSubsequenceWithTransformationFinder();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsOnNullString() {
-        finder.findLongestPalindromicSubsequence(null, new ArrayList<Edge>() {
-            {
-                add(new Edge(0, 1));
-            }
-        });
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> finder.findLongestPalindromicSubsequence(null, new ArrayList<Edge>() {
+                    {
+                        add(new Edge(0, 1));
+                    }
+                })
+        );
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsOnNullTransformations() {
-        finder.findLongestPalindromicSubsequence(new int[]{ 1 }, null);
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> finder.findLongestPalindromicSubsequence(new int[]{ 1 }, null)
+        );
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsOnEmptyString() {
-        finder.findLongestPalindromicSubsequence(new int[]{}, new ArrayList<Edge>() {
-            {
-                add(new Edge(0, 1));
-            }
-        });
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> finder.findLongestPalindromicSubsequence(new int[]{}, new ArrayList<Edge>() {
+                    {
+                        add(new Edge(0, 1));
+                    }
+                })
+        );
     }
 
     @Test

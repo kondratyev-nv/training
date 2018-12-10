@@ -1,26 +1,33 @@
 package ru.nk.training;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MinimumSumWithDifferentIndicesFinderTest {
     private MinimumSumWithDifferentIndicesFinder finder;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         finder = new MinimumSumWithDifferentIndicesFinder();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsWhenSizeOfArraysNotEqual() {
-        finder.findMinSumWithDifferentIndices(new int[]{ 1, 2, 3 }, new int[]{ 1, 2, 3, 4 });
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> finder.findMinSumWithDifferentIndices(new int[]{ 1, 2, 3 }, new int[]{ 1, 2, 3, 4 })
+        );
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsWhenSizeOfArraysLessThanTwo() {
-        finder.findMinSumWithDifferentIndices(new int[]{ 1 }, new int[]{ 1 });
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> finder.findMinSumWithDifferentIndices(new int[]{ 1 }, new int[]{ 1 })
+        );
     }
 
     @Test

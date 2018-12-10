@@ -1,56 +1,60 @@
 package ru.nk.training;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class StocksProfitCalculatorTest {
 
     private StocksProfitCalculator calculator;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         calculator = new StocksProfitCalculator();
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void throwsIfPricesArrayNull() throws Exception {
-        calculator.getMaxProfit(null);
+    @Test
+    public void throwsIfPricesArrayNull() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> calculator.getMaxProfit(null)
+        );
     }
 
     @Test
-    public void returnsZeroForEmptyPricesArray() throws Exception {
+    public void returnsZeroForEmptyPricesArray() {
         long profit = calculator.getMaxProfit(new int[0]);
         assertEquals(0, profit);
     }
 
     @Test
-    public void returnsZeroWhenPriceDoesNotRise() throws Exception {
+    public void returnsZeroWhenPriceDoesNotRise() {
         long profit = calculator.getMaxProfit(new int[]{ 5, 3, 2 });
         assertEquals(0, profit);
     }
 
     @Test
-    public void returnsProfitWhenPriceRises() throws Exception {
+    public void returnsProfitWhenPriceRises() {
         long profit = calculator.getMaxProfit(new int[]{ 1, 2, 100 });
         assertEquals(197, profit);
     }
 
     @Test
-    public void returnsProfitWhenPriceRisesInTheMiddle() throws Exception {
+    public void returnsProfitWhenPriceRisesInTheMiddle() {
         long profit = calculator.getMaxProfit(new int[]{ 1, 3, 1, 2 });
         assertEquals(3, profit);
     }
 
     @Test
-    public void returnsMaxProfitWhenPriceRisesMultipleTimes() throws Exception {
+    public void returnsMaxProfitWhenPriceRisesMultipleTimes() {
         long profit = calculator.getMaxProfit(new int[]{ 1, 2, 100, 1, 2, 200 });
         assertEquals(894, profit);
     }
 
     @Test
-    public void returnsMaxProfitWhenPriceRisesMultipleTimes1() throws Exception {
+    public void returnsMaxProfitWhenPriceRisesMultipleTimes1() {
         long profit = calculator.getMaxProfit(new int[]{ 1, 2, 100, 1, 2, 101 });
         assertEquals(399, profit);
     }

@@ -13,11 +13,10 @@
 using namespace std;
 
 void sort_huge_numbers(std::vector<std::string>& values) {
-  sort(values.begin(), values.end(),
-       [](string const& a, string const& b) -> bool {
-         if (a.length() != b.length()) {
-           return a.length() < b.length();
-         }
-         return a < b;
-       });
+    sort(values.begin(), values.end(), [](string const& a, string const& b) -> bool {
+        if (a.length() != b.length()) {
+            return a.length() < b.length();
+        }
+        return a < b;
+    });
 }
