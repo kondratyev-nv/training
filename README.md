@@ -493,3 +493,14 @@ The first step of the HeapSort algorithm is to create a heap from the array you 
 ### Parallel processing - [Python](python/src/parallel_processing.py)
 
 You have a program which is parallelized and uses `n` independent threads to process the given list of `m` jobs. Threads take jobs in the order they are given in the input. If there is a free thread, it immediately takes the next job from the list. If a thread has started processing a job, it doesn’t interrupt or stop until it finishes processing the job. If several threads try to take jobs from the list simultaneously, the thread with smaller index takes the job. For each job you know exactly how long will it take any thread to process this job, and this time is the same for all the threads. You need to determine for each job which thread will process it and when will it start processing.
+
+### Counting Inversions - [C++](cpp/src/sort_with_invertions_counting.cpp)
+
+[HackerRank - Merge Sort: Counting Inversions](https://www.hackerrank.com/challenges/ctci-merge-sort),
+[GeeksforGeeks - Count Inversions in an array](https://www.geeksforgeeks.org/counting-inversions)
+
+In an array, `arr`, the elements at indices `i` and `j` (where `i` < `j`) form an inversion if `arr`<sub>`i`</sub> > `arr`<sub>`j`</sub>. In other words, inverted elements `arr`<sub>`i`</sub> and `arr`<sub>`j`</sub> are considered to be "out of order". To correct an inversion, we can swap adjacent elements.
+
+For example, consider `arr = [2, 4, 1]`. It has two inversions: (2, 1) and (4, 1). To sort the array, we must perform the following two swaps to correct the inversions: swap(`arr`<sub>`1`</sub>, `arr`<sub>`2`</sub>) and swap(`arr`<sub>`0`</sub>, `arr`<sub>`1`</sub>)
+
+Print the number of inversions that must be swapped to sort an array on a new line.
