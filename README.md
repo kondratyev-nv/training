@@ -504,3 +504,9 @@ In an array, `arr`, the elements at indices `i` and `j` (where `i` < `j`) form a
 For example, consider `arr = [2, 4, 1]`. It has two inversions: (2, 1) and (4, 1). To sort the array, we must perform the following two swaps to correct the inversions: swap(`arr`<sub>`1`</sub>, `arr`<sub>`2`</sub>) and swap(`arr`<sub>`0`</sub>, `arr`<sub>`1`</sub>)
 
 Print the number of inversions that must be swapped to sort an array on a new line.
+
+### Maximum pairwise product - [C++](cpp/src/maximum_pairwise_product.cpp)
+
+[GeeksforGeeks - Find a pair with maximum product in array of Integers](https://www.geeksforgeeks.org/return-a-pair-with-maximum-product-in-array-of-integers)
+
+Find the maximum product of two distinct numbers in a sequence of non-negative integers.
