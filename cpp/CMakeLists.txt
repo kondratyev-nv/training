@@ -1,6 +1,6 @@
 project(training)
 
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.9)
 
 find_package(Threads REQUIRED)
 set(CMAKE_CXX_STANDARD 14)
@@ -35,7 +35,11 @@ add_executable(${PROJECT_TEST_NAME} ${TEST_SRC_FILES} ${SRC_FILES})
 add_dependencies(${PROJECT_TEST_NAME} googletest)
 target_link_libraries(${PROJECT_TEST_NAME}
     pthread
+    stdc++fs
     ${GTEST_LIBS_DIR}/libgtest.a
     ${GTEST_LIBS_DIR}/libgtest_main.a
 )
-add_test(test ${PROJECT_TEST_NAME})
+
+include(GoogleTest)
+gtest_add_tests(TARGET ${PROJECT_TEST_NAME}
+                WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/test)

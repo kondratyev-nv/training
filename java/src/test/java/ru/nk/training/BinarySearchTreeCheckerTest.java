@@ -1,31 +1,37 @@
 package ru.nk.training;
 
-import java.util.Comparator;
-
-import org.junit.Before;
-import org.junit.Test;
-import static org.junit.Assert.*;
-
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import ru.nk.training.DataStructures.BinarySearchTreeBuilder;
 import ru.nk.training.DataStructures.BinaryTreeNode;
+
+import java.util.Comparator;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BinarySearchTreeCheckerTest {
     private BinarySearchTreeChecker checker;
     private Comparator<Integer> comparator = Integer::compareTo;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         checker = new BinarySearchTreeChecker();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsForNullTree() {
-        checker.isBinarySearchTree(null, comparator);
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> checker.isBinarySearchTree(null, comparator)
+        );
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsForNullComparator() {
-        checker.isBinarySearchTree(new BinaryTreeNode<>(0, null, null), null);
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> checker.isBinarySearchTree(new BinaryTreeNode<>(0, null, null), null)
+        );
     }
 
     @Test

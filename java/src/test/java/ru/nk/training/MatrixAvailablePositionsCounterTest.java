@@ -1,44 +1,53 @@
 package ru.nk.training;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import ru.nk.training.MatrixAvailablePositionsCounter.RowInterval;
 
 import java.util.ArrayList;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import ru.nk.training.MatrixAvailablePositionsCounter.RowInterval;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MatrixAvailablePositionsCounterTest {
     private MatrixAvailablePositionsCounter counter;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         counter = new MatrixAvailablePositionsCounter();
     }
 
     @Test
-    public void returnsNumberOfMatrixElementsWhenNothingIsOccupied() throws Exception {
+    public void returnsNumberOfMatrixElementsWhenNothingIsOccupied() {
         assertEquals(50, counter.count(5, 10, new ArrayList<>()));
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void throwsWhenOccupiedIntervalsAreNull() throws Exception {
-        counter.count(5, 10, null);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void throwsWhenNumberOfRowsIsLessThanZero() throws Exception {
-        counter.count(-1, 10, new ArrayList<>());
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void throwsWhenNumberOfColumnsIsLessThanZero() throws Exception {
-        counter.count(5, -1, new ArrayList<>());
+    @Test
+    public void throwsWhenOccupiedIntervalsAreNull() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> counter.count(5, 10, null)
+        );
     }
 
     @Test
-    public void returnsNumberOfMatrixElementsWithoutOneWhenSingleCellIsOccupied() throws Exception {
+    public void throwsWhenNumberOfRowsIsLessThanZero() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> counter.count(-1, 10, new ArrayList<>())
+        );
+    }
+
+    @Test
+    public void throwsWhenNumberOfColumnsIsLessThanZero() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> counter.count(5, -1, new ArrayList<>())
+        );
+    }
+
+    @Test
+    public void returnsNumberOfMatrixElementsWithoutOneWhenSingleCellIsOccupied() {
         assertEquals(49, counter.count(5, 10, new ArrayList<RowInterval>() {
             {
                 add(new RowInterval(2, 3, 3));
@@ -47,7 +56,7 @@ public class MatrixAvailablePositionsCounterTest {
     }
 
     @Test
-    public void returnsNumberOfMatrixElementsWithoutOneRowWhenWholeRowIsOccupied() throws Exception {
+    public void returnsNumberOfMatrixElementsWithoutOneRowWhenWholeRowIsOccupied() {
         assertEquals(40, counter.count(5, 10, new ArrayList<RowInterval>() {
             {
                 add(new RowInterval(2, 0, 9));
@@ -56,7 +65,7 @@ public class MatrixAvailablePositionsCounterTest {
     }
 
     @Test
-    public void returnsNumberAvailablePositionsWhenRowIntervalContainsOthers() throws Exception {
+    public void returnsNumberAvailablePositionsWhenRowIntervalContainsOthers() {
         assertEquals(40, counter.count(5, 10, new ArrayList<RowInterval>() {
             {
                 add(new RowInterval(2, 0, 9));
@@ -67,7 +76,7 @@ public class MatrixAvailablePositionsCounterTest {
     }
 
     @Test
-    public void returnsNumberAvailablePositionsWhenRowIntervalsAreNearEachOther() throws Exception {
+    public void returnsNumberAvailablePositionsWhenRowIntervalsAreNearEachOther() {
         assertEquals(43, counter.count(5, 10, new ArrayList<RowInterval>() {
             {
                 add(new RowInterval(2, 1, 4));
@@ -77,7 +86,7 @@ public class MatrixAvailablePositionsCounterTest {
     }
 
     @Test
-    public void returnsNumberAvailablePositionsWhenRowIntervalsIntersect() throws Exception {
+    public void returnsNumberAvailablePositionsWhenRowIntervalsIntersect() {
         assertEquals(42, counter.count(5, 10, new ArrayList<RowInterval>() {
             {
                 add(new RowInterval(2, 1, 4));
@@ -88,7 +97,7 @@ public class MatrixAvailablePositionsCounterTest {
     }
 
     @Test
-    public void returnsNumberAvailablePositionsWhenRowIntervalsOverlaps() throws Exception {
+    public void returnsNumberAvailablePositionsWhenRowIntervalsOverlaps() {
         assertEquals(42, counter.count(5, 10, new ArrayList<RowInterval>() {
             {
                 add(new RowInterval(2, 1, 4));
@@ -98,7 +107,7 @@ public class MatrixAvailablePositionsCounterTest {
     }
 
     @Test
-    public void returnsNumberAvailablePositionsWhenRowIntervalOverridesOthers() throws Exception {
+    public void returnsNumberAvailablePositionsWhenRowIntervalOverridesOthers() {
         assertEquals(93, counter.count(5, 20, new ArrayList<RowInterval>() {
             {
                 add(new RowInterval(2, 10, 14));
@@ -109,7 +118,7 @@ public class MatrixAvailablePositionsCounterTest {
     }
 
     @Test
-    public void returnsNumberAvailablePositionsWhenIntervalsOnDifferentRows() throws Exception {
+    public void returnsNumberAvailablePositionsWhenIntervalsOnDifferentRows() {
         assertEquals(43, counter.count(5, 10, new ArrayList<RowInterval>() {
             {
                 add(new RowInterval(2, 1, 4));
@@ -119,7 +128,7 @@ public class MatrixAvailablePositionsCounterTest {
     }
 
     @Test
-    public void returnsZeroWhenAllRowsAreOccupied() throws Exception {
+    public void returnsZeroWhenAllRowsAreOccupied() {
         assertEquals(0, counter.count(5, 10, new ArrayList<RowInterval>() {
             {
                 add(new RowInterval(0, 0, 9));
@@ -132,7 +141,7 @@ public class MatrixAvailablePositionsCounterTest {
     }
 
     @Test
-    public void returnsNumberOfAvailablePositionsForLargeMatrix() throws Exception {
+    public void returnsNumberOfAvailablePositionsForLargeMatrix() {
         assertEquals(335820405811182700L, counter.count(693177850, 484465003, new ArrayList<RowInterval>() {
             {
                 add(new RowInterval(236503425, 316332185, 461015094));

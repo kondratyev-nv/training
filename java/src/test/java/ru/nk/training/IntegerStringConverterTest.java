@@ -1,15 +1,16 @@
 package ru.nk.training;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class IntegerStringConverterTest {
     private IntegerStringConverter converter;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         converter = new IntegerStringConverter();
     }
 
@@ -28,14 +29,20 @@ public class IntegerStringConverterTest {
         assertEquals("-4567", converter.intToString(-4567));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void failsOnNullString() {
-        converter.stringToInt(null);
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> converter.stringToInt(null)
+        );
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void failsOnEmptyString() {
-        converter.stringToInt("");
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> converter.stringToInt("")
+        );
     }
 
     @Test

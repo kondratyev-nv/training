@@ -1,6 +1,5 @@
 package ru.nk.training;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -48,7 +47,7 @@ public class Trie {
         TrieNode node = findNodeByPrefix(prefix);
         Stream<String> suffixes = node.getWords().map(suffix -> prefix + suffix);
         if (node.isCompleteWord) {
-            suffixes = Stream.concat(Arrays.stream(new String[]{ prefix }), suffixes);
+            suffixes = Stream.concat(Stream.of(prefix), suffixes);
         }
         return suffixes.toArray(String[]::new);
     }
@@ -97,7 +96,7 @@ public class Trie {
                 String prefix = e.getKey().toString();
 
                 if (child.isCompleteWord) {
-                    stream = Stream.concat(stream, Arrays.stream(new String[]{ prefix }));
+                    stream = Stream.concat(stream, Stream.of(prefix));
                 }
 
                 stream = Stream.concat(stream, child.getWords().map(suffix -> prefix + suffix));

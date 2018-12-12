@@ -1,15 +1,15 @@
 package ru.nk.training.DataStructures;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class LinkedListBuilderTest {
     private LinkedListBuilder<Integer> builder;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         builder = new LinkedListBuilder<>();
     }
 
