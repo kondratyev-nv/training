@@ -510,3 +510,15 @@ Print the number of inversions that must be swapped to sort an array on a new li
 [GeeksforGeeks - Find a pair with maximum product in array of Integers](https://www.geeksforgeeks.org/return-a-pair-with-maximum-product-in-array-of-integers)
 
 Find the maximum product of two distinct numbers in a sequence of non-negative integers.
+
+### Fibonacci numbers - [C++](cpp/src/fibonacci_numbers.cpp)
+
+1. Given an integer `n`, find the `n`-th Fibonacci number `F`<sub>`n`</sub>.
+1. Given two integers `n` and `m`, output `F`<sub>`n`</sub> `mod` `m` (that is, the remainder of `F`<sub>`n`</sub> when divided by `m`).
+1. Given an integer `n`, find the last digit of the sum `F`<sub>`0`</sub> + `F`<sub>`1`</sub> + ... + `F`<sub>`n`</sub>.
+1. Given two non-negative integers `m` and `n`, where `m` ≤ `n`, find the last digit of the sum `F`<sub>`m`</sub> + `F`<sub>`m+1`</sub> + ... + `F`<sub>`n`</sub>.
+
+### GCD and LCM - [C++](cpp/src/gcd.cpp)
+
+1. Given two integers `a` and `b`, find their greatest common divisor.
+1. Given two integers `a` and `b`, find their least common multiple.
