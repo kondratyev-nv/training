@@ -1,38 +1,40 @@
 package ru.nk.training;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MatrixRotatorTest {
     MatrixRotator rotator;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         rotator = new MatrixRotator();
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void throwsWhenMatrixIsNull() throws Exception {
-        rotator.rotateRight(null);
+    @Test
+    public void throwsWhenMatrixIsNull() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> rotator.rotateRight(null)
+        );
     }
 
     @Test
-    public void canRotateEmptyMatrix() throws Exception {
+    public void canRotateEmptyMatrix() {
         rotator.rotateRight(new int[][]{ new int[]{} });
     }
 
     @Test
-    public void canRotateMatrixOfOneElement() throws Exception {
+    public void canRotateMatrixOfOneElement() {
         int[][] m = new int[][]{ new int[]{ 1 } };
         rotator.rotateRight(m);
         assertEquals(1, m[0][0]);
     }
 
     @Test
-    public void rotatesMatrixOfThreeElements() throws Exception {
+    public void rotatesMatrixOfThreeElements() {
         int[][] src = new int[][]{ new int[]{ 1, 2, 3 },
                                    new int[]{ 4, 5, 6 },
                                    new int[]{ 7, 8, 9 } };
@@ -47,7 +49,7 @@ public class MatrixRotatorTest {
     }
 
     @Test
-    public void rotatesMatrixOfFourElements() throws Exception {
+    public void rotatesMatrixOfFourElements() {
         int[][] src = new int[][]{ new int[]{ 11, 12, 13, 14 },
                                    new int[]{ 21, 22, 23, 24 },
                                    new int[]{ 31, 32, 33, 34 },
@@ -63,7 +65,7 @@ public class MatrixRotatorTest {
     }
 
     @Test
-    public void rotatesMatrixOfFiveElements() throws Exception {
+    public void rotatesMatrixOfFiveElements() {
         int[][] src = new int[][]{ new int[]{ 11, 12, 13, 14, 15 },
                                    new int[]{ 21, 22, 23, 24, 25 },
                                    new int[]{ 31, 32, 33, 34, 35 },

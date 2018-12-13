@@ -1,54 +1,64 @@
 package ru.nk.training;
 
-import static org.hamcrest.CoreMatchers.anyOf;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.hamcrest.CoreMatchers.anyOf;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class StringByWordsSplitterTest {
     private StringByWordsSplitter splitter;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         splitter = new StringByWordsSplitter();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsWhenWordsAreEmpty() {
-        splitter.split("abc", new HashSet<>());
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> splitter.split("abc", new HashSet<>())
+        );
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsWhenSentenceIsEmpty() {
-        splitter.split("", new HashSet<String>() {
-            {
-                add("a");
-            }
-        });
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> splitter.split("", new HashSet<String>() {
+                    {
+                        add("a");
+                    }
+                })
+        );
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsWhenWordsAreNull() {
-        splitter.split("abc", null);
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> splitter.split("abc", null)
+        );
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsWhenSentenceIsNull() {
-        splitter.split(null, new HashSet<String>() {
-            {
-                add("a");
-            }
-        });
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> splitter.split(null, new HashSet<String>() {
+                    {
+                        add("a");
+                    }
+                })
+        );
     }
 
     @Test

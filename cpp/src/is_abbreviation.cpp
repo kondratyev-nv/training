@@ -17,36 +17,35 @@
 using namespace std;
 
 int last_uppercase(string const& a) {
-  int index = a.length();
-  while (index >= 0) {
-    if (isupper(a[index])) {
-      break;
+    int index = a.length();
+    while (index >= 0) {
+        if (isupper(a[index])) {
+            break;
+        }
+        index--;
     }
-    index--;
-  }
 
-  return index;
+    return index;
 }
 
 bool is_abbreviation(string const& a, string const& b) {
-  if (b.length() > a.length()) {
-    return false;
-  }
-  int last_uppercase_index = last_uppercase(a);
-  function<bool(int, int)> is_abbreviation =
-      cached_fn<bool(int, int)>([&](int as, int bs) -> bool {
+    if (b.length() > a.length()) {
+        return false;
+    }
+    int last_uppercase_index = last_uppercase(a);
+    function<bool(int, int)> is_abbreviation = cached_fn<bool(int, int)>([&](int as, int bs) -> bool {
         if (bs >= (int)b.length()) {
-          return as > last_uppercase_index;
+            return as > last_uppercase_index;
         }
         for (size_t i = as; i < a.length(); ++i) {
-          if (isupper(a[i])) {
-            return a[i] == b[bs] && is_abbreviation(i + 1, bs + 1);
-          }
-          if (toupper(a[i]) == b[bs]) {
-            return is_abbreviation(i + 1, bs + 1) || is_abbreviation(i + 1, bs);
-          }
+            if (isupper(a[i])) {
+                return a[i] == b[bs] && is_abbreviation(i + 1, bs + 1);
+            }
+            if (toupper(a[i]) == b[bs]) {
+                return is_abbreviation(i + 1, bs + 1) || is_abbreviation(i + 1, bs);
+            }
         }
         return false;
-      });
-  return is_abbreviation(0, 0);
+    });
+    return is_abbreviation(0, 0);
 }

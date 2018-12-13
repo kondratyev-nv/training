@@ -1,25 +1,33 @@
 package ru.nk.training;
 
-import static org.junit.Assert.*;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class LongestPalindromicSubsequenceFinderTest {
     private LongestPalindromicSubsequenceFinder finder;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         finder = new LongestPalindromicSubsequenceFinder();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsOnNullString() {
-        finder.findLongestPalindromicSubsequence(null);
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> finder.findLongestPalindromicSubsequence(null)
+        );
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsOnEmptyString() {
-        finder.findLongestPalindromicSubsequence("");
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> finder.findLongestPalindromicSubsequence("")
+        );
     }
 
     @Test

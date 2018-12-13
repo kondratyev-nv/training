@@ -1,25 +1,29 @@
 package ru.nk.training;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static java.util.Arrays.asList;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class StringPermutationGeneratorTest {
 
     private StringPermutationGenerator generator;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         generator = new StringPermutationGenerator();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsWhenStringIsNull() {
-        generator.permutations(null);
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> generator.permutations(null)
+        );
     }
 
     @Test
@@ -46,7 +50,7 @@ public class StringPermutationGeneratorTest {
     public void returnsPermutationsForStringWithThreeElements() {
         String[] permutations = generator.permutations("hat");
         assertEquals(6, permutations.length);
-        String[] expectedPermutations = {"tha", "aht", "tah", "ath", "hta", "hat"};
+        String[] expectedPermutations = { "tha", "aht", "tah", "ath", "hta", "hat" };
         assertThat(asList(expectedPermutations), containsInAnyOrder(permutations));
     }
 }

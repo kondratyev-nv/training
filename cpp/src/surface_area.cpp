@@ -17,32 +17,32 @@
 using namespace std;
 
 long long surface_area(const std::vector<std::vector<int>>& figure) {
-  if (figure.empty() || figure[0].empty()) {
-    return 0;
-  }
-  size_t n = figure.size(), m = figure[0].size();
-  long long area = 2 * n * m;
-  for (size_t i = 0; i < n; ++i) {
-    area += figure[i][0];
-  }
-  for (size_t i = 0; i < n; ++i) {
-    area += figure[i][m - 1];
-  }
-  for (size_t j = 0; j < m; ++j) {
-    area += figure[0][j];
-  }
-  for (size_t j = 0; j < m; ++j) {
-    area += figure[n - 1][j];
-  }
-  for (size_t i = 0; i < n; ++i) {
-    for (size_t j = 1; j < m; ++j) {
-      area += abs(figure[i][j] - figure[i][j - 1]);
+    if (figure.empty() || figure[0].empty()) {
+        return 0;
     }
-  }
-  for (size_t j = 0; j < m; ++j) {
-    for (size_t i = 1; i < n; ++i) {
-      area += abs(figure[i][j] - figure[i - 1][j]);
+    size_t n = figure.size(), m = figure[0].size();
+    long long area = 2 * n * m;
+    for (size_t i = 0; i < n; ++i) {
+        area += figure[i][0];
     }
-  }
-  return area;
+    for (size_t i = 0; i < n; ++i) {
+        area += figure[i][m - 1];
+    }
+    for (size_t j = 0; j < m; ++j) {
+        area += figure[0][j];
+    }
+    for (size_t j = 0; j < m; ++j) {
+        area += figure[n - 1][j];
+    }
+    for (size_t i = 0; i < n; ++i) {
+        for (size_t j = 1; j < m; ++j) {
+            area += abs(figure[i][j] - figure[i][j - 1]);
+        }
+    }
+    for (size_t j = 0; j < m; ++j) {
+        for (size_t i = 1; i < n; ++i) {
+            area += abs(figure[i][j] - figure[i - 1][j]);
+        }
+    }
+    return area;
 }

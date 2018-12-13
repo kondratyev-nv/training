@@ -1,17 +1,17 @@
 package ru.nk.training;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import ru.nk.training.DataStructures.Point2D;
 import ru.nk.training.DataStructures.Rectangle;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class RectangleIntersectionCheckerTest {
     private RectangleIntersectionChecker checker;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         checker = new RectangleIntersectionChecker();
     }

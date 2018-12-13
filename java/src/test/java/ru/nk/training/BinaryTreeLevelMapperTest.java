@@ -1,7 +1,7 @@
 package ru.nk.training;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import ru.nk.training.DataStructures.BinaryTreeNode;
 
 import java.util.List;
@@ -11,13 +11,13 @@ import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
 import static java.util.Optional.empty;
 import static java.util.Optional.of;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BinaryTreeLevelMapperTest {
     private BinaryTreeLevelMapper mapper;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         mapper = new BinaryTreeLevelMapper(new BinaryTreeHeightFinder());
     }
 
