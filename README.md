@@ -522,3 +522,13 @@ Find the maximum product of two distinct numbers in a sequence of non-negative i
 
 1. Given two integers `a` and `b`, find their greatest common divisor.
 1. Given two integers `a` and `b`, find their least common multiple.
+
+### Majority Element - [Python](python/src/find_majority_element.py)
+
+Given a sequence of elements `a`<sub>`1`</sub>, `a`<sub>`2`</sub>, ... , `a`<sub>`n`</sub>, you would like to check whether it contains an element (majority element) that appears more than `n`/2 times. 
+
+### Organizing a Lottery - [Python](python/src/count_segments_for_points.py)
+
+You are organizing an online lottery. To participate, a person bets on a single integer. You then draw several ranges of consecutive integers at random. A participant’s payoff then is proportional to the number of ranges that contain the participant’s number minus the number of ranges that does not contain it. You need an efficient algorithm for computing the payoffs for all participants.
+
+You are given a set of points on a line and a set of segments on a line. The goal is to compute, for each point, the number of segments that contain this point.
