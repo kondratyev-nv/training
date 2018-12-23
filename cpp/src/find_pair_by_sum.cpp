@@ -1,4 +1,3 @@
-
 /**
  * Each time Sunny and Johnny take a trip to the Ice Cream Parlor, they pool
  * together m dollars for ice cream. On any given day, the parlor offers a line

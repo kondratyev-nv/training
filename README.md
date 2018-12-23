@@ -470,6 +470,69 @@ The goal in this problem is to find the minimum number of coins needed to change
 
 Compose the largest number out of a set of integers. The first line of the input contains an integer `n`. The second line contains integers `a`<sub>`1`</sub>, `a`<sub>`2`</sub>, ..., `a`<sub>`n`</sub>. Output the largest number that can be composed out of `a`<sub>`1`</sub>, `a`<sub>`2`</sub>, ..., `a`<sub>`n`</sub>.
 
+### Has negative cycle - [Python](python/src/has_negative_cycle.py)
+
+Given an directed graph with possibly negative edge weights and with `n` vertices and `m` edges, check whether it contains a cycle of negative weight.
+
+### Is bipartite - [Python](python/src/is_bipartite.py)
+
+Given an undirected graph with `n` vertices and `m` edges, check whether it is bipartite. An undirected graph is called bipartite if its vertices can be split into two parts such that each edge of the graph joins to vertices from different parts. Bipartite graphs arise naturally in applications where a graph is used to model connections between objects of two different types (say, boys and girls; or students and dormitories).
+
+### Connected components - [Python](python/src/vertices_to_components.py)
+
+Given an undirected graph with `n` vertices and `m` edges, compute the number of connected components in it.
+
+### Topological sort - [Python](python/src/topological_sort.py)
+
+Compute a topological ordering of a given directed acyclic graph (DAG) with `n` vertices and `m` edges.
+
+### Convert array into heap - [C++](cpp/include/heapify.hpp)
+
+The first step of the HeapSort algorithm is to create a heap from the array you want to sort. Your task is to implement this first step and convert a given array of integers into a heap. You will do that by applying a certain number of swaps to the array. Swap is an operation which exchanges elements a `i` and a `j` of the array a for some `i` and `j`. You will need to convert the array into a heap using only O(n) swaps, as was described in the lectures. Note that you will need to use a min-heap instead of a max-heap in this problem.
+
+### Parallel processing - [Python](python/src/parallel_processing.py)
+
+You have a program which is parallelized and uses `n` independent threads to process the given list of `m` jobs. Threads take jobs in the order they are given in the input. If there is a free thread, it immediately takes the next job from the list. If a thread has started processing a job, it doesn’t interrupt or stop until it finishes processing the job. If several threads try to take jobs from the list simultaneously, the thread with smaller index takes the job. For each job you know exactly how long will it take any thread to process this job, and this time is the same for all the threads. You need to determine for each job which thread will process it and when will it start processing.
+
+### Counting Inversions - [C++](cpp/src/sort_with_invertions_counting.cpp)
+
+[HackerRank - Merge Sort: Counting Inversions](https://www.hackerrank.com/challenges/ctci-merge-sort),
+[GeeksforGeeks - Count Inversions in an array](https://www.geeksforgeeks.org/counting-inversions)
+
+In an array, `arr`, the elements at indices `i` and `j` (where `i` < `j`) form an inversion if `arr`<sub>`i`</sub> > `arr`<sub>`j`</sub>. In other words, inverted elements `arr`<sub>`i`</sub> and `arr`<sub>`j`</sub> are considered to be "out of order". To correct an inversion, we can swap adjacent elements.
+
+For example, consider `arr = [2, 4, 1]`. It has two inversions: (2, 1) and (4, 1). To sort the array, we must perform the following two swaps to correct the inversions: swap(`arr`<sub>`1`</sub>, `arr`<sub>`2`</sub>) and swap(`arr`<sub>`0`</sub>, `arr`<sub>`1`</sub>)
+
+Print the number of inversions that must be swapped to sort an array on a new line.
+
+### Maximum pairwise product - [C++](cpp/src/maximum_pairwise_product.cpp)
+
+[GeeksforGeeks - Find a pair with maximum product in array of Integers](https://www.geeksforgeeks.org/return-a-pair-with-maximum-product-in-array-of-integers)
+
+Find the maximum product of two distinct numbers in a sequence of non-negative integers.
+
+### Fibonacci numbers - [C++](cpp/src/fibonacci_numbers.cpp)
+
+1. Given an integer `n`, find the `n`-th Fibonacci number `F`<sub>`n`</sub>.
+1. Given two integers `n` and `m`, output `F`<sub>`n`</sub> `mod` `m` (that is, the remainder of `F`<sub>`n`</sub> when divided by `m`).
+1. Given an integer `n`, find the last digit of the sum `F`<sub>`0`</sub> + `F`<sub>`1`</sub> + ... + `F`<sub>`n`</sub>.
+1. Given two non-negative integers `m` and `n`, where `m` ≤ `n`, find the last digit of the sum `F`<sub>`m`</sub> + `F`<sub>`m+1`</sub> + ... + `F`<sub>`n`</sub>.
+
+### GCD and LCM - [C++](cpp/src/gcd.cpp)
+
+1. Given two integers `a` and `b`, find their greatest common divisor.
+1. Given two integers `a` and `b`, find their least common multiple.
+
+### Majority Element - [Python](python/src/find_majority_element.py)
+
+Given a sequence of elements `a`<sub>`1`</sub>, `a`<sub>`2`</sub>, ... , `a`<sub>`n`</sub>, you would like to check whether it contains an element (majority element) that appears more than `n`/2 times. 
+
+### Organizing a Lottery - [Python](python/src/count_segments_for_points.py)
+
+You are organizing an online lottery. To participate, a person bets on a single integer. You then draw several ranges of consecutive integers at random. A participant’s payoff then is proportional to the number of ranges that contain the participant’s number minus the number of ranges that does not contain it. You need an efficient algorithm for computing the payoffs for all participants.
+
+You are given a set of points on a line and a set of segments on a line. The goal is to compute, for each point, the number of segments that contain this point.
+
 ### Longest common subsequence - [C++](cpp/src/longest_common_subsequence.cpp)
 
 Given two or three sequences of integers, find the longest common subsequence and print it as a line of space-separated integers. If there are multiple common subsequences with the same maximum length, print any one of them.

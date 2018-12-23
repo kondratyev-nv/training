@@ -96,27 +96,3 @@ class UndirectedGraph:
         Get all vertices of the graph
         """
         return self.graph.get_vertices()
-
-    def vertices_to_components(self):
-        """
-        Build dictionary of vertices to connected component keys
-        """
-        vertex_to_component = {}
-        key = 0
-        vertices = self.get_vertices()
-        for vertex in vertices:
-            if vertex not in vertex_to_component:
-                self.__build_component(vertex, vertex_to_component, key)
-                key += 1
-        return vertex_to_component
-
-    def __build_component(self, vertex, vertex_to_component, key):
-        """
-        Assing current component key value to the vertex and
-        for all other connected vertices
-        """
-        if vertex in vertex_to_component:
-            return
-        vertex_to_component[vertex] = key
-        for edge in self.get_edges(vertex):
-            self.__build_component(edge.end, vertex_to_component, key)

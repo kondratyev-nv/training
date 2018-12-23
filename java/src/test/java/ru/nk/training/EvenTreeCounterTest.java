@@ -1,33 +1,43 @@
 package ru.nk.training;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class EvenTreeCounterTest {
-    @Test(expected = IllegalArgumentException.class)
-    public void throwsWhenGraphIsNull() throws Exception {
-        new EvenTreeCounter(null);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void throwsWhenGraphIsEmpty() throws Exception {
-        new EvenTreeCounter(new HashMap<>());
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void throwsWhenGraphHasSingleNode() throws Exception {
-        new EvenTreeCounter(new HashMap<Integer, List<Integer>>() {{
-            put(0, new ArrayList<>());
-        }});
+    @Test
+    public void throwsWhenGraphIsNull() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> new EvenTreeCounter(null)
+        );
     }
 
     @Test
-    public void returnsZeroWhenGraphHasOnlyTwoNodes() throws Exception {
+    public void throwsWhenGraphIsEmpty() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> new EvenTreeCounter(new HashMap<>())
+        );
+    }
+
+    @Test
+    public void throwsWhenGraphHasSingleNode() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> new EvenTreeCounter(new HashMap<Integer, List<Integer>>() {{
+                    put(0, new ArrayList<>());
+                }})
+        );
+    }
+
+    @Test
+    public void returnsZeroWhenGraphHasOnlyTwoNodes() {
         int edgesToRemove = new EvenTreeCounter(new HashMap<Integer, List<Integer>>() {{
             put(0, new ArrayList<Integer>() {{
                 add(1);
@@ -37,21 +47,24 @@ public class EvenTreeCounterTest {
         assertEquals(0, edgesToRemove);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void throwsWhenGraphHasOddNumberOfElements() throws Exception {
-        new EvenTreeCounter(new HashMap<Integer, List<Integer>>() {{
-            put(0, new ArrayList<Integer>() {{
-                add(1);
-            }});
-            put(1, new ArrayList<Integer>() {{
-                add(2);
-            }});
-            put(2, new ArrayList<>());
-        }});
+    @Test
+    public void throwsWhenGraphHasOddNumberOfElements() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> new EvenTreeCounter(new HashMap<Integer, List<Integer>>() {{
+                    put(0, new ArrayList<Integer>() {{
+                        add(1);
+                    }});
+                    put(1, new ArrayList<Integer>() {{
+                        add(2);
+                    }});
+                    put(2, new ArrayList<>());
+                }})
+        );
     }
 
     @Test
-    public void returnsOneWhenGraphHasSubtreeOfTwoNodes() throws Exception {
+    public void returnsOneWhenGraphHasSubtreeOfTwoNodes() {
         int edgesToRemove = new EvenTreeCounter(new HashMap<Integer, List<Integer>>() {{
             put(0, new ArrayList<Integer>() {{
                 add(1);
@@ -68,7 +81,7 @@ public class EvenTreeCounterTest {
     }
 
     @Test
-    public void returnsTwoWhenTwoEdgesCanBeRemovedFromGraph() throws Exception {
+    public void returnsTwoWhenTwoEdgesCanBeRemovedFromGraph() {
         int edgesToRemove = new EvenTreeCounter(new HashMap<Integer, List<Integer>>() {{
             put(0, new ArrayList<Integer>() {{
                 add(1);

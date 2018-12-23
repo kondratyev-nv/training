@@ -1,27 +1,32 @@
 package ru.nk.training;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BalancedBracketsCheckerTest {
     private BalancedBracketsChecker checker;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         checker = new BalancedBracketsChecker();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsOnNullString() {
-        checker.isBalanced(null);
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> checker.isBalanced(null)
+        );
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void throwsOnStringContainingNonBracketSymbols() {
-        checker.isBalanced("{1}");
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> checker.isBalanced("{1}")
+        );
     }
 
     @Test

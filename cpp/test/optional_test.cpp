@@ -2,6 +2,7 @@
 
 #include <functional>
 #include <string>
+#include <functional>
 #include <unordered_map>
 #include "optional.hpp"
 

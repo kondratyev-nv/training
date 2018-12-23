@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "cpp"
+		},
+		{
+			"path": "python"
+		},
+		{
+			"path": "java"
+		}
+	],
+	"settings": {
+		"lcov.path": "./build/code_coverage.info",
+		"lcov.branchCoverage": "full",
+		"lcov.watch": [
+			{
+				"pattern": "**/*.hpp",
+				"command": "./build_with_coverage.sh"
+			},
+			{
+				"pattern": "**/*.cpp",
+				"command": "./build_with_coverage.sh"
+			}
+		]
+	}
+}
