@@ -1,21 +1,36 @@
 {
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
-    "version": "0.1.0",
-    "command": "mvn",
-    "isShellCommand": true,
-    "showOutput": "always",
-    "suppressTaskName": true,
+    "version": "2.0.0",
+    "type": "process",
+    "presentation": {
+        "reveal": "always"
+    },
     "tasks": [
         {
-            "taskName": "verify",
-            "args": ["-B", "verify"],
-            "isBuildCommand": true
+            "label": "clean",
+            "command": "${workspaceFolder}/gradlew",
+            "args": ["clean"]
         },
         {
-            "taskName": "test",
-            "args": ["-B", "test"],
-            "isTestCommand": true
+            "label": "build",
+            "command": "${workspaceFolder}/gradlew",
+            "args": ["build", "-x", "test"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": ["clean"]
+        },
+        {
+            "label": "test",
+            "command": "${workspaceFolder}/gradlew",
+            "args": ["test"],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "dependsOn": ["build"]
         }
     ]
 }
