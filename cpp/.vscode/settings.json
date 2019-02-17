@@ -15,6 +15,11 @@
             "command": "./build_with_coverage.sh"
         }
     ],
-    "gtestExplorer.executable": "build/training_test",
-    "gtestExplorer.cwd": "build"
+    "catch2TestExplorer.executables": [
+        {
+            "name": "${filename} (${relDirpath})",
+            "pattern": "build/training_test",
+            "cwd": "${workspaceFolder}/test"
+        }
+    ]
 }
