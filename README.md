@@ -203,7 +203,8 @@ A string `s` contains many patterns of the form `1(0+)1` where `(0+)` represents
 
 ### Find longest palindromic subsequence - [Java](java/src/main/java/ru/nk/training/LongestPalindromicSubsequenceFinder.java)
 
-[LeetCode -  Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring)
+[GeeksforGeeks - Longest Palindromic Subsequence](https://www.geeksforgeeks.org/longest-palindromic-subsequence-dp-12)
+[LeetCode -  Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence)
 
 Given a string, find a longest palindromic subsequence in it. A longest palindromic subsequence is a sequence that appears in the same relative order, but not necessarily contiguous (not substring) and palindrome in nature (means the subsequence will read same from the front and back).
 
