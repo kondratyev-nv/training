@@ -464,7 +464,7 @@ The goal of this problem is to represent a given positive integer `n` as a sum o
 
 ### Money change - [C++](cpp/src/money_change.cpp)
 
-The goal in this problem is to find the minimum number of coins needed to change the input value (an integer) into coins with denominations 1, 5, and 10.
+The goal in this problem is to find the minimum number of coins needed to change the input value (an integer) into coins with various denominations.
 
 ### Maximum salary - [C++](cpp/src/maximum_salary.cpp)
 
@@ -532,3 +532,11 @@ Given a sequence of elements `a`<sub>`1`</sub>, `a`<sub>`2`</sub>, ... , `a`<sub
 You are organizing an online lottery. To participate, a person bets on a single integer. You then draw several ranges of consecutive integers at random. A participant’s payoff then is proportional to the number of ranges that contain the participant’s number minus the number of ranges that does not contain it. You need an efficient algorithm for computing the payoffs for all participants.
 
 You are given a set of points on a line and a set of segments on a line. The goal is to compute, for each point, the number of segments that contain this point.
+
+### Longest common subsequence - [C++](cpp/src/longest_common_subsequence.cpp)
+
+Given two or three sequences of integers, find the longest common subsequence and print it as a line of space-separated integers. If there are multiple common subsequences with the same maximum length, print any one of them.
+
+### Primitive calculator - [C++](cpp/src/primitive_calculator.cpp)
+
+You are given a primitive calculator that can perform the following three operations with the current number `x`: multiply `x` by 2, multiply `x` by 3, or add 1 to `x`. Your goal is given a positive integer `n`, find the minimum number of operations needed to obtain the number `n` starting from the number 1.
