@@ -179,6 +179,7 @@ Evaluate the value of an arithmetic expression in Reverse Polish Notation. Valid
 ### Count ways of making change - [C++](cpp/src/count_ways_to_make_change.cpp)
 
 [HackerRank - The Coin Change Problem](https://www.hackerrank.com/challenges/coin-change)
+[LeetCode - Coin Change 2](https://leetcode.com/problems/coin-change-2/)
 
 You have `m` types of coins available in infinite quantities where the value of each coin is given in the array `C`. Can you determine the number of ways of making change for `n` units using the given types of coins? For example, if `m = 4`, and `C = [8, 3, 1, 2]`, we can make change for `n = 3` units in three ways: `{1, 1, 1}`, `{1, 2}`, and `{3}`.
 
@@ -204,7 +205,7 @@ A string `s` contains many patterns of the form `1(0+)1` where `(0+)` represents
 ### Find longest palindromic subsequence - [Java](java/src/main/java/ru/nk/training/LongestPalindromicSubsequenceFinder.java)
 
 [GeeksforGeeks - Longest Palindromic Subsequence](https://www.geeksforgeeks.org/longest-palindromic-subsequence-dp-12)
-[LeetCode -  Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence)
+[LeetCode - Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence)
 
 Given a string, find a longest palindromic subsequence in it. A longest palindromic subsequence is a sequence that appears in the same relative order, but not necessarily contiguous (not substring) and palindrome in nature (means the subsequence will read same from the front and back).
 
