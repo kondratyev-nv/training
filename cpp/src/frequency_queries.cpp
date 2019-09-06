@@ -2,7 +2,8 @@
  * You are given queries. Each query is one of the described below:
  * - Insert x in your data structure.
  * - Delete one occurence of y from your data structure, if present.
- * - Check if any integer is present whose frequency is exactly z. If yes, print 1 else 0.
+ * - Check if any integer is present whose frequency is exactly z.
+ *   If yes, print 1 else 0.
  *
  * Operation      Array       Output
  * (ADD, 1)       [1]

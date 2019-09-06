@@ -46,6 +46,12 @@ TEST(frequency_queries, returns_zero_when_no_elements_was_added) {
     ASSERT_THAT(make_queries({{3, 2}}), testing::ElementsAreArray({0}));
 }
 
+TEST(frequency_queries, returns_zero_when_frequency_is_negative) {
+    ASSERT_THAT(make_queries({{3, 0}}), testing::ElementsAreArray({0}));
+    ASSERT_THAT(make_queries({{3, -1}}), testing::ElementsAreArray({0}));
+    ASSERT_THAT(make_queries({{3, -2}}), testing::ElementsAreArray({0}));
+}
+
 TEST(frequency_queries, returns_true_when_have_elements_with_expected_frequency) {
     ASSERT_THAT(make_queries({{3, 4}, {2, 1003}, {1, 16}, {3, 1}}), testing::ElementsAreArray({0, 1}));
     ASSERT_THAT(make_queries({{1, 5}, {1, 6}, {3, 2}, {1, 10}, {1, 10}, {1, 6}, {2, 5}, {3, 2}}),
