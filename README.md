@@ -542,3 +542,30 @@ Given two or three sequences of integers, find the longest common subsequence an
 ### Primitive calculator - [C++](cpp/src/primitive_calculator.cpp)
 
 You are given a primitive calculator that can perform the following three operations with the current number `x`: multiply `x` by 2, multiply `x` by 3, or add 1 to `x`. Your goal is given a positive integer `n`, find the minimum number of operations needed to obtain the number `n` starting from the number 1.
+
+### Friend Circle Queries - [Python](python/src/disjoint_set.py)
+
+The population of HackerWorld is 10^9. Initially, none of the people 
+are friends with each other. In order to start a friendship, two persons 
+a and b have to shake hands, where 1 <= a, b <= 10^9. The friendship 
+relation is transitive, that is if a and b shake hands with each other, 
+a and friends of q become friends with b and friends of b.
+
+You will be given q queries. After each query, you need to report 
+the size of the largest friend circle (the largest group of friends) 
+formed after considering that query.
+
+For example, your list of queries is:
+
+    1 2
+    3 4
+    2 3
+
+First, 1 and 2 shake hands, forming a circle of 2. Next, 3 and 4 do 
+the same. Now there are two groups of 2 friends. When 2 and 3 become 
+friends in the next query, both groups of friends are added together 
+to make a circle of 4 friends. We would print
+
+    2
+    2
+    4
