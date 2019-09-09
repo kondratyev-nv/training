@@ -21,40 +21,60 @@
 
 using namespace std;
 
-class frequency_queries::frequency_queries_impl {
+class frequency_queries::impl {
    public:
-    unordered_map<int, int> frequencies_;
-    unordered_map<int, int> frequency_of_frequencies_;
+    void add(int x) {
+        int frequency = by_value_[x]++;
+        if (frequency > 0) {
+            by_frequency_[frequency]--;
+            by_frequency_[frequency + 1]++;
+        } else {
+            by_frequency_[1]++;
+        }
+    }
+
+    void remove(int x) {
+        auto x_it = by_value_.find(x);
+        if (x_it == by_value_.end() || x_it->second <= 0) {
+            return;
+        }
+        int frequency = by_value_[x]--;
+        if (frequency > 1) {
+            by_frequency_[frequency - 1]++;
+            by_frequency_[frequency]--;
+        } else {
+            by_frequency_[1]--;
+        }
+    }
+
+    bool has_element_with_frequency(int frequency) const {
+        if (frequency <= 0) {
+            return false;
+        }
+        auto f_it = by_frequency_.find(frequency);
+        if (f_it == by_frequency_.end()) {
+            return false;
+        }
+        return f_it->second > 0;
+    }
+
+   private:
+    unordered_map<int, int> by_value_;
+    unordered_map<int, int> by_frequency_;
 };
 
-frequency_queries::frequency_queries() : impl_{make_unique<frequency_queries::frequency_queries_impl>()} {}
+frequency_queries::frequency_queries() : impl_{make_unique<frequency_queries::impl>()} {}
 
 frequency_queries::~frequency_queries() = default;
 
 void frequency_queries::add(int x) {
-    if (impl_->frequencies_[x] > 0) {
-        impl_->frequency_of_frequencies_[impl_->frequencies_[x]]--;
-        impl_->frequency_of_frequencies_[impl_->frequencies_[x] + 1]++;
-    } else {
-        impl_->frequency_of_frequencies_[1]++;
-    }
-    impl_->frequencies_[x]++;
+    impl_->add(x);
 }
 
 void frequency_queries::remove(int x) {
-    if (impl_->frequencies_[x] > 0) {
-        impl_->frequency_of_frequencies_[impl_->frequencies_[x] - 1]++;
-        impl_->frequency_of_frequencies_[impl_->frequencies_[x]]--;
-    }
-    impl_->frequencies_[x]--;
-    if (impl_->frequencies_[x] <= 0) {
-        impl_->frequencies_.erase(x);
-    }
+    impl_->remove(x);
 }
 
 bool frequency_queries::has_element_with_frequency(int frequency) const {
-    if (frequency <= 0) {
-        return false;
-    }
-    return impl_->frequency_of_frequencies_[frequency] > 0;
+    return impl_->has_element_with_frequency(frequency);
 }

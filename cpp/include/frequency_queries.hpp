@@ -11,6 +11,6 @@ class frequency_queries {
     bool has_element_with_frequency(int frequency) const;
 
    private:
-    class frequency_queries_impl;
-    std::unique_ptr<frequency_queries_impl> impl_;
+    class impl;
+    std::unique_ptr<impl> impl_;
 };
