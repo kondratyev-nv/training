@@ -542,3 +542,23 @@ Given two or three sequences of integers, find the longest common subsequence an
 ### Primitive calculator - [C++](cpp/src/primitive_calculator.cpp)
 
 You are given a primitive calculator that can perform the following three operations with the current number `x`: multiply `x` by 2, multiply `x` by 3, or add 1 to `x`. Your goal is given a positive integer `n`, find the minimum number of operations needed to obtain the number `n` starting from the number 1.
+
+### Frequency Queries - [C++](cpp/src/frequency_queries.cpp)
+
+[HackerRank - Frequency Queries](https://www.hackerrank.com/challenges/frequency-queries)
+
+You are given queries. Each query is one of the described below:
+ - Insert x in your data structure.
+ - Delete one occurence of y from your data structure, if present.
+ - Check if any integer is present whose frequency is exactly z. If yes, print 1 else 0.
+
+For example, you are given a list of operations. The results of each operation are: 
+
+    Operation      Array       Output
+    (ADD, 1)       [1]
+    (DEL, 2)       [1]
+    (GET, 2)                   0
+    (ADD, 1)       [1,1]
+    (ADD, 1)       [1,1,1]
+    (DEL, 1)       [1,1]
+    (GET, 2)                   1
