@@ -1,41 +1,40 @@
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
 
+#include "helpers/file_based_test_helper.hpp"
+
 #include <experimental/filesystem>
 #include <fstream>
 #include <string>
 #include "heapify.hpp"
 
 using namespace std;
+namespace fs = experimental::filesystem;
 
 vector<int> read_input() {
-    auto path = experimental::filesystem::current_path() / "test_resources" / "heapify" / "01.input";
-    ifstream input(path);
-    if (!input) {
-        throw std::invalid_argument("can not open file " + path.string());
-    }
-    int n = 0;
-    input >> n;
-    vector<int> values(n);
-    for (int i = 0; i < n; ++i) {
-        input >> values[i];
-    }
-    return values;
+    return file_based_test_helper::read_test_resource<vector<int>>(fs::path("heapify") / "01.input",
+                                                                   [](ifstream& input) {
+                                                                       int n = 0;
+                                                                       input >> n;
+                                                                       vector<int> values(n);
+                                                                       for (int i = 0; i < n; ++i) {
+                                                                           input >> values[i];
+                                                                       }
+                                                                       return values;
+                                                                   });
 }
 
 vector<pair<size_t, size_t>> read_output() {
-    auto path = experimental::filesystem::current_path() / "test_resources" / "heapify" / "01.result";
-    ifstream input(path);
-    if (!input) {
-        throw std::invalid_argument("can not open file " + path.string());
-    }
-    int n = 0;
-    input >> n;
-    vector<pair<size_t, size_t>> values(n);
-    for (int i = 0; i < n; ++i) {
-        input >> values[i].first >> values[i].second;
-    }
-    return values;
+    return file_based_test_helper::read_test_resource<vector<pair<size_t, size_t>>>(
+        fs::path("heapify") / "01.result", [](istream& input) {
+            int n = 0;
+            input >> n;
+            vector<pair<size_t, size_t>> values(n);
+            for (int i = 0; i < n; ++i) {
+                input >> values[i].first >> values[i].second;
+            }
+            return values;
+        });
 }
 
 TEST(heapify, heapify_returns_zero_swaps_on_empty_array) {
