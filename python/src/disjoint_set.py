@@ -35,45 +35,48 @@ class DisjointSet:
     """
     Implementation of disjoint set union data structure.
     """
-    
+
     def __init__(self):
-        self.roots_by_vertex = {}
-        self.sized_by_root = {}
+        self.__roots_by_vertex = {}
+        self.__sized_by_root = {}
 
     def __get_root(self, x):
         """
         Returns root of vertex x
         """
-        while self.roots_by_vertex[x] != x:
-            self.roots_by_vertex[x] = self.roots_by_vertex[self.roots_by_vertex[x]]
-            x = self.roots_by_vertex[x]
+        while self.__roots_by_vertex[x] != x:
+            self.__roots_by_vertex[x] = self.__roots_by_vertex[self.__roots_by_vertex[x]]
+            x = self.__roots_by_vertex[x]
         return x
 
     def union(self, x, y):
         """
         Connects two elements x and y. Returns size of connected component.
         """
-        if x not in self.roots_by_vertex:
-            self.roots_by_vertex[x] = x
-            self.sized_by_root[x] = 1
-        if y not in self.roots_by_vertex:
-            self.roots_by_vertex[y] = y
-            self.sized_by_root[y] = 1
-        
+        if x not in self.__roots_by_vertex:
+            self.__roots_by_vertex[x] = x
+            self.__sized_by_root[x] = 1
+        if y not in self.__roots_by_vertex:
+            self.__roots_by_vertex[y] = y
+            self.__sized_by_root[y] = 1
+
         rx = self.__get_root(x)
         ry = self.__get_root(y)
-        if rx == ry: # do not allow cycles
-            return self.sized_by_root[rx]
-        
-        (minr, maxr) = (rx, ry) if self.sized_by_root[rx] < self.sized_by_root[ry] else (ry, rx)
-        self.roots_by_vertex[minr] = maxr
-        self.sized_by_root[maxr] += self.sized_by_root[minr]
-        del self.sized_by_root[minr]
-        
-        return self.sized_by_root[maxr]
+        if rx == ry:  # do not allow cycles
+            return self.__sized_by_root[rx]
+
+        (minr, maxr) = (
+            rx, ry) if self.__sized_by_root[rx] < self.__sized_by_root[ry] else (ry, rx)
+        self.__roots_by_vertex[minr] = maxr
+        self.__sized_by_root[maxr] += self.__sized_by_root[minr]
+        del self.__sized_by_root[minr]
+
+        return self.__sized_by_root[maxr]
 
     def is_connected(self, x, y):
         """
         Checks if vertices x and y are connected by some path.
         """
+        if x not in self.__roots_by_vertex or y not in self.__roots_by_vertex:
+            return False
         return self.__get_root(x) == self.__get_root(y)
