@@ -59,9 +59,7 @@ class disjoint_set_tests(unittest.TestCase):
                 maxs = ns
             actual.append(maxs)
         expected = self.__read_result()
-        self.assertEqual(len(expected), len(actual))
-        for xe, xa, xi in zip(expected, actual, range(len(expected))):
-            self.assertEqual(xe, xa, 'at index ' + str(xi))
+        self.assertEqual(expected, actual)
 
     def __read_input(self):
         path = os.path.join(os.path.dirname(__file__),

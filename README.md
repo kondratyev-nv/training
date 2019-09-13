@@ -565,6 +565,8 @@ For example, you are given a list of operations. The results of each operation a
 
 ### Friend Circle Queries - [Python](python/src/disjoint_set.py)
 
+[HackerRank - Friend Circle Queries](https://www.hackerrank.com/challenges/friend-circle-queries)
+
 The population of HackerWorld is 10^9. Initially, none of the people 
 are friends with each other. In order to start a friendship, two persons 
 a and b have to shake hands, where 1 <= a, b <= 10^9. The friendship 
