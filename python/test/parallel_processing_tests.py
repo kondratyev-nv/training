@@ -39,7 +39,7 @@ class parallel_processing_tests(unittest.TestCase):
         path = os.path.join(os.path.dirname(__file__),
                             'test_resources', 'parallel_processing', '01.input')
         with open(path) as f:
-            workers_count, m = map(int, f.readline().split())
+            workers_count, _ = map(int, f.readline().split())
             jobs = list(map(int, f.read().split()))
             return workers_count, jobs
 

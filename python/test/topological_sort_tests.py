@@ -2,7 +2,7 @@ import unittest
 
 from src.graph import Graph
 from src.topological_sort import topological_sort
-from test.matchers import any_of
+from test.matchers.matchers import any_of
 
 
 class topological_sort_tests(unittest.TestCase):
