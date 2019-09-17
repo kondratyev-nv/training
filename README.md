@@ -591,3 +591,7 @@ to make a circle of 4 friends. We would print
     2
     2
     4
+
+### Copy linked list with friend nodes - [Java](java/src/main/java/ru/nk/training/LinkedListWithFriendLinkCopier.java)
+
+Create a copy of a linked list where each node has a link to a "friend" node.
