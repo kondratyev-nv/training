@@ -16,7 +16,7 @@ public class LinkedListWithFriendLinkCopier {
     public <T> LinkedListNodeWithFriendLink<T> copy(LinkedListNodeWithFriendLink<T> head) {
         Map<LinkedListNodeWithFriendLink<T>, LinkedListNodeWithFriendLink<T>> originalToCopy = copyOriginalNodesToMap(head);
         remapLinks(head, originalToCopy);
-        return originalToCopy.getOrDefault(head, null);
+        return head == null ? null : originalToCopy.get(head);
     }
 
     private <T> void remapLinks(
