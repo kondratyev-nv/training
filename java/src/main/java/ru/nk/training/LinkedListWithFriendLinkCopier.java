@@ -14,47 +14,31 @@ public class LinkedListWithFriendLinkCopier {
     }
 
     public <T> LinkedListNodeWithFriendLink<T> copy(LinkedListNodeWithFriendLink<T> head) {
-        LinkedListNodeWithFriendLink<T> copyHead = copyWithoutFriendLink(head);
-        copyFriendLinks(head, copyHead);
-        return copyHead;
+        Map<LinkedListNodeWithFriendLink<T>, LinkedListNodeWithFriendLink<T>> originalToCopy = copyOriginalNodesToMap(head);
+        remapLinks(head, originalToCopy);
+        return originalToCopy.getOrDefault(head, null);
     }
 
-    private <T> void copyFriendLinks(
+    private <T> void remapLinks(
             LinkedListNodeWithFriendLink<T> head,
-            LinkedListNodeWithFriendLink<T> copy
+            Map<LinkedListNodeWithFriendLink<T>, LinkedListNodeWithFriendLink<T>> originalToCopy
     ) {
-        Map<LinkedListNodeWithFriendLink<T>, LinkedListNodeWithFriendLink<T>> originalToCopy = buildOriginalToCopyMap(head, copy);
-
-        LinkedListNodeWithFriendLink<T> originalNode = head, copyNode = copy;
-        while (originalNode != null) {
-            copyNode.friend = originalToCopy.get(originalNode.friend);
-            copyNode = copyNode.next;
-            originalNode = originalNode.next;
+        while (head != null) {
+            LinkedListNodeWithFriendLink<T> copy = originalToCopy.get(head);
+            copy.next = originalToCopy.getOrDefault(head.next, null);
+            copy.friend = originalToCopy.getOrDefault(head.friend, null);
+            head = head.next;
         }
     }
 
-    private <T> Map<LinkedListNodeWithFriendLink<T>, LinkedListNodeWithFriendLink<T>> buildOriginalToCopyMap(
-            LinkedListNodeWithFriendLink<T> head,
-            LinkedListNodeWithFriendLink<T> copy
+    private <T> Map<LinkedListNodeWithFriendLink<T>, LinkedListNodeWithFriendLink<T>> copyOriginalNodesToMap(
+            LinkedListNodeWithFriendLink<T> head
     ) {
         Map<LinkedListNodeWithFriendLink<T>, LinkedListNodeWithFriendLink<T>> originalToCopy = new HashMap<>();
-        LinkedListNodeWithFriendLink<T> originalNode = head, copyNode = copy;
-        while (originalNode != null) {
-            originalToCopy.put(originalNode, copyNode);
-            copyNode = copyNode.next;
-            originalNode = originalNode.next;
+        while (head != null) {
+            originalToCopy.put(head, new LinkedListNodeWithFriendLink<>(head.value, head.next, head.friend));
+            head = head.next;
         }
         return originalToCopy;
-    }
-
-    private <T> LinkedListNodeWithFriendLink<T> copyWithoutFriendLink(LinkedListNodeWithFriendLink<T> head) {
-        if (head == null) {
-            return null;
-        }
-        return new LinkedListNodeWithFriendLink<>(
-                head.value,
-                copyWithoutFriendLink(head.next),
-                null
-        );
     }
 }
