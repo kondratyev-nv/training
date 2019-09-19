@@ -25,8 +25,12 @@ public class LinkedListWithFriendLinkCopier {
     ) {
         while (head != null) {
             LinkedListNodeWithFriendLink<T> copy = originalToCopy.get(head);
-            copy.next = originalToCopy.getOrDefault(head.next, null);
-            copy.friend = originalToCopy.getOrDefault(head.friend, null);
+            if (head.next != null) {
+                copy.next = originalToCopy.get(head.next);
+            }
+            if (head.friend != null) {
+                copy.friend = originalToCopy.get(head.friend);
+            }
             head = head.next;
         }
     }
