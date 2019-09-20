@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Tests for LRU cache")
+@DisplayName("LRU cache")
 public class LruCacheTest {
     @Test
     @DisplayName("Can add values to cache without exceeding capacity")

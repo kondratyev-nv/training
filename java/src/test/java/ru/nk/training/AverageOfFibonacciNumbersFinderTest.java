@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@DisplayName("Tests for calculating average of fibonacci numbers with Stream's")
+@DisplayName("Calculating average of fibonacci numbers with Stream's")
 public class AverageOfFibonacciNumbersFinderTest {
     private AverageOfFibonacciNumbersFinder finder;
 
