@@ -4,6 +4,9 @@ import ru.nk.training.DataStructures.Pair;
 
 import java.util.TreeSet;
 
+/**
+ * Given two arrays x and y and a number z find a pair of numbers (x_i, y_j) which sum is the closest possible to the z.
+ */
 public class NearestPairSumFinder {
     public NearestPairSumFinder() {
 
