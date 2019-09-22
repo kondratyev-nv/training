@@ -567,15 +567,9 @@ For example, you are given a list of operations. The results of each operation a
 
 [HackerRank - Friend Circle Queries](https://www.hackerrank.com/challenges/friend-circle-queries)
 
-The population of HackerWorld is 10^9. Initially, none of the people 
-are friends with each other. In order to start a friendship, two persons 
-a and b have to shake hands, where 1 <= a, b <= 10^9. The friendship 
-relation is transitive, that is if a and b shake hands with each other, 
-a and friends of q become friends with b and friends of b.
+The population of HackerWorld is 10^9. Initially, none of the people  are friends with each other. In order to start a friendship, two persons  a and b have to shake hands, where 1 <= a, b <= 10^9. The friendship relation is transitive, that is if a and b shake hands with each other, a and friends of q become friends with b and friends of b.
 
-You will be given q queries. After each query, you need to report 
-the size of the largest friend circle (the largest group of friends) 
-formed after considering that query.
+You will be given q queries. After each query, you need to report the size of the largest friend circle (the largest group of friends) formed after considering that query.
 
 For example, your list of queries is:
 
@@ -583,10 +577,7 @@ For example, your list of queries is:
     3 4
     2 3
 
-First, 1 and 2 shake hands, forming a circle of 2. Next, 3 and 4 do 
-the same. Now there are two groups of 2 friends. When 2 and 3 become 
-friends in the next query, both groups of friends are added together 
-to make a circle of 4 friends. We would print
+First, 1 and 2 shake hands, forming a circle of 2. Next, 3 and 4 do the same. Now there are two groups of 2 friends. When 2 and 3 become friends in the next query, both groups of friends are added together to make a circle of 4 friends. We would print
 
     2
     2
@@ -595,3 +586,7 @@ to make a circle of 4 friends. We would print
 ### Copy linked list with friend nodes - [Java](java/src/main/java/ru/nk/training/LinkedListWithFriendLinkCopier.java)
 
 Create a copy of a linked list where each node has a link to a "friend" node.
+
+### Merge Overlapping Intervals - [Python](python/src/merge_intersecting_segments.py)
+
+Given a set of intervals in any order, merge all overlapping intervals into one and output the result which should have only mutually exclusive intervals. Let the intervals be represented as pairs of integers for simplicity. For example, let the given set of intervals be [ {1, 3}, {2, 4}, {5, 7}, {6, 8} ]. The intervals {1, 3} and {2, 4} overlap with each other, so they should be merged and become {1, 4}. Similarly {5, 7} and {6, 8} should be merged and become {5, 8}.

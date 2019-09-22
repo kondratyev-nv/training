@@ -24,3 +24,9 @@ class Segment:
         Returns True if interval contains point
         """
         return self.start <= point and point <= self.end
+
+    def __eq__(self, other):
+        return self.start == other.start and self.end == other.end
+
+    def __str__(self):
+        return 'Segment(start=%s, end=%s)' % (self.start, self.end)
