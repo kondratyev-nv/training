@@ -4,7 +4,7 @@ from src.max_segment_intersections import max_segment_intersections
 from src.segment import Segment
 
 
-class max_segment_intersections_tests_tests(unittest.TestCase):
+class max_segment_intersections_tests(unittest.TestCase):
     def test_returns_zero_when_no_segments(self):
         result = max_segment_intersections([])
         self.assertEqual(result, 0)
