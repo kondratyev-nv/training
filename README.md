@@ -587,6 +587,10 @@ First, 1 and 2 shake hands, forming a circle of 2. Next, 3 and 4 do the same. No
 
 Create a copy of a linked list where each node has a link to a "friend" node.
 
+### Pair of numbers with sum nearest to target - [Java](java/src/main/java/ru/nk/training/NearestPairSumFinder.java)
+
+Given two arrays `x` and `y` and a number `z` find a pair of numbers (`x`_`i`, `y`_`j`) which sum is the closest possible to the `z`.
+
 ### Merge Overlapping Intervals - [Python](python/src/merge_intersecting_segments.py)
 
 Given a set of intervals in any order, merge all overlapping intervals into one and output the result which should have only mutually exclusive intervals. Let the intervals be represented as pairs of integers for simplicity. For example, let the given set of intervals be [ {1, 3}, {2, 4}, {5, 7}, {6, 8} ]. The intervals {1, 3} and {2, 4} overlap with each other, so they should be merged and become {1, 4}. Similarly {5, 7} and {6, 8} should be merged and become {5, 8}.
