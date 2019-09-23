@@ -595,3 +595,7 @@ to make a circle of 4 friends. We would print
 ### Copy linked list with friend nodes - [Java](java/src/main/java/ru/nk/training/LinkedListWithFriendLinkCopier.java)
 
 Create a copy of a linked list where each node has a link to a "friend" node.
+
+### Pair of numbers with sum nearest to target - [Java](java/src/main/java/ru/nk/training/NearestPairSumFinder.java)
+
+Given two arrays `x` and `y` and a number `z` find a pair of numbers (`x`_`i`, `y`_`j`) which sum is the closest possible to the `z`.
