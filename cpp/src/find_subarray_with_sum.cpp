@@ -1,3 +1,6 @@
+/**
+ * Given an array A of non-negative numbers find a contiguous subarray elements of which sums up to a value X.
+ */
 
 #include "find_subarray_with_sum.hpp"
 
