@@ -1,7 +1,25 @@
 {
-    "files.associations": {
-        "string": "cpp",
-        "functional": "cpp"
-    },
-    "C_Cpp.clang_format_style": "Chromium"
+    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.intelliSenseEngine": "Default",
+    "C_Cpp.intelliSenseEngineFallback": "Disabled",
+    "C_Cpp.autoAddFileAssociations": false,
+    "lcov.path": "./build/code_coverage.info",
+    "lcov.branchCoverage": "full",
+    "lcov.watch": [
+        {
+            "pattern": "**/*.hpp",
+            "command": "./build_with_coverage.sh"
+        },
+        {
+            "pattern": "**/*.cpp",
+            "command": "./build_with_coverage.sh"
+        }
+    ],
+    "catch2TestExplorer.executables": [
+        {
+            "name": "${filename} (${relDirpath})",
+            "pattern": "build/training_test",
+            "cwd": "${workspaceFolder}/test"
+        }
+    ]
 }

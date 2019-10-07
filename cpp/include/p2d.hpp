@@ -6,4 +6,4 @@ struct p2d {
     float y;
 };
 
-#endif // P2D_HPP
+#endif  // P2D_HPP

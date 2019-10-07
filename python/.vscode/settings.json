@@ -1,10 +1,11 @@
 {
-    "python.unitTest.unittestArgs": [
+    "python.pythonPath": "python3",
+    "python.testing.unittestArgs": [
         "-v",
         "-s",
         "./test",
         "-p",
         "*_tests.py"
     ],
-    "python.unitTest.unittestEnabled": true
+    "python.testing.unittestEnabled": true
 }

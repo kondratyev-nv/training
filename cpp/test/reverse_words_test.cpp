@@ -1,5 +1,6 @@
-#include "reverse_words.hpp"
 #include "gtest/gtest.h"
+
+#include "reverse_words.hpp"
 
 TEST(reverse_words, do_not_modifies_empty_string) {
     std::string s = "";
@@ -25,8 +26,7 @@ TEST(reverse_words, reverts_single_word) {
     EXPECT_EQ("cba", s);
 }
 
-TEST(reverse_words,
-     reverts_word_when_string_has_multiple_whitespaces_between_words) {
+TEST(reverse_words, reverts_word_when_string_has_multiple_whitespaces_between_words) {
     std::string s = "ab   c";
     reverse_words(s);
     EXPECT_EQ("ba   c", s);

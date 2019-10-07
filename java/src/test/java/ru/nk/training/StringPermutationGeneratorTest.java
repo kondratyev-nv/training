@@ -1,50 +1,56 @@
 package ru.nk.training;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
-import static ru.nk.training.TestUtils.AssertHelper.assertSortedArraysEqual;
+import static java.util.Arrays.asList;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class StringPermutationGeneratorTest {
 
     private StringPermutationGenerator generator;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         generator = new StringPermutationGenerator();
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void throwsWhenStringIsNull() throws Exception {
-        generator.permutations(null);
+    @Test
+    public void throwsWhenStringIsNull() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> generator.permutations(null)
+        );
     }
 
     @Test
-    public void returnsEmptyArrayForEmptyString() throws Exception {
+    public void returnsEmptyArrayForEmptyString() {
         String[] permutations = generator.permutations("");
         assertEquals(0, permutations.length);
     }
 
     @Test
-    public void returnsSameStringForSingleCharacter() throws Exception {
+    public void returnsSameStringForSingleCharacter() {
         String[] permutations = generator.permutations("a");
         assertEquals(1, permutations.length);
         assertEquals("a", permutations[0]);
     }
 
     @Test
-    public void returnsPermutationsForStringWithTwoElements() throws Exception {
+    public void returnsPermutationsForStringWithTwoElements() {
         String[] permutations = generator.permutations("ab");
         assertEquals(2, permutations.length);
-        assertSortedArraysEqual(new String[]{ "ab", "ba" }, permutations);
+        assertThat(asList("ab", "ba"), containsInAnyOrder(permutations));
     }
 
     @Test
-    public void returnsPermutationsForStringWithThreeElements() throws Exception {
+    public void returnsPermutationsForStringWithThreeElements() {
         String[] permutations = generator.permutations("hat");
         assertEquals(6, permutations.length);
         String[] expectedPermutations = { "tha", "aht", "tah", "ath", "hta", "hat" };
-        assertSortedArraysEqual(expectedPermutations, permutations);
+        assertThat(asList(expectedPermutations), containsInAnyOrder(permutations));
     }
 }

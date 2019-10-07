@@ -20,34 +20,42 @@ class Graph:
     """
 
     def __init__(self):
-        self.adjacency_list = {}
+        self.__adjacency_list = {}
 
     def add_edge(self, start, end, weight):
         """
         Add edge with specified weight connecting start and end nodes
         """
-        if start not in self.adjacency_list:
-            self.adjacency_list[start] = []
-        self.adjacency_list[start].append(Edge(start, end, weight))
+        self.add_vertex(start)
+        self.add_vertex(end)
+        self.__adjacency_list[start].append(Edge(start, end, weight))
 
     def add_vertex(self, vertex):
         """
         Add vertex
         """
-        if vertex not in self.adjacency_list:
-            self.adjacency_list[vertex] = []
+        if vertex not in self.__adjacency_list:
+            self.__adjacency_list[vertex] = []
 
     def get_adjacency_list(self):
         """
         Get graph as adjacency list
         """
-        return self.adjacency_list
+        return self.__adjacency_list
 
-    def get_edges(self):
+    def get_edges(self, vertex=None):
         """
         Get all edges of the graph
         """
-        return [edge for edges in self.adjacency_list.values() for edge in edges]
+        if vertex is None:
+            return [edge for edges in self.__adjacency_list.values() for edge in edges]
+        return self.__adjacency_list[vertex]
+
+    def get_vertices(self):
+        """
+        Get all vertices of the graph
+        """
+        return self.__adjacency_list.keys()
 
 
 class UndirectedGraph:
@@ -56,29 +64,35 @@ class UndirectedGraph:
     """
 
     def __init__(self):
-        self.graph = Graph()
+        self.__graph = Graph()
 
     def add_edge(self, start, end, weight):
         """
         Add edge with specified weight connecting start and end nodes
         """
-        self.graph.add_edge(start, end, weight)
-        self.graph.add_edge(end, start, weight)
+        self.__graph.add_edge(start, end, weight)
+        self.__graph.add_edge(end, start, weight)
 
     def add_vertex(self, vertex):
         """
         Add vertex
         """
-        self.graph.add_vertex(vertex)
+        self.__graph.add_vertex(vertex)
 
     def get_adjacency_list(self):
         """
         Get graph as adjacency list
         """
-        return self.graph.get_adjacency_list()
+        return self.__graph.get_adjacency_list()
 
-    def get_edges(self):
+    def get_edges(self, vertex=None):
         """
         Get all edges of the graph
         """
-        return self.graph.get_edges()
+        return self.__graph.get_edges(vertex)
+
+    def get_vertices(self):
+        """
+        Get all vertices of the graph
+        """
+        return self.__graph.get_vertices()

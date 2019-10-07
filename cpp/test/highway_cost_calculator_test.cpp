@@ -3,30 +3,30 @@
 #include "highway_cost_calculator.hpp"
 
 long long p(long long x, long long y) {
-  long long r = 1;
-  for(int i = 1; i <= y; ++i) {
-    r *= x;
-  }
-  return r;
+    long long r = 1;
+    for (int i = 1; i <= y; ++i) {
+        r *= x;
+    }
+    return r;
 }
 
 long long faulhaber_modulo_naive(long long n, long long k, long long m) {
-  long long s = 0;
-  for(int i = 0; i < n; ++i) {
-    s += p(n - i, k);
-  }
-  return s % m;
+    long long s = 0;
+    for (int i = 0; i < n; ++i) {
+        s += p(n - i, k);
+    }
+    return s % m;
 }
 
-long long highway_cost_naive(long long n, long long k,  long long m) {
-  if(n < 2) {
-    return 0;
-  }
-  return (faulhaber_modulo_naive(n - 1, k, m) - 1) % m;
+long long highway_cost_naive(long long n, long long k, long long m) {
+    if (n < 2) {
+        return 0;
+    }
+    return (faulhaber_modulo_naive(n - 1, k, m) - 1) % m;
 }
 
 class highway_cost_calculator_test : public ::testing::Test {
-protected:
+   protected:
     highway_cost_calculator hwc;
 };
 
@@ -66,8 +66,8 @@ TEST_F(highway_cost_calculator_test, returns_zero_cost_for_single_city) {
 }
 
 TEST_F(highway_cost_calculator_test, returns_same_cost_as_naive_implementation) {
-    for(int i = 1; i < 100; ++i) {
-        for(int j = 1; j < 10; ++j) {
+    for (int i = 1; i < 100; ++i) {
+        for (int j = 1; j < 10; ++j) {
             auto se = highway_cost_naive(i, j, 1000000009);
             auto sa = hwc.highway_cost(i, j);
             EXPECT_EQ(se, sa);
