@@ -595,6 +595,10 @@ Given two arrays `x` and `y` and a number `z` find a pair of numbers (`x`_`i`, `
 
 Given a set of intervals in any order, merge all overlapping intervals into one and output the result which should have only mutually exclusive intervals. Let the intervals be represented as pairs of integers for simplicity. For example, let the given set of intervals be [ {1, 3}, {2, 4}, {5, 7}, {6, 8} ]. The intervals {1, 3} and {2, 4} overlap with each other, so they should be merged and become {1, 4}. Similarly {5, 7} and {6, 8} should be merged and become {5, 8}.
 
+### Find subarray with a specified sum - [C++](cpp/src/find_subarray_with_sum.cpp)
+
+Given an array `A` of non-negative numbers find a contiguous subarray elements of which sums up to a value `X`.
+
 ### Running Median - [C++](cpp/include/running_median.hpp)
 
 [HackerRank - Find the Running Median](https://www.hackerrank.com/challenges/find-the-running-median)

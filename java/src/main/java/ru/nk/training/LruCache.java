@@ -2,7 +2,6 @@ package ru.nk.training;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.NoSuchElementException;
 
 /**
  * Least Recently Used (LRU) cache
