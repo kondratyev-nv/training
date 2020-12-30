@@ -14,7 +14,7 @@ public class LinkedListWithFriendLinkCopier {
     }
 
     public <T> LinkedListNodeWithFriendLink<T> copy(LinkedListNodeWithFriendLink<T> head) {
-        Map<LinkedListNodeWithFriendLink<T>, LinkedListNodeWithFriendLink<T>> originalToCopy = copyOriginalNodesToMap(head);
+        var originalToCopy = copyOriginalNodesToMap(head);
         remapLinks(head, originalToCopy);
         return head == null ? null : originalToCopy.get(head);
     }
@@ -38,7 +38,7 @@ public class LinkedListWithFriendLinkCopier {
     private <T> Map<LinkedListNodeWithFriendLink<T>, LinkedListNodeWithFriendLink<T>> copyOriginalNodesToMap(
             LinkedListNodeWithFriendLink<T> head
     ) {
-        Map<LinkedListNodeWithFriendLink<T>, LinkedListNodeWithFriendLink<T>> originalToCopy = new HashMap<>();
+        var originalToCopy = new HashMap<LinkedListNodeWithFriendLink<T>, LinkedListNodeWithFriendLink<T>>();
         while (head != null) {
             originalToCopy.put(head, new LinkedListNodeWithFriendLink<>(head.value, head.next, head.friend));
             head = head.next;
