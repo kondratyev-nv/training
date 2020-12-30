@@ -594,3 +594,11 @@ Given two arrays `x` and `y` and a number `z` find a pair of numbers (`x`_`i`, `
 ### Merge Overlapping Intervals - [Python](python/src/merge_intersecting_segments.py)
 
 Given a set of intervals in any order, merge all overlapping intervals into one and output the result which should have only mutually exclusive intervals. Let the intervals be represented as pairs of integers for simplicity. For example, let the given set of intervals be [ {1, 3}, {2, 4}, {5, 7}, {6, 8} ]. The intervals {1, 3} and {2, 4} overlap with each other, so they should be merged and become {1, 4}. Similarly {5, 7} and {6, 8} should be merged and become {5, 8}.
+
+### Blocking Queue Implementation - [Java](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue)
+
+ - [BlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/BlockingQueue.java) - Blocking Queue API (`add`, `tryAdd`, `waitingAdd`, `remove`, `tryRemove`, `waitingRemove`, `size`)
+ - [ArrayBlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/ArrayBlockingQueue.java) - Implementaion based on an array
+ - [ConditionArrayBlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/ConditionArrayBlockingQueue.java) - Implementaion based on an array, `waitingAdd` and `waitingRemove` leverage Lock Conditions
+ - [LinkedBlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/LinkedBlockingQueue.java) - Implementation based on a linked list (unbounded)
+ - [BoundedLinkedBlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/BoundedLinkedBlockingQueue.java) - Implementation based on a linked list (bounded)
