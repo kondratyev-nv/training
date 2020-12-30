@@ -13,7 +13,7 @@ matrix:
         - codecov
 
     - language: java
-      jdk: openjdk8
+      jdk: openjdk11
       before_script:
         - cd java
       after_success:
