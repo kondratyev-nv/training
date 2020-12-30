@@ -74,35 +74,36 @@ public class BigIntegerTest {
     public void constructsFromIntegerCorrectly() throws Exception {
         BigInteger i = new BigInteger(12345);
         assertEquals(5, i.getDigits().size());
-        assertEquals(Arrays.asList(5, 4, 3, 2, 1), i.getDigits());
+        assertEquals(Arrays.asList(1, 2, 3, 4, 5), i.getDigits());
     }
 
     @Test
     public void constructsFromStringCorrectly() throws Exception {
         BigInteger i = new BigInteger("12345");
         assertEquals(5, i.getDigits().size());
-        assertEquals(Arrays.asList(5, 4, 3, 2, 1), i.getDigits());
+        assertEquals(Arrays.asList(1, 2, 3, 4, 5), i.getDigits());
     }
 
     @Test
     public void constructsFromListCorrectly() throws Exception {
-        BigInteger i = new BigInteger(Arrays.asList(5, 4, 3, 2, 1));
+        //BigInteger i = new BigInteger(Arrays.asList(5, 4, 3, 2, 1));
+        BigInteger i = new BigInteger(Arrays.asList(1, 2, 3, 4, 5));
         assertEquals(5, i.getDigits().size());
-        assertEquals(Arrays.asList(5, 4, 3, 2, 1), i.getDigits());
+        assertEquals(Arrays.asList(1, 2, 3, 4, 5), i.getDigits());
     }
 
     @Test
     public void constructsFromStringSkippingLeadingZeros() throws Exception {
         BigInteger i = new BigInteger("0006780900");
         assertEquals(7, i.getDigits().size());
-        assertEquals(Arrays.asList(0, 0, 9, 0, 8, 7, 6), i.getDigits());
+        assertEquals(Arrays.asList(6, 7, 8, 0, 9, 0, 0), i.getDigits());
     }
 
     @Test
     public void constructsFromListSkippingLeadingZeros() throws Exception {
-        BigInteger i = new BigInteger(Arrays.asList(0, 0, 9, 0, 8, 7, 6, 0, 0, 0));
+        BigInteger i = new BigInteger(Arrays.asList(0, 0, 6, 7, 8, 0, 9, 0, 0));
         assertEquals(7, i.getDigits().size());
-        assertEquals(Arrays.asList(0, 0, 9, 0, 8, 7, 6), i.getDigits());
+        assertEquals(Arrays.asList(6, 7, 8, 0, 9, 0, 0), i.getDigits());
     }
 
     @Test

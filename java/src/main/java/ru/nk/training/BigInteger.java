@@ -37,7 +37,7 @@ public class BigInteger {
         if (digits == null || digits.isEmpty()) {
             throw new IllegalArgumentException("Digits are empty");
         }
-        if (!digits.chars().allMatch(Character::isDigit)){
+        if (!digits.chars().allMatch(ch -> '0' <= ch && ch <= '9')){
             throw new IllegalArgumentException("Digits are not in range [0,9]");
         }
 
@@ -45,11 +45,15 @@ public class BigInteger {
         for (int i = digits.length() - 1; i >= 0; --i){
             this.digits.add(digits.charAt(i) - '0');
         }
-
         trimLeadingZeros();
     }
 
+    // big-endian order: for number "123" the list would be [1, 2, 3]
     public BigInteger(List<Integer> digits) {
+        this(digits, false);
+    }
+
+    private BigInteger(List<Integer> digits, boolean isLittleEndian) {
         if (digits == null || digits.isEmpty()) {
             throw new IllegalArgumentException("Digits are empty");
         }
@@ -57,12 +61,26 @@ public class BigInteger {
             throw new IllegalArgumentException("Digits are not in range [0,9]");
         }
 
-        this.digits = new ArrayList<>(digits);
+        if (isLittleEndian) {
+            this.digits = new ArrayList<>(digits);
+        }
+        else {
+            this.digits = new ArrayList<>();
+            for (int i = digits.size() - 1; i >= 0; --i) {
+                this.digits.add(digits.get(i));
+            }
+        }
+
         trimLeadingZeros();
     }
 
     public List<Integer> getDigits() {
-        return new ArrayList<>(digits);
+        ArrayList<Integer> result = new ArrayList<>();
+        for (int i = digits.size() - 1; i >= 0; --i){
+            result.add(digits.get(i));
+        }
+
+        return result;
     }
 
     @Override
@@ -90,7 +108,7 @@ public class BigInteger {
             sumDigits.add(carry);
         }
 
-        return new BigInteger(sumDigits);
+        return new BigInteger(sumDigits, true);
     }
 
     public BigInteger multiply(BigInteger other) {
@@ -142,7 +160,7 @@ public class BigInteger {
             result.add(getDigit(i));
         }
 
-        return new BigInteger(result);
+        return new BigInteger(result, true);
     }
 
     public BigInteger multiplyByPowerOf10(int power){
@@ -153,7 +171,7 @@ public class BigInteger {
         List<Integer> resultDigits = new ArrayList<>(Collections.nCopies(power, 0));
         resultDigits.addAll(this.digits);
 
-        return new BigInteger(resultDigits);
+        return new BigInteger(resultDigits, true);
     }
 
     private int getDigit(int index){
