@@ -611,3 +611,13 @@ The median of a set of integers is the midpoint value of the data set for which 
  - Add the i-th integer to a running list of integers.
  - Find the median of the updated list (i.e., for the first element through the i-th element).
  - Print the list's updated median on a new line. The printed value must be a double-precision number scaled to 1 decimal place (i.e., 12.3 format).
+
+### Decimal Number Validator - [Java](java/src/main/java/ru/nk/training/DecimalNumberValidator.java)
+
+Validate if a given string can be interpreted as a decimal number.
+
+It is intended for the problem statement to be ambiguous. You should gather all requirements up front before implementing one. However, here is a list of characters that can be in a valid decimal number:
+ * Numbers 0-9
+ * Exponent - "e"
+ * Positive/negative sign - "+"/"-"
+ * Decimal point - "."
