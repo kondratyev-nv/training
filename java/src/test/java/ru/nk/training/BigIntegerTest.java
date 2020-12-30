@@ -86,7 +86,6 @@ public class BigIntegerTest {
 
     @Test
     public void constructsFromListCorrectly() throws Exception {
-        //BigInteger i = new BigInteger(Arrays.asList(5, 4, 3, 2, 1));
         BigInteger i = new BigInteger(Arrays.asList(1, 2, 3, 4, 5));
         assertEquals(5, i.getDigits().size());
         assertEquals(Arrays.asList(1, 2, 3, 4, 5), i.getDigits());
@@ -277,7 +276,7 @@ public class BigIntegerTest {
         BigInteger result = bigA.add(bigB);
 
         java.math.BigInteger testResult = (new java.math.BigInteger(a)).add(new java.math.BigInteger(
-            b));
+                b));
 
         assertEquals(testResult.toString(), result.toString());
     }
@@ -375,8 +374,8 @@ public class BigIntegerTest {
         BigInteger bigB = new BigInteger(b);
         BigInteger result = bigA.multiply(bigB);
 
-        java.math.BigInteger testResult = (new java.math.BigInteger(a)).multiply(new java.math.BigInteger(
-            b));
+        java.math.BigInteger testResult = (new java.math.BigInteger(a))
+                .multiply(new java.math.BigInteger(b));
 
         assertEquals(testResult.toString(), result.toString());
     }
