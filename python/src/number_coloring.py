@@ -15,32 +15,32 @@ need 3 colors (each element should be colored in different color).
 
 Input:
 First row contains one integer n (1<=n<=100), where n is the lenght of the sequence.
-First row contains n integers a1,a2,...,an (1<=ai<=100). Numbers in the sequence can be repeated.
+Second row contains n integers a1,a2,...,an (1<=ai<=100). Numbers in the sequence can be repeated.
 
 Output:
 Print the minimal number of colors needed to color the elements correctly.
 """
 
-def number_coloring(arr):
-    if len(arr) == 0:
+def number_coloring(numbers):
+    if len(numbers) == 0:
         return 0
 
-    arr.sort()
-    if len(arr) == 1 or arr[0] == 1:
+    numbers.sort()
+    if len(numbers) == 1 or numbers[0] == 1:
         return 1
 
     cnt = 0
     next_start = 0
-    color = [0] * len(arr)
+    color = [0] * len(numbers)
     while next_start != -1:
         cnt += 1
         cur_start = next_start
         next_start = -1
-        cur = arr[cur_start]
-        for i in range(cur_start, len(arr)):
+        cur = numbers[cur_start]
+        for i in range(cur_start, len(numbers)):
             if color[i] != 0:
                 continue
-            if arr[i] % cur == 0:
+            if numbers[i] % cur == 0:
                 color[i] = cnt
             elif next_start == -1:
                 next_start = i

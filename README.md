@@ -620,6 +620,6 @@ For example, you can color elements [40, 10, 60] in one color, because all of th
 
 For example, if a=[6, 2, 3, 4, 12], then you need to use two colors: 6,3,12 can be colored in the first color (6,3,12 are divisable by 3), and 2 and 4 in the second color (2 and 4 are divisable by 2). For example, if a=[10, 7, 15], then you need 3 colors (each element should be colored in different color).
 
-**Input:** First row contains one integer n (1<=n<=100), where n is the lenght of the sequence. First row contains n integers a1,a2,...,an (1<=ai<=100). Numbers in the sequence can be repeated.
+**Input:** First row contains one integer n (1<=n<=100), where n is the lenght of the sequence. Second row contains n integers a1,a2,...,an (1<=ai<=100). Numbers in the sequence can be repeated.
 
 **Output:** Print the minimal number of colors needed to color the elements correctly.
