@@ -27,6 +27,9 @@ jobs:
 
   python:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: python
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
@@ -36,38 +39,31 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        python -m pip install coverage
+        python -m pip install coverage codecov
     - name: Test and collect coverage
-      run: coverage run --source=python/src -m unittest discover -v --pattern "*_tests.py"
+      run: coverage run --source=src -m unittest discover -v --pattern "*_tests.py"
     - name: Upload coverage
-      uses: codecov/codecov-action@v1
+      run: codecov
 
   cpp:
     runs-on: ubuntu-latest
-    env:
-      BUILD_DIR: ./cpp/build
     defaults:
       run:
         working-directory: cpp
     steps:
     - uses: actions/checkout@v2
     - name: Create Build Environment
-      # Some projects don't allow in-source building, so create a separate build directory
-      # We'll use this as our working directory for all subsequent commands
-      run: cmake -E make_directory $BUILD_DIR
+      run: cmake -E make_directory cpp/build
     - name: Configure CMake
-      # Use a bash shell so we can use the same syntax for environment variable
-      # access regardless of the host operating system
-      shell: bash
-      working-directory: ${{env.BUILD_DIR}}
+      working-directory: cpp/build
       run: cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" ..
     - name: Build
-      working-directory: ${{env.BUILD_DIR}}
+      working-directory: cpp/build
       shell: bash
       # Execute the build.  You can specify a specific target with "--target <NAME>"
       run: cmake --build .
     - name: Test
-      working-directory: ${{env.BUILD_DIR}}
+      working-directory: cpp/build
       shell: bash
       # Execute tests defined by the CMake configuration.  
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
