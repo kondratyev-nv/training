@@ -12,8 +12,9 @@ on:
 jobs:
   java:
     runs-on: ubuntu-latest
-    env:
-      working-directory: java
+    defaults:
+      run:
+        working-directory: java
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
@@ -29,8 +30,9 @@ jobs:
 
   python:
     runs-on: ubuntu-latest
-    env:
-      working-directory: python
+    defaults:
+      run:
+        working-directory: python
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
