@@ -44,25 +44,31 @@ jobs:
 
   cpp:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: cpp
     env:
       # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
       BUILD_TYPE: Debug
     steps:
     - uses: actions/checkout@v2
 
+    - name: Set up Python ${{ env.PYTHON_VERSION }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    
+    - name: Install gcovr
+      run: pip install gcovr
+
     - name: Create Build Environment
+      working-directory: $GITHUB_WORKSPACE/cpp
       # Some projects don't allow in-source building, so create a separate build directory
       # We'll use this as our working directory for all subsequent commands
       run: cmake -E make_directory ${{runner.workspace}}/build
 
     - name: Configure CMake
+      working-directory: ${{runner.workspace}}/build
       # Use a bash shell so we can use the same syntax for environment variable
       # access regardless of the host operating system
       shell: bash
-      working-directory: ${{runner.workspace}}/build
       # Note the current convention is to use the -S and -B options here to specify source 
       # and build directories, but this is only available with CMake 3.13 and higher.  
       # The CMake binaries on the Github Actions machines are (as of this writing) 3.12
@@ -79,12 +85,13 @@ jobs:
       shell: bash
       # Execute tests defined by the CMake configuration.  
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
-      run: ctest -C $BUILD_TYPE --parallel 4 --timeout 10 --output-on-failure
+      run: ctest -C $BUILD_TYPE --parallel 4 --timeout 30 --output-on-failure
+    
     - name: Collect coverage
-      run: |
-        lcov --directory . --capture --output-file coverage.info # capture coverage info
-        lcov --remove coverage.info '/usr/*' 'test/*' --output-file coverage.info # filter out system
-        lcov --list coverage.info #debug info
+      working-directory: ${{runner.workspace}}/cpp/test
+      shell: bash
+      run: make --directory=${{runner.workspace}}/build training_test_coverage
+    
     - name: Upload coverage
       uses: codecov/codecov-action@v1
 
