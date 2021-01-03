@@ -41,13 +41,20 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND NOT MINGW)
     target_link_libraries(${PROJECT_TEST_NAME} stdc++fs)
 endif()
 
+add_custom_target(copy_test_resources ALL
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${PROJECT_SOURCE_DIR}/test/test_resources
+    ${CMAKE_BINARY_DIR}/test_resources)
+
+add_dependencies(${PROJECT_TEST_NAME} copy_test_resources)
+
 include(GoogleTest)
-gtest_add_tests(TARGET ${PROJECT_TEST_NAME}
-                WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/test)
+gtest_add_tests(TARGET ${PROJECT_TEST_NAME})
 
 include(CodeCoverage)
 append_coverage_compiler_flags()
-setup_target_for_coverage_gcovr_html(
+setup_target_for_coverage_gcovr_xml(
     NAME ${PROJECT_TEST_NAME}_coverage
     EXECUTABLE ${PROJECT_TEST_NAME}
-    BASE_DIRECTORY "${PROJECT_SOURCE_DIR}/src")
+    BASE_DIRECTORY "${PROJECT_SOURCE_DIR}/src"
+    EXCLUDE "${PROJECT_SOURCE_DIR}/build" "${PROJECT_SOURCE_DIR}/test")
