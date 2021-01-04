@@ -1,6 +1,6 @@
 # Training project
 
-[![Build Status](https://travis-ci.org/kondratyev-nv/training.svg?branch=master)](https://travis-ci.org/kondratyev-nv/training)
+[![GitHub Actions CI](https://github.com/kondratyev-nv/training/workflows/GitHub%20Actions%20CI/badge.svg)](https://github.com/kondratyev-nv/training/actions?query=workflow%3A%22GitHub+Actions+CI%22)
 [![Coverage](https://codecov.io/gh/kondratyev-nv/training/branch/master/graph/badge.svg)](https://codecov.io/gh/kondratyev-nv/training)
 [![Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](UNLICENSE)
 
