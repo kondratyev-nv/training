@@ -612,6 +612,11 @@ The median of a set of integers is the midpoint value of the data set for which 
  - Find the median of the updated list (i.e., for the first element through the i-th element).
  - Print the list's updated median on a new line. The printed value must be a double-precision number scaled to 1 decimal place (i.e., 12.3 format).
 
+### BigInteger Implementation [Java](java/src/main/java/ru/nk/training/BigInteger.java)
+
+Constructed from int, String or List of digits (big-endian)
+Supported operations: addition, multiplication
+
 ### Number coloring - [Python](python/src/number_coloring.py)
 
 There is a sequence of integer numbers a1, a2, ..., an. You need to color the elements of the sequence so that for an arbitrary color, all elements of this color should be divisible by the minimal element of this color. You need to minimize the number of colors used.
