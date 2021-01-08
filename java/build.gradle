@@ -17,7 +17,13 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    jcstressVersion = '0.3'
+}
+
 dependencies {
+    compile "org.openjdk.jcstress:jcstress-core:${jcstressVersion}"
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-params:5.7.0'
     testImplementation 'org.hamcrest:hamcrest:2.2'

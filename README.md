@@ -612,6 +612,14 @@ The median of a set of integers is the midpoint value of the data set for which 
  - Find the median of the updated list (i.e., for the first element through the i-th element).
  - Print the list's updated median on a new line. The printed value must be a double-precision number scaled to 1 decimal place (i.e., 12.3 format).
 
+### Blocking Queue Implementation - [Java](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue)
+
+ - [BlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/BlockingQueue.java) - Blocking Queue API (`add`, `tryAdd`, `waitingAdd`, `remove`, `tryRemove`, `waitingRemove`, `size`)
+ - [ArrayBlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/ArrayBlockingQueue.java) - Implementaion based on an array
+ - [ConditionArrayBlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/ConditionArrayBlockingQueue.java) - Implementaion based on an array, `waitingAdd` and `waitingRemove` leverage Lock Conditions
+ - [LinkedBlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/LinkedBlockingQueue.java) - Implementation based on a linked list (unbounded)
+ - [BoundedLinkedBlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/BoundedLinkedBlockingQueue.java) - Implementation based on a linked list (bounded)
+
 ### Decimal Number Validator - [Java](java/src/main/java/ru/nk/training/DecimalNumberValidator.java)
 
 Validate if a given string can be interpreted as a decimal number.
