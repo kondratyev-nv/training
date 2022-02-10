@@ -665,7 +665,7 @@ For example, if a=[6, 2, 3, 4, 12], then you need to use two colors: 6,3,12 can 
 
 ### Insert Delete GetRandom O(1) - [Java](java/src/main/java/ru/nk/training/RandomizedSet.java)
 
-[LeetCode - Word Pattern](https://leetcode.com/problems/insert-delete-getrandom-o1/)
+[LeetCode - Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/)
 
 Implement the `RandomizedSet` class:
 
