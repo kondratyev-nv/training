@@ -10,10 +10,12 @@ Solutions to various programming challenges in Java, C++ and Python.
 
 ### Java
 
-Java 8 and Maven are required. To build and run tests
+Java 11 is required. To build and run tests
 
     cd java
-    mvn clean test
+    ./gradlew build
+
+(Use `./gradlew.bat` on Windows)
 
 ### Python
 
@@ -22,7 +24,7 @@ Python 3.5 is required. To run tests
     cd python
     python -m unittest discover -v --pattern *_tests.py
 
-To run tests with coverage 
+To run tests with coverage
 
     coverage run --source=src -m unittest discover -v --pattern *_tests.py
 
@@ -34,7 +36,7 @@ To build from VSCode open cpp directory (`code cpp`) and run build task. To run 
 
 #### Linux
 
-On Linux gcc-5 and g++-5 and CMake 3.2 are required. To build and run tests from the console go to the cpp directory (`cd ./cpp/`) and run `./build.sh` or 
+On Linux gcc-5 and g++-5 and CMake 3.2 are required. To build and run tests from the console go to the cpp directory (`cd ./cpp/`) and run `./build.sh` or
 
     mkdir -p build
     cd build
@@ -77,8 +79,9 @@ You are given two rectangles, each defined by an upper-left (UL) corner and a lo
 [LeetCode - LRU Cache](https://leetcode.com/problems/lru-cache)
 
 Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: `get` and `put`.
- - `get(key)` - Get the value of the key if the key exists in the cache, otherwise return `null`. 
- - `put(key, value)` - Set or insert the value if the key is not already present. 
+
+- `get(key)` - Get the value of the key if the key exists in the cache, otherwise return `null`.
+- `put(key, value)` - Set or insert the value if the key is not already present.
 
 When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
 
@@ -96,7 +99,7 @@ Write an efficient function that deletes characters from an ASCII string. Use th
 
 ### Count number of road forks - [Python](python/src/count_number_of_road_forks.py)
 
-Consider the forest as an N x M grid. Each cell is either empty (represented by .) or blocked by a tree (represented by X). You can move LEFT, RIGHT, UP, and DOWN through empty cells, but you cannot travel through a tree cell. Starting cell is marked with the character M, and the target cell is marked with a *. The upper-left corner is indexed as (0, 0). Find a number of times you are able to move in more than one direction.
+Consider the forest as an N x M grid. Each cell is either empty (represented by .) or blocked by a tree (represented by X). You can move LEFT, RIGHT, UP, and DOWN through empty cells, but you cannot travel through a tree cell. Starting cell is marked with the character M, and the target cell is marked with a \*. The upper-left corner is indexed as (0, 0). Find a number of times you are able to move in more than one direction.
 
 ### Find first non repeated char - [Java](java/src/main/java/ru/nk/training/FirstNonRepeatedCharFinder.java)
 
@@ -135,7 +138,7 @@ Given the value of two nodes in a binary search tree, find the lowest (nearest) 
 
 ### Rotate binary tree - [Java](java/src/main/java/ru/nk/training/BinaryTreeRotator.java)
 
-Given an unbalanced binary search tree with more nodes in the left subtree than 
+Given an unbalanced binary search tree with more nodes in the left subtree than
 the right, reorganise the tree to improve its balance while maintaining the properties of a binary search tree
 
 ### Maximize profit on stock - [Java](java/src/main/java/ru/nk/training/StocksProfitCalculator.java)
@@ -221,9 +224,10 @@ Given a string find out if symbols can be rearranged to a palindrom.
 [HackerRank - Week of Code 33 - Transform to Palindrome](https://www.hackerrank.com/contests/w33/challenges/transform-to-palindrome)
 
 The alphabet system consists of `n` letters, denoted by the integers from `1` to `n`. Some letters can be transformed to other letters. A transformation is denoted by a pair of two letters, `x -> y`. Using this transformation, you can replace letter `x` with letter `y`. Transformations also have additional properties:
- - If letter `x` can be transformed to letter `y` using a transformation, then letter `y` can be transformed to letter `x` as well.
- - If letter `x` can be transformed to letter `y` and letter `y` can be transformed to letter `z`, then letter `x` can be transformed to letter `z` as well.
- 
+
+- If letter `x` can be transformed to letter `y` using a transformation, then letter `y` can be transformed to letter `x` as well.
+- If letter `x` can be transformed to letter `y` and letter `y` can be transformed to letter `z`, then letter `x` can be transformed to letter `z` as well.
+
 You are given a sequence `s` comprising of `m` letters. You are given `k` transformations that can be applied to `s`. You may apply transformations to zero or more letters in the sequence. When a transformation is applied to a letter, the other letters of the string remain unaffected. You can also apply a single transformation multiple times on the same sequence. Find the length of the longest possible palindromic subsequence after applying zero or more transformations on the letters of the given sequence.
 
 ### Word Break - [Java](java/src/main/java/ru/nk/training/StringByWordsSplitter.java)
@@ -243,6 +247,7 @@ You are given `n x m` matrix and a list of tracks that always run in straight ho
 [HackerRank - Super Digit](https://www.hackerrank.com/challenges/super-digit)
 
 We define super digit of an integer `x` using the following rules:
+
 - If `x` has only 1 digit, then its super digit is `x`.
 - Otherwise, the super digit of `x` is equal to the super digit of the digit-sum of `x`. Here, digit-sum of a number is defined as the sum of its digits.
 
@@ -253,6 +258,7 @@ You are given two numbers `n` and `k`. You have to calculate the super digit of 
 [HackerRank - Prim's (MST): Special Subtree](https://www.hackerrank.com/challenges/primsmstsub)
 
 Given a graph which consists of several edges connecting the N nodes in it. It is required to find a subgraph of the given graph with the following properties:
+
 - The subgraph contains all the nodes present in the original graph.
 - The subgraph is of minimum overall weight (sum of all edges) among all such subgraphs.
 - It is also required that there is exactly one, exclusive path between any two nodes of the subgraph.
@@ -262,6 +268,7 @@ Given a graph which consists of several edges connecting the N nodes in it. It i
 [LeetCode - Min Stack](https://leetcode.com/problems/min-stack)
 
 Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+
 - `push(x)` - Push element x onto stack.
 - `pop()` - Removes the element on top of the stack.
 - `peek()` - Get the top element.
@@ -273,16 +280,18 @@ Design a stack that supports push, pop, top, and retrieving the minimum element 
 [LeetCode - Valid Parentheses](https://leetcode.com/problems/valid-parentheses)
 
 A bracket is considered to be any one of the following characters: `(`, `)`, `{`, `}`, `[`, or `]`. Two brackets are considered to be a matched pair if the an opening bracket (i.e., `(`, `[`, or `{`) occurs to the left of a closing bracket (i.e., `)`, `]`, or `}`) of the exact same type. There are three types of matched pairs of brackets: `[]`, `{}`, and `()`. A matching pair of brackets is not balanced if the set of brackets it encloses are not matched. For example, `{[(])}` is not balanced because the contents in between `{` and `}` are not balanced. The pair of square brackets encloses a single, unbalanced opening bracket, `(`, and the pair of parentheses encloses a single, unbalanced closing square bracket, `]`. By this logic, we say a sequence of brackets is considered to be balanced if the following conditions are met:
+
 - It contains no unmatched brackets.
 - The subset of brackets enclosed within the confines of a matched pair of brackets is also a matched pair of brackets.
 
-Given  strings of brackets, determine whether each sequence of brackets is balanced.
+Given strings of brackets, determine whether each sequence of brackets is balanced.
 
 ### Is This a Binary Search Tree? - [Java](java/src/main/java/ru/nk/training/BinarySearchTreeChecker.java)
 
 [HackerRank - Trees: Is This a Binary Search Tree?](https://www.hackerrank.com/challenges/ctci-is-binary-search-tree)
 
 Given the root node of a binary tree, can you determine if it's also a binary search tree. A binary tree is a binary search tree when the following ordering requirements are satisfied:
+
 - The value of every node in a node's left subtree is less than the data value of that node.
 - The value of every node in a node's right subtree is greater than the data value of that node.
 
@@ -303,8 +312,9 @@ Consider a big party where a log register for guest’s entry and exit times is 
 [HackerRank - Week of Code 35 - Highway Construction](https://www.hackerrank.com/contests/w35/challenges/highway-construction)
 
 You are planning the next FIFA World Cup and you are counting the number of highways that need to be built to connect the cities with the venue. Your country has n cities and all cities lie on a single straight road called “Highway Road”. If you want to go from City `x` to City `y` (where `x` ≤ `y`), you need to go through city `x`, `x + 1`, `x + 2`, .., `y - 1`, `y`. The requirements for the highways are as follows:
- - All games will be held in the `n`-th city.
- - New bidirectional roads, called "Super Highways", need to be built such that it is possible to visit the `n`-th city from any other city directly. 
+
+- All games will be held in the `n`-th city.
+- New bidirectional roads, called "Super Highways", need to be built such that it is possible to visit the `n`-th city from any other city directly.
 
 You also have the cost to fulfil the second condition. The engineering team knows that if the length of a Super Highway is `l`, then it will cost `l`<sup>`k`</sup>, where k is an integer constant. The length of Super Highway between city `x` and `y` is `|x - y|`. For this problem, you need to find only a rough estimation of the cost, hence, find Total Cost Modulo 1000000009.
 
@@ -317,15 +327,15 @@ Madison, is a little girl who is fond of toys. Her friend Mason works in a toy m
 ### Map Binary Tree by Levels - [Java](java/src/main/java/ru/nk/training/BinaryTreeLevelMapper.java)
 
 Given a binary tree, map it to lists of values by level, breadth-first. If any node is absent in the tree there should be an empty element in the level list. For example the binary tree
- 
+
         1
      /    \
     2      3
      \
       4
- 
+
 should be mapped to lists
- 
+
     [1]
     [2, 3]
     [X, 4, X, X]
@@ -335,15 +345,15 @@ should be mapped to lists
 [HackerRank - Week of Code 36 - A Race Against Time](https://www.hackerrank.com/contests/w36/challenges/a-race-against-time)
 
 A relay race is being organised in a school for middle school students by two high school students, Mason and Madison. Mason starts with the baton and Madison receives the baton at the final destination. There are middle school students in between Mason and Madison, and each of their heights is given. Mason's height, too, is given. Initially, the baton is with Mason and it is passed to the destination in a manner similar to a relay race.
- 
+
 1. At any moment,the current baton carrier has an option to hand over the baton to the student at the current position or to continue to the next position. However, if the student at the given position is taller than the current baton carrier, it is mandatory to hand over the baton because it is a safer option according to Mason.
 1. It takes one second to move between consecutive positions.
 1. Whenever the baton is handed over , there is a time and price associated with it.
 1. The time taken, in seconds, is the absolute difference between the heights of the current baton carrier and the student to whom the baton is handed.
 1. The student to whom the baton is passed charges a given price.
- 
+
 Note: Price charged can be negative too.
- 
+
 The baton must be sent to Madison in the minimum possible sum of time and price. Complete the function Solve which takes the number of middle school students, Mason's height, and heights and prices charged by middle school students as input, and return the minimum possible sum of time and price required for the baton to reach Madison.
 
 ### Flatten Binary Tree to Linked List - [Java](java/src/main/java/ru/nk/training/BinaryTreeFlattener.java)
@@ -379,12 +389,12 @@ The flattened tree should look like:
 Given `n` non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
 
 For example, given `[0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]`, return `6`.
-                                
+
                                        |###|
                    |###|~~~~~~~~~~~~~~~|###||###|~~~~~|###|
          |###|~~~~~|###||###|~~~~~|###||###||###||###||###||###|
     ============================================================
-      0    1    0    2    1    0    1    3    2    1    2    1  
+      0    1    0    2    1    0    1    3    2    1    2    1
 
 ### Word Pattern - [Python](python/src/is_word_pattern.py)
 
@@ -392,12 +402,12 @@ For example, given `[0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]`, return `6`.
 
 Given a pattern and a string `str`, find if `str` follows the same pattern. Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in `str`. Examples:
 
- - pattern = `"abba"`, str = `"dog cat cat dog"` should return true.
- - pattern = `"abba"`, str = `"dog cat cat fish"` should return false.
- - pattern = `"aaaa"`, str = `"dog cat cat dog"` should return false.
- - pattern = `"abba"`, str = `"dog dog dog dog"` should return false.
+- pattern = `"abba"`, str = `"dog cat cat dog"` should return true.
+- pattern = `"abba"`, str = `"dog cat cat fish"` should return false.
+- pattern = `"aaaa"`, str = `"dog cat cat dog"` should return false.
+- pattern = `"abba"`, str = `"dog dog dog dog"` should return false.
 
-Notes: You may assume pattern contains only lowercase letters, and `str` contains lowercase letters separated by a single space. 
+Notes: You may assume pattern contains only lowercase letters, and `str` contains lowercase letters separated by a single space.
 
 ### Permuting Two Arrays - [C++](cpp/src/can_permute_for_sum.cpp)
 
@@ -447,6 +457,7 @@ Consider an array of numeric strings, `unsorted`, where each string is a positiv
 [HackerRank - Abbreviation](https://www.hackerrank.com/challenges/abbr)
 
 You can perform the following operation on some string, `a`:
+
 - Capitalize zero or more of `a`'s lowercase letters at some index `i` (i.e., make them uppercase).
 - Delete all of the remaining lowercase letters in `a`.
 
@@ -527,7 +538,7 @@ Find the maximum product of two distinct numbers in a sequence of non-negative i
 
 ### Majority Element - [Python](python/src/find_majority_element.py)
 
-Given a sequence of elements `a`<sub>`1`</sub>, `a`<sub>`2`</sub>, ... , `a`<sub>`n`</sub>, you would like to check whether it contains an element (majority element) that appears more than `n`/2 times. 
+Given a sequence of elements `a`<sub>`1`</sub>, `a`<sub>`2`</sub>, ... , `a`<sub>`n`</sub>, you would like to check whether it contains an element (majority element) that appears more than `n`/2 times.
 
 ### Organizing a Lottery - [Python](python/src/count_segments_for_points.py)
 
@@ -548,11 +559,12 @@ You are given a primitive calculator that can perform the following three operat
 [HackerRank - Frequency Queries](https://www.hackerrank.com/challenges/frequency-queries)
 
 You are given queries. Each query is one of the described below:
- - Insert x in your data structure.
- - Delete one occurence of y from your data structure, if present.
- - Check if any integer is present whose frequency is exactly z. If yes, print 1 else 0.
 
-For example, you are given a list of operations. The results of each operation are: 
+- Insert x in your data structure.
+- Delete one occurence of y from your data structure, if present.
+- Check if any integer is present whose frequency is exactly z. If yes, print 1 else 0.
+
+For example, you are given a list of operations. The results of each operation are:
 
     Operation      Array       Output
     (ADD, 1)       [1]
@@ -567,7 +579,7 @@ For example, you are given a list of operations. The results of each operation a
 
 [HackerRank - Friend Circle Queries](https://www.hackerrank.com/challenges/friend-circle-queries)
 
-The population of HackerWorld is 10^9. Initially, none of the people  are friends with each other. In order to start a friendship, two persons  a and b have to shake hands, where 1 <= a, b <= 10^9. The friendship relation is transitive, that is if a and b shake hands with each other, a and friends of q become friends with b and friends of b.
+The population of HackerWorld is 10^9. Initially, none of the people are friends with each other. In order to start a friendship, two persons a and b have to shake hands, where 1 <= a, b <= 10^9. The friendship relation is transitive, that is if a and b shake hands with each other, a and friends of q become friends with b and friends of b.
 
 You will be given q queries. After each query, you need to report the size of the largest friend circle (the largest group of friends) formed after considering that query.
 
@@ -604,31 +616,34 @@ Given an array `A` of non-negative numbers find a contiguous subarray elements o
 [HackerRank - Find the Running Median](https://www.hackerrank.com/challenges/find-the-running-median)
 
 The median of a set of integers is the midpoint value of the data set for which an equal number of integers are less than and greater than the value. To find the median, you must first sort your set of integers in non-decreasing order, then:
- - If your set contains an odd number of elements, the median is the middle element of the sorted sample. In the sorted set {1, 2, 3}, 2 is the median.
- - If your set contains an even number of elements, the median is the average of the two middle elements of the sorted sample. In the sorted set {1, 2, 3, 4}, (2 + 3) / 2 = 2.5 is the median.
- 
- Given an input stream of n integers, you must perform the following task for each i-th integer:
- - Add the i-th integer to a running list of integers.
- - Find the median of the updated list (i.e., for the first element through the i-th element).
- - Print the list's updated median on a new line. The printed value must be a double-precision number scaled to 1 decimal place (i.e., 12.3 format).
+
+- If your set contains an odd number of elements, the median is the middle element of the sorted sample. In the sorted set {1, 2, 3}, 2 is the median.
+- If your set contains an even number of elements, the median is the average of the two middle elements of the sorted sample. In the sorted set {1, 2, 3, 4}, (2 + 3) / 2 = 2.5 is the median.
+
+Given an input stream of n integers, you must perform the following task for each i-th integer:
+
+- Add the i-th integer to a running list of integers.
+- Find the median of the updated list (i.e., for the first element through the i-th element).
+- Print the list's updated median on a new line. The printed value must be a double-precision number scaled to 1 decimal place (i.e., 12.3 format).
 
 ### Blocking Queue Implementation - [Java](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue)
 
- - [BlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/BlockingQueue.java) - Blocking Queue API (`add`, `tryAdd`, `waitingAdd`, `remove`, `tryRemove`, `waitingRemove`, `size`)
- - [ArrayBlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/ArrayBlockingQueue.java) - Implementaion based on an array
- - [ConditionArrayBlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/ConditionArrayBlockingQueue.java) - Implementaion based on an array, `waitingAdd` and `waitingRemove` leverage Lock Conditions
- - [LinkedBlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/LinkedBlockingQueue.java) - Implementation based on a linked list (unbounded)
- - [BoundedLinkedBlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/BoundedLinkedBlockingQueue.java) - Implementation based on a linked list (bounded)
+- [BlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/BlockingQueue.java) - Blocking Queue API (`add`, `tryAdd`, `waitingAdd`, `remove`, `tryRemove`, `waitingRemove`, `size`)
+- [ArrayBlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/ArrayBlockingQueue.java) - Implementaion based on an array
+- [ConditionArrayBlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/ConditionArrayBlockingQueue.java) - Implementaion based on an array, `waitingAdd` and `waitingRemove` leverage Lock Conditions
+- [LinkedBlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/LinkedBlockingQueue.java) - Implementation based on a linked list (unbounded)
+- [BoundedLinkedBlockingQueue](java/src/main/java/ru/nk/training/DataStructures/BlockingQueue/BoundedLinkedBlockingQueue.java) - Implementation based on a linked list (bounded)
 
 ### Decimal Number Validator - [Java](java/src/main/java/ru/nk/training/DecimalNumberValidator.java)
 
 Validate if a given string can be interpreted as a decimal number.
 
 It is intended for the problem statement to be ambiguous. You should gather all requirements up front before implementing one. However, here is a list of characters that can be in a valid decimal number:
- * Numbers 0-9
- * Exponent - "e"
- * Positive/negative sign - "+"/"-"
- * Decimal point - "."
+
+- Numbers 0-9
+- Exponent - "e"
+- Positive/negative sign - "+"/"-"
+- Decimal point - "."
 
 ### BigInteger Implementation [Java](java/src/main/java/ru/nk/training/BigInteger.java)
 
@@ -647,3 +662,16 @@ For example, if a=[6, 2, 3, 4, 12], then you need to use two colors: 6,3,12 can 
 **Input:** First row contains one integer n (1<=n<=100), where n is the lenght of the sequence. Second row contains n integers a1,a2,...,an (1<=ai<=100). Numbers in the sequence can be repeated.
 
 **Output:** Print the minimal number of colors needed to color the elements correctly.
+
+### Insert Delete GetRandom O(1) - [Java](java/src/main/java/ru/nk/training/RandomizedSet.java)
+
+[LeetCode - Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/)
+
+Implement the `RandomizedSet` class:
+
+- `RandomizedSet()` Initializes the `RandomizedSet` object.
+- `bool insert(int val)` Inserts an item `val` into the set if not present. Returns `true` if the item was not present, `false` otherwise.
+- `bool remove(int val)` Removes an item `val` from the set if present. Returns `true` if the item was present, `false` otherwise.
+- `int getRandom()` Returns a random element from the current set of elements (it's guaranteed that at least one element exists when this method is called). Each element must have the same probability of being returned.
+
+You must implement the functions of the class such that each function works in average O(1) time complexity.
